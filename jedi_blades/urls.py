@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import LightsaberListView
+from app.views import LightsaberListView, LightsaberDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LightsaberListView.as_view(), name='lightsaber-list'),
+    path('lightsaber/<int:pk>/', LightsaberDetailView.as_view(), name='lightsaber-detail'),
 ]
