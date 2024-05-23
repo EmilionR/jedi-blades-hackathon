@@ -6,9 +6,34 @@
 
 ![screenshot](documentation/mockup.png)
 
+## Table of Contents
+- [Intro](#jedi-blades)
+- [Table of Contents](#table-of-contents)
+- [UX](#ux)
+    - [User Goals](#user-goals)
+    - [Features](#features)
+    - [Surface](#surface)
+- [Future Implementations](#future-implementations)
+- [Tools & Technologies Used](#tools--technologies-used)
+- [Credits](#credits)
+
 ## UX
 
-### Typography
+### User Goals
+
+#### User Stories
+
+### Features
+
+### Surface
+
+#### Wireframes
+
+#### Color Palette
+
+#### Typography
+
+## Future Implementations
 
 ## Tools & Technologies Used
 
@@ -29,3 +54,5 @@
 - [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
+
+## Credits
