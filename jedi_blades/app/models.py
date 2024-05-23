@@ -3,8 +3,8 @@ from django.db import models
 class Lightsaber(models.Model):
     name = models.CharField(max_length=100, unique=True)
     color = models.CharField(max_length=20)
-    owner = models.CharField(max_length=15)
-    design = models.CharField(max_length=10)
+    owner = models.CharField(max_length=100)
+    design = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
 
     def __str__(self):
