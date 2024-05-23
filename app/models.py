@@ -21,8 +21,7 @@ class Character(models.Model):
     full_name = models.CharField(max_length=200)
     alignment = models.CharField(max_length=1, choices=ALIGNMENT_CHOICES)
     lightsaber = models.ForeignKey(Lightsaber, on_delete=models.CASCADE)
+    home_planet = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
-
-
