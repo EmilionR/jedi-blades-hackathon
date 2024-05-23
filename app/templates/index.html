@@ -1,57 +1,7 @@
 {% extends 'base.html' %}
-
+{% load static %} 
 {% block content %}
-<!-- Unique Scoped Content Styles -->
-<style>
-
-    /* Hero section */ 
-    
-    .outer-hero-section {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        max-width: 1800px; /* Ensuring it doesn't exceed 1500px width */
-        margin: 0 auto; /* Center the section */
-        background-color: black; /* Dark background for contrast */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
-    }
-
-    .jedi-hero-section {
-        position: relative;
-        overflow: hidden;
-        height: 50vh; /* Fixed viewport height */
-        transform: perspective(300px) rotateX(20deg);
-        transform-origin: 50% 100%;
-        background: black;
-        color: yellow;
-    }
-
-    .jedi-hero-text {
-        position: absolute;
-        top: 100%; /* Start off-screen */
-        width: 100%;
-        text-align: center;
-        font-size: 30px;
-        font-family: sans-serif;
-        color: yellow;
-        animation: jedi-autoscroll 400s linear infinite;
-    }
-
-    @keyframes jedi-autoscroll {
-        from { transform: translateY(0); } /* Start from below the view */
-        to { transform: translateY(-100%); } /* Scroll through three blocks of text */
-    }
-
-    .jedi-hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-        pointer-events: none;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 
 <!-- Content Block -->
 <div class="outer-hero-section">
@@ -146,4 +96,81 @@
     </div>
 </div>
 
+<div class="container mt-5">
+    <!-- Toggle for Light, Both, and Dark Side -->
+    <div class="btn-group" role="group" aria-label="Side Toggle">
+        <button type="button" class="btn btn-light" id="lightSide">Light</button>
+        <button type="button" class="btn btn-secondary" id="bothSides">Both</button>
+        <button type="button" class="btn btn-dark" id="darkSide">Dark</button>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        {% for lightsaber in lightsabers %}
+        <!-- Make sure to convert 'L' to 'light' and 'D' to 'dark' for class name compatibility -->
+        <div class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom {% if lightsaber.owner.alignment == 'L' %}light{% elif lightsaber.owner.alignment == 'D' %}dark{% endif %}">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ lightsaber.name }}</h5>
+                    <p class="card-text">{{ lightsaber.description }}</p>
+                    <p class="card-text">Color: {{ lightsaber.color }}</p>
+                    <p class="card-text">Owner: {{ lightsaber.owner }}</p>
+                    <a href="{% url 'lightsaber-detail' pk=lightsaber.id %}" class="btn btn-primary">
+                        View Details
+                    </a>
+                    <!-- Trigger for Character Modal -->
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#characterModal{{ lightsaber.id }}">
+                        {{ lightsaber.owner  }}
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade" id="characterModal{{ lightsaber.id }}" tabindex="-1" aria-labelledby="characterModalLabel{{ lightsaber.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="characterModalLabel{{ lightsaber.id }}">{{ lightsaber.owner.name }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Full Name: {{ lightsaber.owner.full_name }}</p>
+                            <p>Alignment: {{ lightsaber.owner.get_alignment_display }}</p>
+                            <p>Home Planet: {{ lightsaber.owner.home_planet }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+document.getElementById('lightSide').addEventListener('click', function() {
+    filterSide('light');
+});
+document.getElementById('bothSides').addEventListener('click', function() {
+    filterSide('both');
+});
+document.getElementById('darkSide').addEventListener('click', function() {
+    filterSide('dark');
+});
+
+function filterSide(side) {
+    const cards = document.querySelectorAll('.jedi-card-custom');
+    cards.forEach(card => {
+        if (side === 'both') {
+            card.style.display = '';
+        } else {
+            card.style.display = card.classList.contains(side) ? '' : 'none';
+        }
+    });
+}
+</script>
+
+
+
+
+
+
 {% endblock %}
+
+
