@@ -17,8 +17,14 @@
     <style> 
 
     /*                    General                  */ 
+    html{
+    color:yellow;
+    background:black;
+}
 
-    i {color:White;}
+main {min-height: 100vh;}
+    
+    
 
      /*                    General  Header                  */ 
 
@@ -110,13 +116,13 @@
   </nav>
 </header>
 
-    <main>
+    <main >
       {% block content %}
       <!-- Page-specific content will go here -->
       {% endblock %}
     </main>
     <footer class="bg-dark text-white mt-5 p-4 fixed-bottom">
-      <div class="container container-max flex-column flex-md-row justify-content-between text-center text-md-start">
+      <div class="container container-max flex-column flex-lg-row justify-content-between text-center text-lg-start">
           <div>
               <h5>Social Media</h5>
               <i class="fab fa-facebook footer-social-icon"></i>
