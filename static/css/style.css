@@ -1,0 +1,15 @@
+/*---------------------------------- General */
+
+a {
+  text-decoration: none;
+}
+
+/*---------------------------------- Navigation Bar */
+
+nav ul {
+  gap: 1rem;
+  
+  li {
+    list-style: none;
+  }
+}
