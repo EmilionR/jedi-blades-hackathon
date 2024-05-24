@@ -123,6 +123,21 @@
 </section>
 
 <script>
+
+    // Set blend mode as default
+    document.querySelector(".select-your-side").className = "select-your-side blend-mode";
+
+    document.getElementById("lightSide").addEventListener("click", function () {
+        document.querySelector(".select-your-side").className = "select-your-side light-mode";
+    });
+    document.getElementById("bothSides").addEventListener("click", function () {
+        document.querySelector(".select-your-side").className = "select-your-side blend-mode";
+    });
+    document.getElementById("darkSide").addEventListener("click", function () {
+        document.querySelector(".select-your-side").className = "select-your-side dark-mode";
+    });
+
+
   document.getElementById("lightSide").addEventListener("click", function () {
     filterSide("L");
   });
@@ -177,7 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       starrySky.appendChild(star);
     }
-  });
+
+  }); 
 </script>
 
 {% endblock %}
