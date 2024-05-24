@@ -129,6 +129,7 @@ footer {
   border-radius: 50%;
   box-shadow: 0 0 2px #fff, 0 0 5px #fff;
   animation: animateStar linear infinite;
+  z-index: 10;
 }
 
 @keyframes animateStar {
