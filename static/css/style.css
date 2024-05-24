@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --bg: black;
   --secondary-bg: #333;
@@ -8,6 +10,17 @@
   --saber-purple: #7851a9;
   --saber-yellow: #f9ff58;
   --saber-white: #ddddff;
+
+  /* Color palette */
+  --light-grey: #d6d6d6;
+  --bright-yellow: #ffee32;
+  --gold-yellow: #ffd100;
+  --black: #202020;
+  --dark-grey: #333533;
+
+  /* Fonts */
+  --title: "Orbitron", sans-serif;
+  --main-font: "Raleway", sans-serif;
 }
 
 /*                    General                  */
