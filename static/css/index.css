@@ -1,34 +1,34 @@
-/* Hero section */
-
-.outer-hero-section {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 1800px; /* Ensuring it doesn't exceed 1500px width */
-  margin: 0 auto; /* Center the section */
-  background-color: black; /* Dark background for contrast */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
+   /* Hero section */ 
+    
+   .outer-hero-section {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1800px; /* Ensuring it doesn't exceed 1500px width */
+    margin: 0 auto; /* Center the section */
+    background-color: black; /* Dark background for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
+    border-bottom: 2px solid var(--sw-yellow); /* Yellow border at the bottom */
 }
 
 .jedi-hero-section {
-  position: relative;
-  overflow: hidden;
-  height: 50vh; /* Fixed viewport height */
-  transform: perspective(300px) rotateX(20deg);
-  transform-origin: 50% 100%;
-  background: black;
-  color: yellow;
+    position: relative;
+    overflow: hidden;
+    height: 50vh; /* Fixed viewport height */
+    transform: perspective(300px) rotateX(20deg);
+    transform-origin: 50% 100%;
+    background: var(--bg);
+    color: var(--sw-yellow);
 }
 
 .jedi-hero-text {
-  position: absolute;
-  top: 100%; /* Start off-screen */
-  width: 100%;
-  text-align: center;
-  font-size: 30px;
-  font-family: sans-serif;
-  color: yellow;
-  animation: jedi-autoscroll 30s linear infinite;
+    position: absolute;
+    top: 100%; /* Start off-screen */
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    animation: jedi-autoscroll 30s linear infinite;
 }
 
 @keyframes jedi-autoscroll {
@@ -50,13 +50,34 @@
   pointer-events: none;
 }
 
-/* Lightsaber display section */
+.btn-group {
+    border: 2px solid var(--sw-yellow);
+    padding: 2px;
+
+    button {
+        border: none;
+        color: var(--bg);
+        font-weight: 600;
+    }
+    #lightSide {
+        background-color: var(--saber-blue);
+    }
+    #darkSide {
+        background-color: var(--saber-red);
+    }
+    #bothSides {
+        background: linear-gradient(to right, var(--saber-blue), var(--saber-red));
+        margin: 0 3px;
+    }
+}
+
+/* Lightsaber display section */ 
 .light {
-  border-left: 5px solid blue; /* Light side has a blue border */
+border-left: 5px solid var(--saber-blue); /* Light side has a blue border */
 }
 
 .dark {
-  border-left: 5px solid red; /* Dark side has a red border */
+border-left: 5px solid var(saber-red); /* Dark side has a red border */
 }
 
 /* Changing the color of the text */

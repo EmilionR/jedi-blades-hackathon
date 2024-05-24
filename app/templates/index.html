@@ -22,9 +22,9 @@
 <section class="container mt-5">
     <!-- Toggle for Light, Both, and Dark Side -->
     <div class="btn-group" role="group" aria-label="Side Toggle">
-        <button type="button" class="btn btn-light" id="lightSide">Light</button>
-        <button type="button" class="btn btn-secondary" id="bothSides">Both</button>
-        <button type="button" class="btn btn-dark" id="darkSide">Dark</button>
+        <button type="button" class="btn" id="lightSide">Light</button>
+        <button type="button" class="btn" id="bothSides">Both</button>
+        <button type="button" class="btn" id="darkSide">Dark</button>
     </div>
 
     <div class="row justify-content-center mt-3">
@@ -40,8 +40,9 @@
                     <a href="{% url 'lightsaber-detail' pk=lightsaber.id %}" class="btn btn-primary">
                         View Details
                     </a>
-                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#characterModal{{ lightsaber.id }}">
-                        {{ lightsaber.owner }}
+                    <!-- Trigger for Character Modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#characterModal{{ lightsaber.id }}">
+                        {{ lightsaber.owner  }}
                     </button>
                 </div>
             </div>            
