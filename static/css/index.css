@@ -139,26 +139,108 @@
 
 /* Light / Dark toggle */
 
-.btn-group {
-    border: 2px solid var(--sw-yellow);
-    padding: 2px;
+/* Star Wars Title */
+.star-wars-title {
+    font-family: 'Star Jedi', sans-serif; /* Make sure to import a Star Wars font */
+    color: #FFCC00; /* Yellow */
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10px #FFCC00, 0 0 20px #FFCC00; /* Yellow */
+    margin-bottom: 1rem;
+}
 
-    button {
-        border: none;
-        color: var(--bg);
-        font-weight: 600;
-    }
-    #lightSide {
-        background-color: var(--saber-blue);
-    }
-    #darkSide {
-        background-color: var(--saber-red);
-    }
-    #bothSides {
-        background: linear-gradient(to right, var(--saber-blue), var(--saber-red));
-        margin: 0 3px;
-    }
+/* Toggle Section */
+.toggle-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #000000 !important; /* Black background */
+    border: 2px solid #FFCC00 !important; /* Yellow border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow */
+    max-width: 500px;
+    margin: auto;
+    z-index: 400 !important;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: 2px solid #FFCC00; /* Yellow border */
+    color: #000000; /* Black text */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    background: #FFCC00; /* Yellow background */
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow */
+}
+
+.toggle-btn:hover {
+    background: #FFD700; /* Light yellow on hover */
+    transform: translateY(-2px);
+}
+
+.toggle-btn:active {
+    transform: translateY(1px);
+}
+
+#lightSide {
+    background: #0056b3; /* Blue */
+}
+
+#lightSide:hover {
+    background: #007bff; /* Light blue on hover */
+}
+
+#darkSide {
+    background: #b30000; /* Red */
+}
+
+#darkSide:hover {
+    background: #ff0000; /* Light red on hover */
+}
+
+#bothSides {
+    background: linear-gradient(to right, #0056b3, #b30000); /* Blue to Red */
+}
+
+#bothSides:hover {
+    background: linear-gradient(to right, #007bff, #ff0000); /* Light Blue to Light Red */
+}
+
+.z-index {
     z-index: 30;
+}
+
+/* Content Section Styles */
+#sideContent {
+    margin-top: 20px;
+}
+
+#sideLogo {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+#sideText {
+    font-family: 'Star Jedi', sans-serif; /* Make sure to import a Star Wars font */
+    color: #FFCC00; /* Yellow */
+    text-shadow: 0 0 10px #FFCC00, 0 0 20px #FFCC00; /* Yellow */
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    margin-top: 10px;
 }
 
 
