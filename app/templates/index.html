@@ -36,7 +36,7 @@
                     <div class="col">
                         <h5 class="card-title">{{ lightsaber.name }}</h5>
                         <p class="card-text">{{ lightsaber.description }}</p>
-                        <p class="card-text">Color: {{ lightsaber.color }}</p>
+                        <p class="card-text">Color: <span class="color-text" title="{{ lightsaber.color }}"></span></p>
                         <p class="card-text">Owner: {{ lightsaber.owner }}</p>
                     </div>
                     <div class="col pb-4">
@@ -54,7 +54,7 @@
                         {{ lightsaber.owner  }}
                     </button>
                 </div>
-            </div>
+            </div>            
             <div class="modal fade" id="characterModal{{ lightsaber.id }}" tabindex="-1" aria-labelledby="characterModalLabel{{ lightsaber.id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -97,6 +97,21 @@ function filterSide(side) {
         }
     });
 }
+
+// Set the background color of the color text elements
+document.addEventListener("DOMContentLoaded", function() {
+    const colorTextElements = document.querySelectorAll('.color-text');
+
+    colorTextElements.forEach(element => {
+        const colorValue = element.getAttribute('title').trim().toLowerCase();
+
+        if (['red', 'blue', 'green', 'yellow', 'purple'].includes(colorValue)) {
+            element.style.backgroundColor = colorValue;
+        } else {
+            element.style.backgroundColor = 'transparent';
+        }
+    });
+});
 </script>
 
 
