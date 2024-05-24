@@ -112,3 +112,30 @@ footer {
     margin-top: 20px;
   }
 }
+
+/*                  Starry Sky                */
+.starry-sky {
+  position: relative;
+  width: 100%;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff;
+  animation: animateStar linear infinite;
+}
+
+@keyframes animateStar {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}

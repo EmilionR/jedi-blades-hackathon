@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 
 <!-- Content Block -->
-<section class="outer-hero-section">
+<section class="outer-hero-section starry-sky">
   <div class="jedi-hero-section">
     <div class="jedi-hero-text">
       <!-- Content for scrolling effect -->
@@ -158,6 +158,25 @@
         element.style.backgroundColor = "transparent";
       }
     });
+  });
+
+// Starry Sky Animation for Hero Section
+document.addEventListener("DOMContentLoaded", function () {
+    const starrySky = document.querySelector(".starry-sky");
+    const starsCount = 300;
+
+    for (let i = 0; i < starsCount; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * 50 + "vh";
+
+      // Increase the minimum and maximum duration for slower animation
+      let duration = Math.random() * (250 - 5) + 5;
+      star.style.animationDuration = duration + "s";
+
+      starrySky.appendChild(star);
+    }
   });
 </script>
 
