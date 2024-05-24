@@ -56,51 +56,49 @@
 
 /* Blended mode backgrounds */
 .select-your-side.blend-mode {
-    background-image: 
-        linear-gradient(
-            to right, 
-            rgba(0, 0, 0, 0.5), 
-            rgba(0, 0, 0, 0.5)
-        ), 
-        url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp'), 
-        url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
-    background-size: 50% 100%;
-    background-position: left, right;
+    position: relative;
+    min-height: 80vh;
+}
+
+.select-your-side.blend-mode::before,
+.select-your-side.blend-mode::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
+.select-your-side.blend-mode::before {
+    left: 0;
+    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp');
+}
+
+.select-your-side.blend-mode::after {
+    right: 0;
+    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
+}
+
 @media (min-width: 768px) {
-    .select-your-side.blend-mode {
-        background-image: 
-            linear-gradient(
-                to right, 
-                rgba(0, 0, 0, 0.5), 
-                rgba(0, 0, 0, 0.5)
-            ), 
-            url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp'), 
-            url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
-        background-size: cover, 50% 100%, 50% 100%;
-        background-position: center, left, right;
-        background-repeat: no-repeat;
+    .select-your-side.blend-mode::before {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp');
+    }
+    .select-your-side.blend-mode::after {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
     }
 }
 
 @media (min-width: 1024px) {
-    .select-your-side.blend-mode {
-        background-image: 
-            linear-gradient(
-                to right, 
-                rgba(0, 0, 0, 0.5), 
-                rgba(0, 0, 0, 0.5)
-            ), 
-            url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp'), 
-            url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
-        background-size: cover, 50% 100%, 50% 100%;
-        background-position: center, left, right;
-        background-repeat: no-repeat;
+    .select-your-side.blend-mode::before {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp');
+    }
+    .select-your-side.blend-mode::after {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
     }
 }
-  
 
 .jedi-hero-section {
     position: relative;
@@ -158,7 +156,11 @@
         background: linear-gradient(to right, var(--saber-blue), var(--saber-red));
         margin: 0 3px;
     }
+    z-index: 30;
 }
+
+
+.lightsaber-row {z-index: 30;}
 
 /* Lightsaber display section */ 
 .light {
