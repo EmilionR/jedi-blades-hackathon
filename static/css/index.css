@@ -305,53 +305,44 @@ border-left: 5px solid var(saber-red); /* Dark side has a red border */
 }
 
 
-/* General Button Style */
-.btn-primary {
-    transition: background-color 0.3s ease;
-}
-
-/* General Hover Effect for Button */
-.btn-primary:hover {
-    opacity: 0.8;
-}
-
-/* Lightsaber Card Styling */
-.lightsaber-row {
-    transition: border-color 0.3s ease;
-    border: 3px solid transparent; /* Default transparent border */
-}
-
-/* Dynamic Color Application via JavaScript */
-.color-text {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    vertical-align: middle;
-    margin-right: 5px;
-    background-color: #FFF; /* Default white background */
-}
-
-
-/* Ensure that the default card has no border and a potential for glow */
+/* Lightsaber Card Styling with Keyframes for Glowing Effect */
 .lightsaber-card {
     position: relative;
-    border: 3px solid transparent;
-    transition: box-shadow 0.3s ease;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0); /* Initial state with no glow */
+    border: 3px solid transparent; /* Default transparent border */
+    transition: box-shadow 4s ease;
+    animation: glowingAnimation 8s infinite;
 }
 
-.lightsaber-card:hover {
-    box-shadow: 0 0 8px 3px var(--dynamic-color); /* Dynamic glow effect */
+@keyframes glowingAnimation {
+    0%, 100% {
+        box-shadow: 0 0 4px 2px #FFCC00, 0 0 20px 4px #FFCC00;
+    }
+    50% {
+        box-shadow: 0 0 8px 3px #FFD700, 0 0 30px 6px #FFD700;
+    }
 }
 
-/* Button styles adjusted for color dynamics */
+/* Enhanced Button Styles for Star Wars Theme */
 .btn-primary {
-    background-color: var(--dynamic-color); /* Use CSS variable for color */
-    border-color: var(--dynamic-color);
+    background-color: #FFCC00; /* Star Wars yellow background */
+    color: #000000; /* Text color */
+    border: 2px solid #FFCC00; /* Matching border */
     transition: background-color 0.3s, border-color 0.3s;
+    animation: buttonGlow 6s infinite;
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        background-color: #FFCC00; /* Original yellow */
+        border-color: #FFCC00;
+    }
+    50% {
+        background-color: #FFD700; /* Lighter yellow */
+        border-color: #FFD700;
+    }
 }
 
 .btn-primary:hover {
-    background-color: darken(var(--dynamic-color), 10%); /* Slightly darken on hover */
+    background-color: #FFD700; /* Lighter yellow on hover */
+    border-color: #FFD700; /* Lighter border on hover */
 }
