@@ -12,13 +12,11 @@
 }
 
 .select-your-side {
-    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp');
-    background-size: cover; /* Ensures the background image covers the entire section */
-    background-position: bottom; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-    min-height: 80vh; /* Ensures the section is at least 80% of the viewport height */
+    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.36_-_A_dark_fortress_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 20;
 }
-  
 
 .jedi-hero-section {
     position: relative;
