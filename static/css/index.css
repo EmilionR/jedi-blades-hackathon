@@ -8,6 +8,7 @@
     margin: 0 auto; /* Center the section */
     background-color: black; /* Dark background for contrast */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
+    border-bottom: 2px solid var(--sw-yellow); /* Yellow border at the bottom */
 }
 
 .jedi-hero-section {
@@ -16,8 +17,8 @@
     height: 50vh; /* Fixed viewport height */
     transform: perspective(300px) rotateX(20deg);
     transform-origin: 50% 100%;
-    background: black;
-    color: yellow;
+    background: var(--bg);
+    color: var(--sw-yellow);
 }
 
 .jedi-hero-text {
@@ -27,7 +28,6 @@
     text-align: center;
     font-size: 30px;
     font-family: sans-serif;
-    color: yellow;
     animation: jedi-autoscroll 30s linear infinite;
 }
 
@@ -46,11 +46,34 @@
     pointer-events: none;
 }
 
+/* Light / Dark toggle */
+
+.btn-group {
+    border: 2px solid var(--sw-yellow);
+    padding: 2px;
+
+    button {
+        border: none;
+        color: var(--bg);
+        font-weight: 600;
+    }
+    #lightSide {
+        background-color: var(--saber-blue);
+    }
+    #darkSide {
+        background-color: var(--saber-red);
+    }
+    #bothSides {
+        background: linear-gradient(to right, var(--saber-blue), var(--saber-red));
+        margin: 0 3px;
+    }
+}
+
 /* Lightsaber display section */ 
 .light {
-border-left: 5px solid blue; /* Light side has a blue border */
+border-left: 5px solid var(--saber-blue); /* Light side has a blue border */
 }
 
 .dark {
-border-left: 5px solid red; /* Dark side has a red border */
+border-left: 5px solid var(saber-red); /* Dark side has a red border */
 }

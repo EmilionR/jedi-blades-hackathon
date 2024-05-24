@@ -1,8 +1,25 @@
+:root {
+  --bg: black;
+  --secondary-bg: #333;
+  --sw-yellow: #ffe81f;
+  --saber-blue: #2e67f8;
+  --saber-green: #2ff924;
+  --saber-red: #c13d3d;
+  --saber-purple: #7851a9;
+  --saber-yellow: #f9ff58;
+  --saber-white: #ddddff;
+}
 
 /*                    General                  */
-html {
-  color: yellow;
-  background: black;
+html,
+body {
+  color: var(--saber-white);
+  background: var(--bg);
+}
+
+.card {
+  background-color: var(--bg);
+  border: 2px solid var(--sw-yellow);
 }
 
 main {
@@ -13,9 +30,19 @@ a {
   text-decoration: none;
 }
 
+.btn-primary {
+  background-color: var(--bg);
+  border: 2px solid var(--sw-yellow);
+  color: var(--sw-yellow);
+}
+
 /*                    General  Header                  */
 
 /*                    General  Footer                   */
+
+footer {
+  border-top: 2px solid var(--sw-yellow);
+}
 
 /*                   Media Queries                   */
 
