@@ -60,6 +60,13 @@ All user stories are mapped to Issues in Github, with acceptance criteria and ta
 ### Surface
 
 #### Wireframes
+We started out with these wireframes:
+![Original desktop wireframe](static/images/readme_images/wf-original-desktop.png)
+![Original mobile wireframe](static/images/readme_images/wf-original-mobile.png)
+![Original tablet wireframe](static/images/readme_images/wf-original-tablet.png)
+
+We developed this wireframe to help build the Lightsaber and Character list pages, and the Team page:
+![Lightsaber list page](static/images/readme_images/wf-lightsaber-list.png)
 
 #### Color Palette
 The color palette is based on the official Star Wars yellow and black, with some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
