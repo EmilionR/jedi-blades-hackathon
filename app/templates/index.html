@@ -35,17 +35,16 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ lightsaber.name }}</h5>
                     <p class="card-text">{{ lightsaber.description }}</p>
-                    <p class="card-text">Color: {{ lightsaber.color }}</p>
+                    <p class="card-text">Color: <span class="color-text" title="{{ lightsaber.color }}"></span></p>
                     <p class="card-text">Owner: {{ lightsaber.owner }}</p>
                     <a href="{% url 'lightsaber-detail' pk=lightsaber.id %}" class="btn btn-primary">
                         View Details
                     </a>
-                    <!-- Trigger for Character Modal -->
                     <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#characterModal{{ lightsaber.id }}">
-                        {{ lightsaber.owner  }}
+                        {{ lightsaber.owner }}
                     </button>
                 </div>
-            </div>
+            </div>            
             <div class="modal fade" id="characterModal{{ lightsaber.id }}" tabindex="-1" aria-labelledby="characterModalLabel{{ lightsaber.id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -88,6 +87,20 @@ function filterSide(side) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const colorTextElements = document.querySelectorAll('.color-text');
+
+    colorTextElements.forEach(element => {
+        const colorValue = element.getAttribute('title').trim().toLowerCase(); // Use the title attribute to get the color
+
+        if (['red', 'blue', 'green', 'yellow', 'purple'].includes(colorValue)) {
+            element.style.backgroundColor = colorValue;
+        } else {
+            element.style.backgroundColor = 'transparent'; // Handle default or unrecognized colors
+        }
+    });
+});
 </script>
 
 
