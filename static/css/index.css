@@ -1,0 +1,56 @@
+   /* Hero section */ 
+    
+   .outer-hero-section {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1800px; /* Ensuring it doesn't exceed 1500px width */
+    margin: 0 auto; /* Center the section */
+    background-color: black; /* Dark background for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
+}
+
+.jedi-hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 50vh; /* Fixed viewport height */
+    transform: perspective(300px) rotateX(20deg);
+    transform-origin: 50% 100%;
+    background: black;
+    color: yellow;
+}
+
+.jedi-hero-text {
+    position: absolute;
+    top: 100%; /* Start off-screen */
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: yellow;
+    animation: jedi-autoscroll 30s linear infinite;
+}
+
+@keyframes jedi-autoscroll {
+    from { transform: translateY(0); } /* Start from below the view */
+    to { transform: translateY(-190%); } /* Scroll through three blocks of text */
+}
+
+.jedi-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
+
+/* Lightsaber display section */ 
+.light {
+border-left: 5px solid blue; /* Light side has a blue border */
+}
+
+.dark {
+border-left: 5px solid red; /* Dark side has a red border */
+}

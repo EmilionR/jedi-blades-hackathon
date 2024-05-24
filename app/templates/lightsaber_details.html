@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ lightsaber.name }}</h1>
+    <p>{{ lightsaber.description }}</p>
+    <p>Color: {{ lightsaber.color }}</p>
+    <p>Owner: {{ lightsaber.owner }}</p>
+    <p>Design: {{ lightsaber.design }}</p>
+</div>
+{% endblock %}
