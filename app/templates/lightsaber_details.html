@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<!-- Content goes here-->
-<div class="container py-4">
-    <h1 class="text-center">Darth Vader's lightsaber</h1>
-    <p>
-        Darth Vader's lightsaber is one of the most iconic lightsabers in the Star Wars
-        universe. It is a red-bladed lightsaber that was used by Darth Vader, the Sith
-        Lord who was once known as Anakin Skywalker. The lightsaber is known for its
-        distinctive design and its red blade, which is a symbol of the dark side of the
-        Force.
-    </p>
+<div class="container">
+    <h1>{{ lightsaber.name }}</h1>
+    <p>{{ lightsaber.description }}</p>
+    <p>Color: {{ lightsaber.color }}</p>
+    <p>Owner: {{ lightsaber.owner }}</p>
+    <p>Design: {{ lightsaber.design }}</p>
 </div>
 {% endblock %}

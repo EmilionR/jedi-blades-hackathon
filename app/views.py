@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Lightsaber, Character
 from django.http import HttpResponse
 
@@ -24,6 +24,13 @@ class CharacterListView(ListView):
     model = Character
     template_name = 'characters.html'
     context_object_name = 'characters'
+
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
+
+class TeamView(TemplateView):
+    template_name = 'team.html'
 
 
 class CharacterDetailView(DetailView):
