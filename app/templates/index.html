@@ -30,8 +30,8 @@
     <div class="row justify-content-center mt-3">
         {% for lightsaber in lightsabers %}
         <!-- Make sure to convert 'L' to 'light' and 'D' to 'dark' for class name compatibility -->
-        <div class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom {% if lightsaber.owner.alignment == 'L' %}light{% elif lightsaber.owner.alignment == 'D' %}dark{% endif %}">
-            <article class="card">
+        <article class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom {{ lightsaber.owner.alignment }}">
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ lightsaber.name }}</h5>
                     <p class="card-text">{{ lightsaber.description }}</p>
@@ -45,7 +45,7 @@
                         {{ lightsaber.owner  }}
                     </button>
                 </div>
-            </article>
+            </div>
             <div class="modal fade" id="characterModal{{ lightsaber.id }}" tabindex="-1" aria-labelledby="characterModalLabel{{ lightsaber.id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -61,29 +61,30 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
         {% endfor %}
     </div>
 </section>
 
 <script>
 document.getElementById('lightSide').addEventListener('click', function() {
-    filterSide('light');
+    filterSide('L');
 });
 document.getElementById('bothSides').addEventListener('click', function() {
     filterSide('both');
 });
 document.getElementById('darkSide').addEventListener('click', function() {
-    filterSide('dark');
+    filterSide('D');
 });
 
 function filterSide(side) {
     const cards = document.querySelectorAll('.jedi-card-custom');
     cards.forEach(card => {
+        console.log(card.classList)
         if (side === 'both') {
             card.style.display = '';
         } else {
-            card.style.display = card.classList.contains(side) ? '' : 'none';
+            card.style.display = card.classList.contains(side) ? 'block' : 'none';
         }
     });
 }
