@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 
 <!-- Content Block -->
-<div class="outer-hero-section">
+<section class="outer-hero-section">
     <div class="jedi-hero-section">
         <div class="jedi-hero-text">
             <!-- Content for scrolling effect -->
@@ -94,9 +94,9 @@
         </div>
         <div class="jedi-hero-overlay"></div>
     </div>
-</div>
+</section>
 
-<div class="container mt-5">
+<section class="container mt-5">
     <!-- Toggle for Light, Both, and Dark Side -->
     <div class="btn-group" role="group" aria-label="Side Toggle">
         <button type="button" class="btn btn-light" id="lightSide">Light</button>
@@ -108,7 +108,7 @@
         {% for lightsaber in lightsabers %}
         <!-- Make sure to convert 'L' to 'light' and 'D' to 'dark' for class name compatibility -->
         <div class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom {% if lightsaber.owner.alignment == 'L' %}light{% elif lightsaber.owner.alignment == 'D' %}dark{% endif %}">
-            <div class="card">
+            <article class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ lightsaber.name }}</h5>
                     <p class="card-text">{{ lightsaber.description }}</p>
@@ -122,7 +122,7 @@
                         {{ lightsaber.owner  }}
                     </button>
                 </div>
-            </div>
+            </article>
             <div class="modal fade" id="characterModal{{ lightsaber.id }}" tabindex="-1" aria-labelledby="characterModalLabel{{ lightsaber.id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -141,7 +141,7 @@
         </div>
         {% endfor %}
     </div>
-</div>
+</section>
 
 <script>
 document.getElementById('lightSide').addEventListener('click', function() {
