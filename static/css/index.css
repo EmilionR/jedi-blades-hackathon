@@ -28,12 +28,12 @@
     font-size: 30px;
     font-family: sans-serif;
     color: yellow;
-    animation: jedi-autoscroll 400s linear infinite;
+    animation: jedi-autoscroll 30s linear infinite;
 }
 
 @keyframes jedi-autoscroll {
     from { transform: translateY(0); } /* Start from below the view */
-    to { transform: translateY(-100%); } /* Scroll through three blocks of text */
+    to { transform: translateY(-190%); } /* Scroll through three blocks of text */
 }
 
 .jedi-hero-overlay {
