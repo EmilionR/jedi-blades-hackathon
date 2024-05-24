@@ -59,10 +59,11 @@
   <div class="row justify-content-center mt-3 ">
     {% for lightsaber in lightsabers %}
     <!-- Make sure to convert 'L' to 'light' and 'D' to 'dark' for class name compatibility -->
+
     <article
-      class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom lightsaber-row  {{ lightsaber.owner.alignment }}"
+      class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom lightsaber-row   {{ lightsaber.owner.alignment }}"  data-color="{{ lightsaber.color }}" 
     >
-      <div class="card">
+      <div class="card lightsaber-card  "  style="border-color: {{ lightsaber.color }};">
         <div class="card-body row">
           <div class="col">
             <h5 class="card-title">{{ lightsaber.name }}</h5>
@@ -86,7 +87,7 @@
             <div class="col-5">
               <a
                 href="{% url 'lightsaber-detail' pk=lightsaber.id %}"
-                class="btn btn-primary w-100"
+                class="btn btn-primary w-100" style="border-color: {{ lightsaber.color }};"
               >
                 Details
               </a>
@@ -95,7 +96,7 @@
               <!-- Trigger for Character Modal -->
               <button
                 type="button"
-                class="btn btn-primary w-100"
+                class="btn btn-primary w-100" style="border-color: {{ lightsaber.color }};"
                 data-bs-toggle="modal"
                 data-bs-target="#characterModal{{ lightsaber.id }}"
               >
@@ -249,6 +250,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
   }); 
+
+
 </script>
 
 {% endblock %}
