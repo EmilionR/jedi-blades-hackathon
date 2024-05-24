@@ -8,6 +8,96 @@
     margin: 0 auto; /* Center the section */
     background-color: black; /* Dark background for contrast */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
+    border-bottom: 2px solid var(--sw-yellow); /* Yellow border at the bottom */
+}
+
+
+
+.select-your-side {
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    position: relative;
+}
+
+/* Light mode backgrounds */
+.select-your-side.light-mode {
+    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
+}
+
+@media (min-width: 768px) {
+    .select-your-side.light-mode {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
+    }
+}
+
+@media (min-width: 1024px) {
+    .select-your-side.light-mode {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
+    }
+}
+
+/* Dark mode backgrounds */
+.select-your-side.dark-mode {
+    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp');
+}
+
+@media (min-width: 768px) {
+    .select-your-side.dark-mode {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp');
+    }
+}
+
+@media (min-width: 1024px) {
+    .select-your-side.dark-mode {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp');
+    }
+}
+
+/* Blended mode backgrounds */
+.select-your-side.blend-mode {
+    position: relative;
+    min-height: 80vh;
+}
+
+.select-your-side.blend-mode::before,
+.select-your-side.blend-mode::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.select-your-side.blend-mode::before {
+    left: 0;
+    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp');
+}
+
+.select-your-side.blend-mode::after {
+    right: 0;
+    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
+}
+
+@media (min-width: 768px) {
+    .select-your-side.blend-mode::before {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp');
+    }
+    .select-your-side.blend-mode::after {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
+    }
+}
+
+@media (min-width: 1024px) {
+    .select-your-side.blend-mode::before {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp');
+    }
+    .select-your-side.blend-mode::after {
+        background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp');
+    }
 }
 
 .jedi-hero-section {
@@ -16,8 +106,10 @@
     height: 50vh; /* Fixed viewport height */
     transform: perspective(300px) rotateX(20deg);
     transform-origin: 50% 100%;
-    background: black;
-    color: yellow;
+    background: var(--bg);
+    color: var(--sw-yellow);
+    pointer-events: none;
+    user-select: none;
 }
 
 .jedi-hero-text {
@@ -27,7 +119,6 @@
     text-align: center;
     font-size: 30px;
     font-family: sans-serif;
-    color: yellow;
     animation: jedi-autoscroll 30s linear infinite;
 }
 
@@ -46,11 +137,88 @@
     pointer-events: none;
 }
 
+/* Light / Dark toggle */
+
+.btn-group {
+    border: 2px solid var(--sw-yellow);
+    padding: 2px;
+
+    button {
+        border: none;
+        color: var(--bg);
+        font-weight: 600;
+    }
+    #lightSide {
+        background-color: var(--saber-blue);
+    }
+    #darkSide {
+        background-color: var(--saber-red);
+    }
+    #bothSides {
+        background: linear-gradient(to right, var(--saber-blue), var(--saber-red));
+        margin: 0 3px;
+    }
+    z-index: 30;
+}
+
+
+.lightsaber-row {z-index: 30;}
+
 /* Lightsaber display section */ 
 .light {
-border-left: 5px solid blue; /* Light side has a blue border */
+border-left: 5px solid var(--saber-blue); /* Light side has a blue border */
 }
 
 .dark {
-border-left: 5px solid red; /* Dark side has a red border */
+border-left: 5px solid var(saber-red); /* Dark side has a red border */
 }
+
+/* Changing the color of the text */
+.color-text {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .saber-container {
+    height: 30vh;
+    min-height: 150px;
+  }
+
+.lightsaber {
+
+    width: 10px;
+    height: 100%;
+    position: relative;
+    transform: rotate(-45deg);
+    margin-left: 10%;
+
+    .glow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px 8px 0 0;
+        filter: blur(6px);
+    }
+
+    .core {
+        position: absolute;
+        top: 5%;
+        right: 30%;
+        left: 30%;
+        bottom: 0;
+        filter: blur(2px);
+        background-color: white;
+    }
+
+    .handle {
+        position: absolute;
+        height: 25%;
+        width: 80%;
+        bottom: -20%;
+        background: linear-gradient(to left, #111 25% , #aaa 20%, #111);
+    }
+}
+

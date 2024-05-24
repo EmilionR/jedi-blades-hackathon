@@ -1,8 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg: black;
+  --secondary-bg: #333;
+  --sw-yellow: #ffe81f;
+  --saber-blue: #2e67f8;
+  --saber-green: #2ff924;
+  --saber-red: #c13d3d;
+  --saber-purple: #7851a9;
+  --saber-yellow: #f9ff58;
+  --saber-white: #ddddff;
+
+  /* Color palette */
+  --light-grey: #d6d6d6;
+  --bright-yellow: #ffee32;
+  --gold-yellow: #ffd100;
+  --black: #202020;
+  --dark-grey: #333533;
+
+  /* Fonts */
+  --title: "Orbitron", sans-serif;
+  --main-font: "Raleway", sans-serif;
+}
 
 /*                    General                  */
-html {
-  color: yellow;
-  background: black;
+html,
+body {
+  color: var(--saber-white);
+  background: var(--bg);
+}
+
+.card {
+  background-color: var(--bg);
+  border: 2px solid var(--sw-yellow);
 }
 
 main {
@@ -13,9 +43,19 @@ a {
   text-decoration: none;
 }
 
+.btn-primary {
+  background-color: var(--bg);
+  border: 2px solid var(--sw-yellow);
+  color: var(--sw-yellow);
+}
+
 /*                    General  Header                  */
 
 /*                    General  Footer                   */
+
+footer {
+  border-top: 2px solid var(--sw-yellow);
+}
 
 /*                   Media Queries                   */
 
@@ -70,5 +110,33 @@ footer {
   }
   footer h5 {
     margin-top: 20px;
+  }
+}
+
+/*                  Starry Sky                */
+.starry-sky {
+  position: relative;
+  width: 100%;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff;
+  animation: animateStar linear infinite;
+  z-index: 10;
+}
+
+@keyframes animateStar {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-100vh);
   }
 }
