@@ -29,19 +29,20 @@
   </div>
 </section>
 <section class="select-your-side w-100">
-
+<div class="toggle-section mx-auto d-flex justify-content-center pt-4 my-3">
   <!-- Toggle for Light, Both, and Dark Side -->
   <div class="btn-group" role="group" aria-label="Side Toggle">
     <button type="button" class="btn" id="lightSide">Light</button>
     <button type="button" class="btn" id="bothSides">Both</button>
     <button type="button" class="btn" id="darkSide">Dark</button>
   </div>
+</div>
 
-  <div class="row justify-content-center mt-3">
+  <div class="row justify-content-center mt-3 ">
     {% for lightsaber in lightsabers %}
     <!-- Make sure to convert 'L' to 'light' and 'D' to 'dark' for class name compatibility -->
     <article
-      class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom {{ lightsaber.owner.alignment }}"
+      class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom lightsaber-row  {{ lightsaber.owner.alignment }}"
     >
       <div class="card">
         <div class="card-body row">
@@ -123,6 +124,21 @@
 </section>
 
 <script>
+
+    // Set blend mode as default
+    document.querySelector(".select-your-side").className = "select-your-side blend-mode";
+
+    document.getElementById("lightSide").addEventListener("click", function () {
+        document.querySelector(".select-your-side").className = "select-your-side light-mode";
+    });
+    document.getElementById("bothSides").addEventListener("click", function () {
+        document.querySelector(".select-your-side").className = "select-your-side blend-mode";
+    });
+    document.getElementById("darkSide").addEventListener("click", function () {
+        document.querySelector(".select-your-side").className = "select-your-side dark-mode";
+    });
+
+
   document.getElementById("lightSide").addEventListener("click", function () {
     filterSide("L");
   });
@@ -177,7 +193,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       starrySky.appendChild(star);
     }
-  });
+
+  }); 
 </script>
 
 {% endblock %}
