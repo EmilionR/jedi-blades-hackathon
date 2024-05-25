@@ -50,7 +50,124 @@ a {
 }
 
 /*                    General  Header                  */
+header {
+  background-color: #050505; /* Deep space black */
+  border-bottom: 3px solid #FFE81F; /* Star Wars theme yellow */
+}
 
+.navbar {
+  padding: 0.5rem 1rem;
+  font-family: 'Orbitron', sans-serif;
+  background-color: transparent;
+}
+
+.navbar-brand {
+  color: #FFE81F; /* Star Wars theme yellow */
+  font-size: 2rem; /* Larger font size for brand */
+}
+
+.navbar-brand:hover {
+  color: #FFD700; /* Lighter yellow on hover */
+}
+
+.navbar-toggler {
+  border-color: #FFE81F;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFE81F' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-link {
+  color: #4bd1f7; /* Light saber blue */
+  margin: 0 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #c1d72e; /* Light saber green */
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link.active {
+  color: #FFE81F; /* Star Wars theme yellow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+      text-align: center;
+  }
+}
+
+/* Styling for social icons in the header, if any */
+.header-social-icons {
+  color: #4bd1f7; /* Light saber blue */
+}
+
+.header-social-icons:hover {
+  color: #c1d72e; /* Light saber green */
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+/* Star wars icon */ 
+#burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 2em;
+  width: 2em;
+}
+
+.bun, .filling {
+   /* Star Wars yellow */
+  height: 4px;
+  transition: transform 0.3s ease;
+}
+
+.bun.top, .bun.bottom {
+  width: 100%;
+ 
+}
+
+.bun.top {
+  transform-origin: 0% 0%;
+  background-color: #c13d3d
+}
+
+.bun.bottom {
+  transform-origin: 0% 100%;
+  background-color: #2e67f8;
+}
+
+.filling {
+  background-color: #2ff924;
+  width: 60%;
+  align-self: center;
+}
+
+/* Transform burger into a cross when active */
+#burger.active .bun.top {
+  transform: rotate(45deg);
+}
+
+#burger.active .bun.bottom {
+  transform: rotate(-45deg);
+}
+
+#burger.active .filling {
+  transform: scale(0);
+}
+
+.navbar-dark .navbar-toggler {
+  border: none;
+  padding: 0;
+}
 /*                    General  Footer                   */
 
 footer {
@@ -92,24 +209,69 @@ nav ul {
   margin: auto;
 }
 /*                  Footer                */
-.footer-social-icon {
-  font-size: 1.5em;
-  margin-right: 15px;
-}
-.footer-text {
-  font-size: 0.9em;
-}
 footer {
-  font-size: 1.1em; /* Larger footer text */
+  background-color: #050505; /* Deep space black */
+  color: #FFE81F; /* Star Wars theme yellow */
+  padding: 20px;
+  border-top: 3px solid #FFE81F; /* Star Wars theme yellow */
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
 }
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-column {
+  flex: 1 1 200px; /* Flex basis of 200px but can grow and shrink */
+  padding: 10px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #FFE81F;
+}
+
+.footer-text, .footer-link {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4bd1f7; /* Light saber blue */
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #c1d72e; /* Light saber green */
+}
+
+.footer-social-icons {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #4bd1f7; /* Light saber blue */
+}
+
+.footer-social-icons:hover {
+  color: #c1d72e; /* Light saber green */
+}
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  footer .container {
-    display: flex;
+  .footer-content {
     flex-direction: column;
     align-items: center;
   }
-  footer h5 {
-    margin-top: 20px;
+
+  .footer-column {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 20px;
   }
 }
 

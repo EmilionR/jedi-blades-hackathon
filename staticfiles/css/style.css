@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg: black;
+  --secondary-bg: #333;
+  --sw-yellow: #ffe81f;
+  --saber-blue: #2e67f8;
+  --saber-green: #2ff924;
+  --saber-red: #c13d3d;
+  --saber-purple: #7851a9;
+  --saber-yellow: #f9ff58;
+  --saber-white: #ddddff;
+
+  /* Color palette */
+  --light-grey: #d6d6d6;
+  --bright-yellow: #ffee32;
+  --gold-yellow: #ffd100;
+  --black: #202020;
+  --dark-grey: #333533;
+
+  /* Fonts */
+  --title: "Orbitron", sans-serif;
+  --main-font: "Raleway", sans-serif;
+}
+
+/*                    General                  */
+html,
+body {
+  color: var(--saber-white);
+  background: var(--bg);
+}
+
+.card {
+  background-color: var(--bg);
+  border: 2px solid var(--sw-yellow);
+}
+
+main {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--bg);
+  border: 2px solid var(--sw-yellow);
+  color: var(--sw-yellow);
+}
+
+/*                    General  Header                  */
+
+/*                    General  Footer                   */
+
+footer {
+  border-top: 2px solid var(--sw-yellow);
+}
+
+/*                   Media Queries                   */
+
+@media (max-width: 768px) {
+  .nav-link .fas {
+    display: block;
+    text-align: center;
+  }
+  .nav-link {
+    text-align: center;
+  }
+  .navbar-brand,
+  .nav-link {
+    font-size: 1.25rem; /* Larger text on smaller screens */
+  }
+}
+@media (min-width: 992px) {
+  .nav-link,
+  .navbar-brand {
+    font-size: 1.5rem; /* Even larger text on larger screens */
+  }
+}
+
+nav ul {
+  gap: 1rem;
+
+  li {
+    list-style: none;
+  }
+}
+/*                 Max width setting                 */
+.container-max {
+  max-width: 1800px;
+  margin: auto;
+}
+/*                  Footer                */
+.footer-social-icon {
+  font-size: 1.5em;
+  margin-right: 15px;
+}
+.footer-text {
+  font-size: 0.9em;
+}
+footer {
+  font-size: 1.1em; /* Larger footer text */
+}
+@media (max-width: 768px) {
+  footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer h5 {
+    margin-top: 20px;
+  }
+}
