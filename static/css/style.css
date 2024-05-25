@@ -53,12 +53,13 @@ a {
 
 /*                    General  Header                  */
 header {
-  background-color: #050505; /* Deep space black */
+   /* Deep space black */
   border-bottom: 3px solid #FFE81F; /* Star Wars theme yellow */
 }
 
 .navbar {
   padding: 0.5rem 1rem;
+  background-color: #050505;
   font-family: 'Orbitron', sans-serif;
   background-color: transparent;
 }
