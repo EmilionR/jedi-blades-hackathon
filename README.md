@@ -68,11 +68,18 @@ We started out with these wireframes:
 We developed this wireframe to help build the Lightsaber and Character list pages, and the Team page:
 ![Lightsaber list page](static/images/readme_images/wf-lightsaber-list.png)
 
+This is the landing page:
+![Landing page](static/images/readme_images/wf-landing-page.png)
+
 #### Color Palette
 The color palette is based on the official Star Wars yellow and black, with some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
 ![Color palette](static/images/readme_images/color-palette.png)
 
 #### Typography
+We used Google Fonts for this project. The titles are Orbitron, which is similar to the Star Wars logo font.
+![Title font](static/images/readme_images/orbitron-font.png)
+The main font is Raleway, which is clear and easy to read.
+![Main font](static/images/readme_images/raleway-font.png)
 
 ## Future Implementations
 
