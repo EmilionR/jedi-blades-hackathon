@@ -23,7 +23,7 @@
   --main-font: "Raleway", sans-serif;
 
   /* Glassmorphism */
-  --glass-bg: rgba(255, 157, 157, 0.2);
+  --glass-bg: rgba(0, 0, 0, 0.2);
   --glass-radius: 16px;
   --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   --glass-backdrop: blur(4px);
