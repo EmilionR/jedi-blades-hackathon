@@ -1,0 +1,93 @@
+/* General styles */
+
+body {
+    flex-direction: column;
+  }
+  
+
+
+/* Team Section */
+
+img {
+    max-width: 100%;
+}
+
+p {
+    text-align: center;
+    font-size: 70%;
+    line-height: 1.5;
+    font-weight: 400;
+
+}
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+  }
+
+.heading-1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 180%;
+}
+
+.heading-2 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+.subheading {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+
+
+#team-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-block: 100px;
+
+}
+
+#team-section hr {
+    width: 80%;
+}
+
+.team-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.team-member-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+.team-member-card-header {
+    text-align: center;
+}
+
+/* Media query: large or landscape phones (576px and up) */
+@media screen and (min-width: 576px) {
+
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+
+
+}
