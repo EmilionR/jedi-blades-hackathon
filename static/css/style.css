@@ -114,6 +114,60 @@ header {
     outline: none;
     box-shadow: none;
 }
+/* Star wars icon */ 
+#burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 2em;
+  width: 2em;
+}
+
+.bun, .filling {
+   /* Star Wars yellow */
+  height: 4px;
+  transition: transform 0.3s ease;
+}
+
+.bun.top, .bun.bottom {
+  width: 100%;
+ 
+}
+
+.bun.top {
+  transform-origin: 0% 0%;
+  background-color: #c13d3d
+}
+
+.bun.bottom {
+  transform-origin: 0% 100%;
+  background-color: #2e67f8;
+}
+
+.filling {
+  background-color: #2ff924;
+  width: 60%;
+  align-self: center;
+}
+
+/* Transform burger into a cross when active */
+#burger.active .bun.top {
+  transform: rotate(45deg);
+}
+
+#burger.active .bun.bottom {
+  transform: rotate(-45deg);
+}
+
+#burger.active .filling {
+  transform: scale(0);
+}
+
+.navbar-dark .navbar-toggler {
+  border: none;
+  padding: 0;
+}
 /*                    General  Footer                   */
 
 footer {
