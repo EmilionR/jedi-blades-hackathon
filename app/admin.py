@@ -7,4 +7,4 @@ class LightsaberAdmin(admin.ModelAdmin):
 
 @admin.register(Character)
 class CharacterAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'full_name', 'alignment', 'home_planet', 'profile_image')
+    list_display = ('id', 'name', 'full_name', 'alignment', 'home_planet', 'profile_image', 'lore')

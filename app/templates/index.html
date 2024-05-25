@@ -63,7 +63,7 @@
     <article
       class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom lightsaber-row   {{ lightsaber.owner.alignment }}"  data-color="{{ lightsaber.color }}" 
     >
-      <div class="card lightsaber-card  "  style="border-color: {{ lightsaber.color }};">
+      <div class="card lightsaber-card  z-index-100 "  style="border-color: {{ lightsaber.color }};">
         <div class="card-body row">
           <div class="col">
             <h5 class="card-title">{{ lightsaber.name }}</h5>
@@ -93,13 +93,13 @@
             </div>
             <div class="col-10 py-2">
               <!-- Trigger for Character Modal -->
-              <button
-                type="button"
-                class="btn btn-primary w-100 hovered" style="border-color: {{ lightsaber.color }};"
-                data-bs-toggle="modal"
-                data-bs-target="#characterModal{{ lightsaber.id }}"
-              >
-                {{ lightsaber.owner }}
+              <a
+              href="{% url 'character-detail' pk=lightsaber.owner.id %}"  
+              class="btn btn-primary w-100 hovered" style="border-color: {{ lightsaber.color }};"
+            >
+              {{ lightsaber.owner.name }}
+              </a>
+                
               </button>
             </div>
           </div>

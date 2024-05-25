@@ -20,14 +20,10 @@ class LightsaberDetailView(DetailView):
     context_object_name = 'lightsaber'
 
 
-class CharacterListView(ListView):
-    model = Character
-    template_name = 'characters.html'
-    context_object_name = 'characters'
 
 
-class AboutView(TemplateView):
-    template_name = 'about.html'
+
+
 
 class TeamView(TemplateView):
     template_name = 'team.html'
