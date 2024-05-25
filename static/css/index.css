@@ -153,23 +153,23 @@
 }
 
 #lightSide {
-  background: var(--saber-blue); /* Blue */
+  background: rgba(0, 87, 179); /* Blue */
   opacity: 0.8;
 }
 
 #lightSide:hover {
   background: rgb(0, 46, 163);
-  color: var(--saber-white);
+  color: white;
 }
 
 #darkSide {
-  background: var(--saber-red); /* Red */
+  background: rgb(179, 0, 0); /* Red */
   opacity: 0.8;
 }
 
 #darkSide:hover {
-  background: rgb(196, 50, 50);
-  color: var(--black);
+  background: rgb(155, 39, 39);
+  color: black;
   opacity: 1;
 }
 
