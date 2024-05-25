@@ -37,9 +37,9 @@
         </div>
         <!-- Toggle for Jedi, Balance, and Sith -->
         <div class="btn-group toggle-buttons" role="group" aria-label="Side Toggle">
-            <button type="button" class="btn toggle-btn hovered" id="lightSide">Jedi</button>
-            <button type="button" class="btn toggle-btn hovered" id="bothSides">Balance</button>
-            <button type="button" class="btn toggle-btn hovered" id="darkSide">Sith</button>
+            <button type="button" class="btn toggle-btn sfx" id="lightSide">Jedi</button>
+            <button type="button" class="btn toggle-btn sfx" id="bothSides">Balance</button>
+            <button type="button" class="btn toggle-btn sfx" id="darkSide">Sith</button>
         </div>
     </div>
 </div>
@@ -86,7 +86,7 @@
             <div class="col-10">
               <a
                 href="{% url 'lightsaber-detail' pk=lightsaber.id %}"
-                class="btn btn-primary w-100 hovered" style="border-color: {{ lightsaber.color }};"
+                class="btn btn-primary w-100 sfx" style="border-color: {{ lightsaber.color }};"
               >
                 Details
               </a>
@@ -95,7 +95,7 @@
               <!-- Trigger for Character Modal -->
               <button
                 type="button"
-                class="btn btn-primary w-100 hovered" style="border-color: {{ lightsaber.color }};"
+                class="btn btn-primary w-100 sfx" style="border-color: {{ lightsaber.color }};"
                 data-bs-toggle="modal"
                 data-bs-target="#characterModal{{ lightsaber.id }}"
               >
