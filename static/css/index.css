@@ -230,6 +230,7 @@
       box-shadow: 0 0 8px 3px #ffd700, 0 0 30px 6px #ffd700;
     }
   }
+  z-index: 2;
 
 /* Changing the color of the text */
 .color-text {
