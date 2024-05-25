@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.error("Failed to play audio:", error);
         });
 
-      // Update the index to the next sound in a round-robin fashion
+      // Update the index to a different sound in a round-robin fashion
       while (true) {
         let randomIndex = Math.floor(Math.random() * lightsaberSounds.length);
         if (randomIndex !== currentIndex) {
