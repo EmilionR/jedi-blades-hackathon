@@ -7,44 +7,52 @@ document
 
 // Sound effects
 document.addEventListener("DOMContentLoaded", function () {
-  let hoverSaber = document.querySelectorAll(".hovered");
-  let hoverClash = document.querySelectorAll(".lightsaber");
+  let hoverSaber = document.querySelectorAll(".sfx");
 
-  // Array of sound file URLs
-  const lightsaberSounds = [
+  // Arrays of sound file URLs
+  const swingSounds = [
     "static/sounds/lightsaber-1.mp3",
     "static/sounds/lightsaber-2.mp3",
     "static/sounds/lightsaber-3.mp3",
     "static/sounds/lightsaber-4.mp3",
   ];
-  const clashSound = "../sounds/saber-clash";
+  const clashSounds = [
+    "static/sounds/clash-1.mp3",
+    "static/sounds/clash-2.mp3",
+    "static/sounds/clash-3.mp3",
+  ];
 
   // Index to keep track of the current sound
-  let currentIndex = 0;
+  let swingIndex = {index: 0};
+  let clashIndex = {index: 0};
+
+  // Function to play the sound
+  function playSound(soundList, currentIndex) {
+
+    // Update the index to a different sound in a round-robin fashion
+    while (true) {
+      let randomIndex = Math.floor(Math.random() * soundList.length);
+      if (randomIndex !== currentIndex.index) {
+        currentIndex.index = randomIndex;
+        break;
+      }
+    }
+
+    // Select the sound to play
+    audio = new Audio(soundList[currentIndex.index]);
+
+    // Play the current sound
+    audio.play();
+  }
 
   for (item of hoverSaber) {
     item.addEventListener("mouseenter", function () {
-      // Create a new audio element
-      let audio = new Audio(lightsaberSounds[currentIndex]);
+      playSound(swingSounds, swingIndex);
+    });
 
-      // Play the current sound
-      audio
-        .play()
-        .then(function () {
-          console.log("Audio played successfully");
-        })
-        .catch(function (error) {
-          console.error("Failed to play audio:", error);
-        });
-
-      // Update the index to a different sound in a round-robin fashion
-      while (true) {
-        let randomIndex = Math.floor(Math.random() * lightsaberSounds.length);
-        if (randomIndex !== currentIndex) {
-          currentIndex = randomIndex;
-          break;
-        }
-      }
+    item.addEventListener("click", function () {
+      // Play the sound
+      playSound(clashSounds, clashIndex);
     });
   }
 });
