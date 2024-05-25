@@ -1,11 +1,44 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/lightsaber-detail.css' %}">
 
-{% block content %}
-<div class="container">
+
+<div class="header-section text-center py-4">
     <h1>{{ lightsaber.name }}</h1>
-    <p>{{ lightsaber.description }}</p>
-    <p>Color: {{ lightsaber.color }}</p>
-    <p>Owner: {{ lightsaber.owner }}</p>
-    <p>Design: {{ lightsaber.design }}</p>
 </div>
+<div class="container">
+    <div class="content-section">
+        <div class="row d-flex justify-content-center  ">
+            <div class="col-10 col-md-6">
+        <img src="{{ lightsaber.image.url }}" alt="{{ lightsaber.name }} Lightsaber" class="img-fluid">
+    </div>
+    <div class="col-10 col-md-6">
+        
+            <div class="sub-section py-5">
+                <div class="card border-0 shadow">
+                    <div class="card-body text-center">
+                     
+                        <div class="text-center my-3">
+                            <h2 class="my-2 py-2"> Wielded  by {{ lightsaber.owner.name }}</h2>
+                            <span class="d-inline-block rounded-circle" style="width: 30px; height: 30px; background-color: {{ lightsaber.color }};"></span>
+                            <p class="d-inline-block ms-2" style="vertical-align: middle;">{{ lightsaber.color }}</p>
+                        </div>
+            
+                        <h3 class=" my-2 py-2" >Design</h3>
+                        <p>{{ lightsaber.design }}</p>
+                        
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col-10">
+        <div class="detail-section text-center py-3">
+            <h3 class=" my-2 py-2" >Lightsaber Lore</h3>
+            <p>{{ lightsaber.description }}</p>
+
+        </div>
+</div>
+
 {% endblock %}
