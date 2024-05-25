@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+
+  /* Color palette */
+
   --bg: black;
   --secondary-bg: #333;
   --sw-yellow: #ffe81f;
@@ -11,7 +14,6 @@
   --saber-yellow: #f9ff58;
   --saber-white: #ddddff;
 
-  /* Color palette */
   --light-grey: #d6d6d6;
   --bright-yellow: #ffee32;
   --gold-yellow: #ffd100;
