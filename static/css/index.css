@@ -237,10 +237,13 @@
 #sideText {
     font-family: 'Star Jedi', sans-serif; /* Make sure to import a Star Wars font */
     color: #FFCC00; /* Yellow */
-    text-shadow: 0 0 10px #FFCC00, 0 0 20px #FFCC00; /* Yellow */
     font-size: 1.2rem;
     letter-spacing: 0.05rem;
     margin-top: 10px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 5;
 }
 
 
