@@ -104,20 +104,19 @@
             <div class="col-10">
               <a
                 href="{% url 'lightsaber-detail' pk=lightsaber.id %}"
-                class="btn btn-primary w-100"
-                style="border-color: {{ lightsaber.color }};"
+                class="btn btn-primary w-100 sfx"
+                 style="border-color: {{ lightsaber.color }};"
               >
                 Details
               </a>
             </div>
             <div class="col-10 py-2">
-              <!-- Trigger for Character Modal -->
               <a
-                href="{% url 'character-detail' pk=lightsaber.owner.id %}"
-                class="btn btn-secondary w-100 hovered"
-                style="border-color: {{ lightsaber.color }};"
-              >
-                {{ lightsaber.owner.name }}
+              href="{% url 'character-detail' pk=lightsaber.owner.id %}"  
+              class="btn btn-secondary w-100 sfx"
+              style="border-color: {{ lightsaber.color }};"
+            >
+              {{ lightsaber.owner.name }}
               </a>
             </div>
           </div>
