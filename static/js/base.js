@@ -89,15 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Event listener for the Accept button
-document.querySelector('.btn-primary').addEventListener('click', function() {
-  try {
-    acceptCookies();
-  } catch (error) {
-    console.error("Failed to handle accept button click:", error);
-  }
-});
-
 // Fallback in case Modal instance is not properly retrieved
 document.getElementById('cookieConsentModal').addEventListener('hidden.bs.modal', function () {
   if (!localStorage.getItem('cookieConsent')) {
