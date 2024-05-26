@@ -1,39 +1,44 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <link rel="stylesheet" href="{% static 'css/lightsaber-detail.css' %}" />
 
+<div class="stars-wrapper" id="stars-wrapper"></div>
+
 <div class="lightsaber-container">
-  <div class="header-section text-center py-4">
+  <div class="header-section text-center py-4 fade-in">
     <h1 class="title">{{ lightsaber.name }}</h1>
   </div>
   <div class="container">
     <div class="content-section">
       <div class="row d-flex justify-content-center">
-        <div class="col-10 col-md-6 lightsaber-image">
-          <img
-            src="{{ lightsaber.image.url }}"
-            alt="{{ lightsaber.name }} Lightsaber"
-            class="img-fluid"
-          />
+        <div class="col-10 col-md-6 lightsaber-image slide-in-left">
+          <div class="glass-card">
+            <img
+              src="{{ lightsaber.image.url }}"
+              alt="{{ lightsaber.name }} Lightsaber"
+              class="img-fluid"
+            />
+          </div>
         </div>
-        <div class="col-10 col-md-6">
+        <div class="col-10 col-md-6 slide-in-right">
           <div class="sub-section">
-            <div class="card border-0">
+            <div class="glass-card">
               <div class="card-body text-center">
                 <div class="my-3">
                   <h2 class="text-center my-2 title">
                     Wielded by {{ lightsaber.owner.name }}
-
-                    <div class="col text-center saber-container">
-                      <div class="lightsaber">
-                        <div
-                          class="glow"
-                          style="background-color: {{ lightsaber.color }};"
-                        ></div>
-                        <div class="core"></div>
-                        <div class="handle"></div>
-                      </div>
-                    </div>
                   </h2>
+                  <div class="col text-center saber-container">
+                    <div class="lightsaber">
+                      <div
+                        class="glow"
+                        style="background-color: {{ lightsaber.color }};"
+                      ></div>
+                      <div class="core"></div>
+                      <div class="handle"></div>
+                    </div>
+                  </div>
                   <hr class="hr" />
                 </div>
                 <h3 class="py-2 text-center title">
@@ -50,8 +55,34 @@
             </div>
           </div>
         </div>
-        {% endblock %}
       </div>
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const starsWrapper = document.getElementById('stars-wrapper');
+    const starsCount = 100;
+    const stars = [];
+
+    for (let i = 0; i < starsCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = Math.random() * 2 + 1 + 's';
+        starsWrapper.appendChild(star);
+        stars.push(star);
+    }
+
+    const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+
+    elements.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add('active');
+        }, index * 300);
+    });
+});
+</script>
+{% endblock %}

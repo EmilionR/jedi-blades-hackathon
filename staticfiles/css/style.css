@@ -24,7 +24,7 @@
   --main-font: "Raleway", sans-serif;
 
   /* Glassmorphism */
-  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.2);
   --glass-radius: 16px;
   --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   --glass-backdrop: blur(4px);
@@ -44,6 +44,17 @@ html,
 body {
   color: var(--saber-white);
   background: var(--bg);
+  cursor: none;
+}
+
+button,
+a,
+.btn,
+button:hover,
+a:hover,
+.btn:hover {
+  cursor: none;
+
 }
 
 .card {
@@ -105,14 +116,13 @@ a {
 
 /*                    General  Header                  */
 header {
-  /* Deep space black */
+  background-color: #050505; /* Deep space black */
+  color: #ffe81f; /* Star Wars theme yellow */
   border-bottom: 3px solid #ffe81f; /* Star Wars theme yellow */
 }
-
 .navbar {
-  padding: 0.5rem 1rem;
   background-color: #050505;
-  font-family: "Star Wars", sans-serif;
+  font-family: var(--title);
   background-color: transparent;
 }
 
@@ -154,6 +164,14 @@ header {
   vertical-align: middle; /* Align logos with the text vertically */
 }
 
+hr {
+  height: 3px; /* Increase the height */
+  background-color: var(
+    --bright-yellow
+  ); /* Set the background color to the Star Wars theme yellow */
+  border: none; /* Remove any default border */
+}
+
 /* Ensure logos do not become too large on smaller screens */
 @media (max-width: 768px) {
   .nav-logo {
@@ -191,59 +209,7 @@ header {
   box-shadow: none;
 }
 /* Star wars icon */
-#burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 2em;
-  width: 2em;
-}
 
-.bun,
-.filling {
-  /* Star Wars yellow */
-  height: 4px;
-  transition: transform 0.3s ease;
-}
-
-.bun.top,
-.bun.bottom {
-  width: 100%;
-}
-
-.bun.top {
-  transform-origin: 0% 0%;
-  background-color: #c13d3d;
-}
-
-.bun.bottom {
-  transform-origin: 0% 100%;
-  background-color: #2e67f8;
-}
-
-.filling {
-  background-color: #2ff924;
-  width: 60%;
-  align-self: center;
-}
-
-/* Transform burger into a cross when active */
-#burger.active .bun.top {
-  transform: rotate(45deg);
-}
-
-#burger.active .bun.bottom {
-  transform: rotate(-45deg);
-}
-
-#burger.active .filling {
-  transform: scale(0);
-}
-
-.navbar-dark .navbar-toggler {
-  border: none;
-  padding: 0;
-}
 /*                    General  Footer                   */
 
 footer {
@@ -269,14 +235,6 @@ footer {
   .nav-link,
   .navbar-brand {
     font-size: 1.5rem; /* Even larger text on larger screens */
-  }
-}
-
-nav ul {
-  gap: 1rem;
-
-  li {
-    list-style: none;
   }
 }
 /*                 Modal styling                      */
