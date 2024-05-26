@@ -32,43 +32,19 @@
     <header class="container-max">
       <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container-fluid py-3">
-          <a class="navbar-brand sfx" href="/">JediBlades</a>
-          <button id="toggle-music" class="btn btn-warning sfx">
-            Play Star Wars Music
-          </button>
-
-          <button
-            class="navbar-toggler sfx"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+          <a class="navbar-brand sfx" href="/"
+            ><img
+              src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/q3oqyzmvtog2wrw8zh9v.png"
+              alt="Lightsabers"
+              class="nav-logo"
+            />JediBlades</a
           >
-            <div id="burger">
-              <div class="bun top"></div>
-              <div class="filling"></div>
-              <div class="bun bottom"></div>
-            </div>
+          <button id="toggle-music" class="btn btn-warning sfx">
+            <i class="fa-solid fa-volume-xmark"></i>
           </button>
-
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          </button>
+          <div class="navbar">
             <ul class="navbar-nav w-100 justify-content-around">
-              <li class="nav-item sfx">
-                <a
-                  class="nav-link {% if request.resolver_match.url_name == 'lightsaber-list' %}active{% endif %}"
-                  aria-current="page"
-                  href="{% url 'lightsaber-list' %}"
-                >
-                  <img
-                    src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/q3oqyzmvtog2wrw8zh9v.png"
-                    alt="Lightsabers"
-                    class="nav-logo"
-                  />
-                  <span>Lightsabers</span>
-                </a>
-              </li>
               <li class="nav-item sfx">
                 <a
                   class="nav-link sfx {% if request.resolver_match.url_name == 'team' %}active{% endif %}"
@@ -87,12 +63,10 @@
         </div>
       </nav>
     </header>
-
     <main>
-      {% block content %}
-      <!-- Page-specific content will go here -->
-      {% endblock %}
-
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
       <!-- Cookie Consent Modal -->
       <div
         class="modal fade"
