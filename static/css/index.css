@@ -65,6 +65,10 @@
   position: relative;
 }
 
+h3 {
+  font-size: 1.25rem;
+}
+
 /* Light mode backgrounds */
 .select-your-side.light-mode {
   background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
@@ -257,7 +261,7 @@
 .btn-primary {
   border: none;
   background-color: var(--bright-yellow); /* Star Wars yellow background */
-  color: var(--dark-grey); /* Text color */
+  color: var(--bg); /* Text color */
   transition: var(--transition);
   font-family: var(--title);
   letter-spacing: var(--spacing);
@@ -271,7 +275,7 @@
 .btn-secondary {
   border: none;
   background-color: var(--saber-purple);
-  color: var(--saber-white); /* Text color */
+  color: var(--bg); /* Text color */
   transition: var(--transition);
   font-family: var(--title);
   letter-spacing: 0.1rem;
