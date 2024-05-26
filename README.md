@@ -4,7 +4,9 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/EmilionR/jedi-blades-hackathon)](https://github.com/EmilionR/jedi-blades-hackathon/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/EmilionR/jedi-blades-hackathon)](https://github.com/EmilionR/jedi-blades-hackathon)
 
-![screenshot](documentation/mockup.png)
+<div align="center">
+  <img src="documentation/mockup.png" alt="screenshot">
+</div>
 
 Welcome to Jedi Blades! Our website shows our wide selection of lightsabers. Whether you are a Jedi or a Sith, we have the perfect lightsaber for you. <br>
 
@@ -61,25 +63,66 @@ All user stories are mapped to Issues in Github, with acceptance criteria and ta
 
 #### Wireframes
 We started out with these wireframes:
-![Original desktop wireframe](static/images/readme_images/wf-original-desktop.png)
-![Original mobile wireframe](static/images/readme_images/wf-original-mobile.png)
-![Original tablet wireframe](static/images/readme_images/wf-original-tablet.png)
+<div align="left">
+  <img src="static/images/readme_images/wf-original-desktop.png" alt="Original desktop wireframe" width="300">
+  <img src="static/images/readme_images/wf-original-tablet.png" alt="Original tablet wireframe" width="200">
+  <img src="static/images/readme_images/wf-original-mobile.png" alt="Original mobile wireframe" width="150">
+</div>
 
 We developed this wireframe to help build the Lightsaber and Character list pages, and the Team page:
-![Lightsaber list page](static/images/readme_images/wf-lightsaber-list.png)
+<div align="left">
+  <img src="static/images/readme_images/wf-lightsaber-list.png" alt="Lightsaber list page wireframe" width="500">
+</div>
 
-This is the landing page:
-![Landing page](static/images/readme_images/wf-landing-page.png)
+Then we had more ideas for scrolling text and a Light Side/Dark Side options:
+<div align="left">
+  <img src="static/images/readme_images/wf-landing-page.png" alt="Landing page wireframe" width="500">
+</div>
+
+This is the Characters page:
+<div align="left">
+  <img src="static/images/readme_images/wf-characters.png" alt="Characters page wireframe" width="500">
+</div>
+
+The Team page:
+<div align="left">
+  <img src="static/images/readme_images/wf-team.png" alt="Team page wireframe" width="500">
+</div>
+
+And the About page:
+<div align="left">
+  <img src="static/images/readme_images/wf-about.png" alt="About page wireframe" width="500">
+</div>
 
 #### Color Palette
-The color palette is based on the official Star Wars yellow and black, with some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
-![Color palette](static/images/readme_images/color-palette.png)
+The official Star Wars yellow and black provided inspiration:
+<div align="left">
+  <img src="static/images/readme_images/official-colors.png" alt="Official Star Wars colors" width="200">
+</div>
+
+The palette we developed has some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
+<div align="left">
+  <img src="static/images/readme_images/color-palette.png" alt="Color palette" width="500">
+</div>
+
+We used official colors for the lightsabers that are specific to each character:
+- Blue: #2e67f8
+- Green: #2ff924
+- Red: #c13d3d
+- Purple: #7851a9
+- Yellow: #f9ff58
+- White: #ddddff
 
 #### Typography
-We used Google Fonts for this project. The titles are Orbitron, which is similar to the Star Wars logo font.
-![Title font](static/images/readme_images/orbitron-font.png)
-The main font is Raleway, which is clear and easy to read.
-![Main font](static/images/readme_images/raleway-font.png)
+We used Google Fonts for this project. The titles are Orbitron, which is a Google Fonts option similar to the Star Wars logo font:
+<div align="left">
+  <img src="static/images/readme_images/orbitron-font.png" alt="Title font" width="400">
+</div>
+
+The main font is Raleway, which is clear and easy to read, for accessibility:
+<div align="left">
+  <img src="static/images/readme_images/raleway-font.png" alt="Main font" width="400">
+</div>
 
 ## Future Implementations
 
