@@ -122,6 +122,7 @@
   max-width: 500px;
   margin: auto;
   z-index: 400 !important;
+
 }
 
 /* Toggle Buttons */
@@ -129,6 +130,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  
 }
 
 .toggle-btn {

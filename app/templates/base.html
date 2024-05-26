@@ -22,7 +22,7 @@
   <body class="p-0 m-0">
     <!-- Navbar for medium to large screens: Always expanded -->
     <header class="container-max">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark ">
           <div class="container-fluid  py-3">
               <a class="navbar-brand sfx" href="/">JediBlades</a>
              
@@ -36,16 +36,18 @@
             
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="navbar-nav w-100 justify-content-around">
-                      <li class="nav-item sfx">
-                          <a class="nav-link active" aria-current="page" href="{% url 'lightsaber-list' %}">
-                              <i class="fas fa-home"></i> <span>Lightsabers</span>
-                          </a>
-                      </li>
-                      <li class="nav-item sfx">
-                          <a class="nav-link" href="{% url 'team' %}">
-                              <i class="fas fa-users"></i> <span>Team</span>
-                          </a>
-                      </li>
+                    <li class="nav-item sfx">
+                      <a class="nav-link {% if request.resolver_match.url_name == 'lightsaber-list' %}active{% endif %}" aria-current="page" href="{% url 'lightsaber-list' %}">
+                          <img src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/q3oqyzmvtog2wrw8zh9v.png" alt="Lightsabers" class="nav-logo">
+                          <span>Lightsabers</span>
+                      </a>
+                  </li>
+                  <li class="nav-item sfx">
+                      <a class="nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}" href="{% url 'team' %}">
+                          <img src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/dxhe7dl6mgwsgoxigk0e.png"  alt="Team" class="nav-logo">
+                          <span>Team</span>
+                      </a>
+                  </li>
                   </ul>
               </div>
           </div>

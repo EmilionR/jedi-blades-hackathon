@@ -93,7 +93,7 @@ header {
 }
 
 .navbar-nav .nav-link {
-  color: #4bd1f7; /* Light saber blue */
+  color: #ffe81f; /* Light saber blue */
   margin: 0 10px;
 }
 
@@ -103,8 +103,30 @@ header {
 
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-link.active {
-  color: #ffe81f; /* Star Wars theme yellow */
+  color: #4bd1f7; /* Star Wars theme yellow */
 }
+
+/* Navbar logo styling */
+.nav-logo {
+  height: 40px;  /* Fixed height for logos */
+  width: auto;   /* Auto width to maintain aspect ratio */
+  vertical-align: middle; /* Align logos with the text vertically */
+}
+
+/* Ensure logos do not become too large on smaller screens */
+@media (max-width: 768px) {
+  .nav-logo {
+      height: 30px; /* Smaller logos for mobile devices */
+  }
+}
+
+/* Adjustments for very small devices */
+@media (max-width: 480px) {
+  .nav-logo {
+      height: 25px; /* Even smaller logos for very small devices */
+  }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
