@@ -59,29 +59,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Cookie Functions 
 
-// Function to display the cookie consent modal if needed
-function checkCookieConsent() {
-  if (!localStorage.getItem('cookieConsent')) {
-      // Create a new modal instance and show it
-      var myModal = new bootstrap.Modal(document.getElementById('cookieConsentModal'), {
-          backdrop: 'static',  // Prevents closing the modal by clicking outside it
-          keyboard: false       // Prevents closing the modal with the keyboard
-      });
-      myModal.show();
+// Function to accept cookies and hide the modal
+function acceptCookies() {
+  try {
+    localStorage.setItem('cookieConsent', 'true');
+    var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
+    myModal.hide(); // Hide the modal after consent
+  } catch (error) {
+    console.error("Failed to accept cookies or hide the modal:", error);
   }
 }
 
-// Function to accept cookies and hide the modal
-function acceptCookies() {
-  localStorage.setItem('cookieConsent', 'true');
-  var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
-  myModal.hide(); // Hide the modal after consent
+// Function to check if cookie consent is already given
+function checkCookieConsent() {
+  if (!localStorage.getItem('cookieConsent')) {
+    var cookieModal = new bootstrap.Modal(document.getElementById('cookieConsentModal'));
+    cookieModal.show();
+  }
 }
 
 // Add event listener to hide modal and record consent when clicking outside the modal
 document.getElementById('cookieConsentModal').addEventListener('click', function(event) {
   if (event.target === this) {
-      acceptCookies(); // Treat clicks on the modal backdrop as consent
+    acceptCookies(); // Treat clicks on the modal backdrop as consent
+  }
+});
+
+// Initialize cookie check when document is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    checkCookieConsent();
+  } catch (error) {
+    console.error("Failed to check cookie consent:", error);
+  }
+});
+
+// Event listener for the Accept button
+document.querySelector('.btn-primary').addEventListener('click', function() {
+  try {
+    acceptCookies();
+  } catch (error) {
+    console.error("Failed to handle accept button click:", error);
+  }
+});
+
+// Fallback in case Modal instance is not properly retrieved
+document.getElementById('cookieConsentModal').addEventListener('hidden.bs.modal', function () {
+  if (!localStorage.getItem('cookieConsent')) {
+    localStorage.setItem('cookieConsent', 'true');
+  }
+});
+
+// Add a listener for escape key to close modal
+document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {
+    try {
+      var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
+      myModal.hide();
+      localStorage.setItem('cookieConsent', 'true');
+    } catch (error) {
+      console.error("Failed to close modal with escape key:", error);
+    }
   }
 });
 
