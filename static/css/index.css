@@ -200,6 +200,12 @@ h3 {
   border: none;
   transition: box-shadow 4s ease;
   animation: glowingAnimation 8s infinite;
+  height: 100%;
+
+  .saber-container {
+    justify-content: center;
+    align-items: center;
+  }
 
   img {
     max-width: 100%;
@@ -209,15 +215,6 @@ h3 {
 
 .card-title {
   font-family: "Star Wars", sans-serif;
-}
-
-/* Changing the color of the text */
-.color-text {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 5px;
 }
 
 .saber-container {
