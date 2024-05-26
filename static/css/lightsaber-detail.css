@@ -1,86 +1,44 @@
-/* Importing a Star Wars themed font */
-@import url('https://fonts.cdnfonts.com/css/star-wars');
+main {
+  display: grid;
+}
 
+hr {
+  color: var(--sw-yellow);
+}
+
+.lightsaber-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.99)),
+    url("https://res-console.cloudinary.com/dxr4xewpz/thumbnails/v1/image/upload/v1716673639/bGlnaHRzYWJlcnNfamtkYnIw/drilldown")
+      center/cover no-repeat;
+}
+
+.title {
+  font-family: var(--title);
+  letter-spacing: var(--spacing);
+  color: var(--sw-yellow);
+}
+
+.text {
+  font-family: var(--main-font);
+}
+
+.card {
+  background-color: transparent;
+  border: 1px soild black;
+}
 
 :root {
-    --twinkle-duration: 4s;
+  --twinkle-duration: 4s;
 }
-
-
-body,html {
-    color:#FFE81F;
-}
-
 
 .stars-wrapper {
-    position: relative;
-    pointer-events: none;
-    max-width:1500px;
-   
- 
-    overflow: hidden;
+  position: relative;
+  pointer-events: none;
+  max-width: 1500px;
+  overflow: hidden;
 }
-
-
-
-
-
-
-
-
-/* Base Styles */
-h1, h2, h3  {
-    font-family: 'Star Wars', sans-serif; /* Star Wars font */
-    /* Light grey text for readability on dark backgrounds */
-}
-
-
-
-
-
-
-/* Header styling */
-.header-section {
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
-    padding: 20px 0;
-}
-
-
-/* Cards with glassmorphism style */
-.card {
-    background-color: rgba(255, 255, 255, 0.1); /* Translucent white */
-    backdrop-filter: blur(10px); /* Blur effect for the background */
-    border-radius: 15px; /* Rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle white border */
-}
-
 
 /* Image styling for a better visual effect */
 img.img-fluid {
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Shadow for depth */
-}
-
-
-/* Color indicator styling */
-span.rounded-circle {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-
-
-
-
-.text-center {
-    text-align: center;
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .header-section, .card {
-        margin: 10px;
-    }
+  border-radius: 15px;
 }
