@@ -25,13 +25,11 @@ document.getElementById("darkSide").addEventListener("click", function () {
 function updateContent(imgSrc, text, modeClass) {
   const sideLogo = document.getElementById("sideLogo");
   const sideText = document.getElementById("sideText");
-  const selectSide = document.querySelector(".select-your-side");
 
   sideLogo.src = imgSrc;
   sideLogo.style.display = "block";
   sideText.innerHTML = text;
   sideText.style.display = "block";
-  selectSide.className = "select-your-side " + modeClass;
 }
 
 // Set blend mode as default
@@ -41,22 +39,16 @@ document.querySelector(".select-your-side").className =
 // Set click events for Light side
 document.getElementById("lightSide").addEventListener("click", function () {
   filterSide("L");
-  document.querySelector(".select-your-side").className =
-    "select-your-side light-mode";
 });
 
 // Set click events for Balance
 document.getElementById("bothSides").addEventListener("click", function () {
-  document.querySelector(".select-your-side").className =
-    "select-your-side blend-mode";
   filterSide("both");
 });
 
 // Set click events for Dark side
 document.getElementById("darkSide").addEventListener("click", function () {
   filterSide("D");
-  document.querySelector(".select-your-side").className =
-    "select-your-side dark-mode";
 });
 
 function filterSide(side) {

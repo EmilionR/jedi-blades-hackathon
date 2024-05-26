@@ -59,48 +59,23 @@
 /* Light / Dark toggle */
 /* Select your side */
 .select-your-side {
-  background-size: cover;
-  background-position: center;
   min-height: 80vh;
   position: relative;
+  background-image: linear-gradient(
+    200deg,
+    black 45.45%,
+    #112 45.45%,
+    #112 50%,
+    black 50%,
+    black 95.45%,
+    #112 95.45%,
+    #112 100%
+  );
+  background-size: 1608.09px 585.3px;
 }
 
-/* Light mode backgrounds */
-.select-your-side.light-mode {
-  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
-}
-
-/* Dark mode backgrounds */
-.select-your-side.dark-mode {
-  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp");
-}
-
-/* Blended mode backgrounds */
-.select-your-side.blend-mode {
-  position: relative;
-  min-height: 80vh;
-}
-
-.select-your-side.blend-mode::before,
-.select-your-side.blend-mode::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.select-your-side.blend-mode::before {
-  left: 0;
-  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp");
-}
-
-.select-your-side.blend-mode::after {
-  right: 0;
-  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
+h3 {
+  font-size: 1.25rem;
 }
 
 /* Star Wars Title */
@@ -224,7 +199,6 @@
 /* Lightsaber Card Styling with Keyframes for Glowing Effect */
 .lightsaber-card {
   z-index: 2;
-  position: relative;
   background: var(--glass-bg);
   border-radius: var(--glass-radius);
   box-shadow: var(--glass-shadow);
@@ -233,19 +207,21 @@
   border: none;
   transition: box-shadow 4s ease;
   animation: glowingAnimation 8s infinite;
+  height: 100%;
+
+  .saber-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .card-title {
   font-family: "Star Wars", sans-serif;
-}
-
-/* Changing the color of the text */
-.color-text {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 5px;
 }
 
 .saber-container {
@@ -257,7 +233,7 @@
 .btn-primary {
   border: none;
   background-color: var(--bright-yellow); /* Star Wars yellow background */
-  color: var(--dark-grey); /* Text color */
+  color: var(--bg); /* Text color */
   transition: var(--transition);
   font-family: var(--title);
   letter-spacing: var(--spacing);
@@ -271,7 +247,7 @@
 .btn-secondary {
   border: none;
   background-color: var(--saber-purple);
-  color: var(--saber-white); /* Text color */
+  color: var(--bg); /* Text color */
   transition: var(--transition);
   font-family: var(--title);
   letter-spacing: 0.1rem;
@@ -286,32 +262,7 @@
   .star-wars-title {
     font-size: 2.5rem;
   }
-
-  .select-your-side.blend-mode::before {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp");
-  }
-  .select-your-side.blend-mode::after {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
-  }
-  .select-your-side.light-mode {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
-  }
-  .select-your-side.dark-mode {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp");
-  }
 }
 
 @media (min-width: 1024px) {
-  .select-your-side.dark-mode {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp");
-  }
-  .select-your-side.light-mode {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
-  }
-  .select-your-side.blend-mode::before {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp");
-  }
-  .select-your-side.blend-mode::after {
-    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
-  }
 }

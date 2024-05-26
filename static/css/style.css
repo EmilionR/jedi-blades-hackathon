@@ -24,7 +24,7 @@
   --main-font: "Raleway", sans-serif;
 
   /* Glassmorphism */
-  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.2);
   --glass-radius: 16px;
   --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   --glass-backdrop: blur(4px);
@@ -54,6 +54,7 @@ button:hover,
 a:hover,
 .btn:hover {
   cursor: none;
+
 }
 
 .card {
@@ -69,13 +70,15 @@ a {
   text-decoration: none;
 }
 
+.cursor {
+  display: hidden;
+}
+
 .btn-primary {
   background-color: var(--bg);
   border: 2px solid var(--sw-yellow);
   color: var(--sw-yellow);
 }
-
-/*       Cursor & Lightsaber        */
 
 .lightsaber {
   width: 10px;
@@ -108,19 +111,6 @@ a {
     width: 80%;
     bottom: -20%;
     background: linear-gradient(to left, #111 25%, #aaa 20%, #111);
-  }
-}
-
-.cursor {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  pointer-events: none;
-  transition: all 0.1s ease;
-  z-index: 9999;
-
-  .glow {
-    background-color: var(--saber-blue);
   }
 }
 
@@ -360,5 +350,33 @@ footer {
   }
   to {
     transform: translateY(-100vh);
+  }
+}
+
+@media (pointer: fine) {
+  /* Rules for devices with mouse here */
+  .cursor {
+    display: block;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    z-index: 9999;
+
+    .glow {
+      background-color: var(--saber-blue);
+    }
+  }
+
+  html,
+  body,
+  button,
+  a,
+  .btn,
+  button:hover,
+  a:hover,
+  .btn:hover {
+    cursor: none;
   }
 }

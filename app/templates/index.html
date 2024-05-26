@@ -36,7 +36,7 @@
     <!-- Star Wars Theme Title -->
     <div class="toggle-section pt-4 my-3">
       <div class="text-center mb-3">
-        <h1 class="star-wars-title">Choose Your Path</h1>
+        <h2 class="star-wars-title">Choose Your Path</h2>
       </div>
       <!-- Toggle for Jedi, Balance, and Sith -->
       <div
@@ -71,90 +71,91 @@
     </div>
   </div>
 
-  <div class="row justify-content-center mt-3">
-    {% for lightsaber in lightsabers %}
-    <!-- Make sure to convert 'L' to 'light' and 'D' to 'dark' for class name compatibility -->
-    <article
-      class="col-10 col-md-5 col-lg-4 mb-4 jedi-card-custom lightsaber-row   {{ lightsaber.owner.alignment }}"
-      data-color="{{ lightsaber.color }}"
-    >
-      <div
-        class="card lightsaber-card z-index-100"
-        style="border-color: {{ lightsaber.color }};"
+  <div class="container">
+    <div class="row justify-content-center mt-3">
+      <!-- Render lightsabers from models -->
+      {% for lightsaber in lightsabers %}
+      <article
+        class="col-12 col-md-6 col-lg-4 mb-3 {{ lightsaber.owner.alignment }}"
       >
-        <div class="card-body row">
-          <div class="col">
-            <h5 class="card-title">{{ lightsaber.name }}</h5>
-            <p class="card-text">
-              Color:
-              <span style="color: {{ lightsaber.color }};"
-                >{{ lightsaber.color }}</span
-              >
-            </p>
-            <p class="card-text">Owner: {{ lightsaber.owner }}</p>
-          </div>
-          <div class="col p-2 pb-4 my-4 saber-container">
-            <img
-              src="{{ lightsaber.image.url }}"
-              alt="{{ lightsaber.name }} Lightsaber"
-              class="img-fluid"
-            />
-          </div>
-          <div class="row g-0 justify-content-around px-2">
-            <div class="col-10">
-              <a
-                href="{% url 'lightsaber-detail' pk=lightsaber.id %}"
-                class="btn btn-primary w-100 sfx"
-                 style="border-color: {{ lightsaber.color }};"
-              >
-                Details
-              </a>
+        <div
+          class="card lightsaber-card"
+          style="border-color: {{ lightsaber.color }};"
+        >
+          <div class="card-body row px-4">
+            <div class="col-12 col-lg-6">
+              <h3 class="card-title">{{ lightsaber.name }}</h3>
+              <p class="card-text">
+                Color:
+                <span style="color: {{ lightsaber.color }};"
+                  >{{ lightsaber.color }}</span
+                >
+              </p>
+              <p class="card-text">Owner: {{ lightsaber.owner }}</p>
             </div>
-            <div class="col-10 py-2">
-              <a
-              href="{% url 'character-detail' pk=lightsaber.owner.id %}"  
-              class="btn btn-secondary w-100 sfx"
-              style="border-color: {{ lightsaber.color }};"
-            >
-              {{ lightsaber.owner.name }}
-              </a>
+            <div class="col p-2 pb-4 my-4 saber-container d-flex">
+              <img
+                src="{{ lightsaber.image.url }}"
+                alt="{{ lightsaber.name }} Lightsaber"
+                class="img-fluid"
+              />
+            </div>
+            <div class="row g-0 justify-content-around px-2">
+              <div class="col-10">
+                <a
+                  href="{% url 'lightsaber-detail' pk=lightsaber.id %}"
+                  class="btn btn-primary w-100 sfx"
+                  style="border-color: {{ lightsaber.color }};"
+                >
+                  Details
+                </a>
+              </div>
+              <div class="col-10 py-2">
+                <a
+                  href="{% url 'character-detail' pk=lightsaber.owner.id %}"
+                  class="btn btn-secondary w-100 sfx"
+                  style="border-color: {{ lightsaber.color }};"
+                >
+                  {{ lightsaber.owner.name }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="modal fade"
-        id="characterModal{{ lightsaber.id }}"
-        tabindex="-1"
-        aria-labelledby="characterModalLabel{{ lightsaber.id }}"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5
-                class="modal-title"
-                id="characterModalLabel{{ lightsaber.id }}"
-              >
-                {{ lightsaber.owner.name }}
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <p>Full Name: {{ lightsaber.owner.full_name }}</p>
-              <p>Alignment: {{ lightsaber.owner.get_alignment_display }}</p>
-              <p>Home Planet: {{ lightsaber.owner.home_planet }}</p>
+        <div
+          class="modal fade"
+          id="characterModal{{ lightsaber.id }}"
+          tabindex="-1"
+          aria-labelledby="characterModalLabel{{ lightsaber.id }}"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5
+                  class="modal-title"
+                  id="characterModalLabel{{ lightsaber.id }}"
+                >
+                  {{ lightsaber.owner.name }}
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>Full Name: {{ lightsaber.owner.full_name }}</p>
+                <p>Alignment: {{ lightsaber.owner.get_alignment_display }}</p>
+                <p>Home Planet: {{ lightsaber.owner.home_planet }}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </article>
-    {% endfor %}
+      </article>
+      {% endfor %}
+    </div>
   </div>
 </section>
 <script src="{% static 'js/index.js' %}"></script>

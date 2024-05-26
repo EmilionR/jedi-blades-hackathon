@@ -1,63 +1,66 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'css/character-detail.css' %}">
 
-<div class="stars-wrapper container">
-    <div class="header-section text-center py-4">
+<div class="stars-wrapper" id="stars-wrapper"></div>
+
+<div class="container">
+    <div class="header-section text-center py-4 fade-in">
         <h1 class="m-4">{{ character.name }}</h1>
     </div>
     <div class="container">
         <div class="content-section">
             <div class="row d-flex justify-content-center">
-                <div class="col-10 col-md-6 col-lg-5 sub-section card">
-                    <img src="{{ character.profile_image.url }}" alt="{{ character.full_name }}" class="img-fluid">
+                <div class="col-10 col-md-6 col-lg-5 sub-section slide-in-left">
+                    <div class="glass-card">
+                        <img src="{{ character.profile_image.url }}" alt="{{ character.full_name }}" class="img-fluid">
+                    </div>
                 </div>
                 <div class="col-12 col-md-10 col-lg-6">
-                    <div class="sub-section py-5">
-                        <div class="card border-0 shadow">
-                            <div class="card-body text-center">
-                                <h2 class="my-2 py-2">Alignment: {{ character.get_alignment_display }}</h2>
-                                <h3 class="my-2 py-2">Home Planet</h3>
-                                <p>{{ character.home_planet }}</p>
-                            </div>
-                            <div class="detail-section text-center py-3 p-1 p-md-3 ">
-                                <h3 class="my-2 py-2">Character Lore</h3>
-                                <p>{{ character.lore }}</p>
-                            </div>
+                    <div class="sub-section py-5 glass-card slide-in-right">
+                        <div class="card-body text-center">
+                            <h2 class="my-2 py-2">Alignment: {{ character.get_alignment_display }}</h2>
+                            <h3 class="my-2 py-2">Home Planet</h3>
+                            <p>{{ character.home_planet }}</p>
                         </div>
                     </div>
-
-
-
                 </div>
-
+                <div class="col-10 col-md-10 col-lg-8">
+                    <div class="content-section text-center py-3 p-1 p-md-3 glass-card fade-in">
+                        <h3 class="my-2 py-2">Character Lore</h3>
+                        <p>{{ character.lore }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const svgNS = "http://www.w3.org/2000/svg";
-        const wrapper = document.querySelector('.stars-wrapper');
+document.addEventListener('DOMContentLoaded', () => {
+    const starsWrapper = document.getElementById('stars-wrapper');
+    const starsCount = 100;
+    const stars = [];
 
-        let starsSvg = document.createElementNS(svgNS, "svg");
-        starsSvg.setAttribute("style", "width: 100%; height: 100%; position: absolute; top: 0; left: 0;");
-        starsSvg.setAttribute("preserveAspectRatio", "none");
+    for (let i = 0; i < starsCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = Math.random() * 2 + 1 + 's';
+        starsWrapper.appendChild(star);
+        stars.push(star);
+    }
 
-        for (let i = 0; i < 200; i++) {
-            let star = document.createElementNS(svgNS, "circle");
-            star.setAttribute("cx", Math.random() * 100 + '%');
-            star.setAttribute("cy", Math.random() * 100 + '%');
-            star.setAttribute("r", Math.random() * 2 + 0.5); // Adjusted for visibility
-            star.setAttribute("fill", "white"); // Ensuring stars are visible
-            starsSvg.appendChild(star);
-        }
+    const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
 
-        wrapper.appendChild(starsSvg);
-
-        // Adjust comet creation here similarly if needed
+    elements.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add('active');
+        }, index * 300);
     });
+});
 </script>
 {% endblock %}

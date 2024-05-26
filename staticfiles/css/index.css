@@ -1,136 +1,321 @@
-   /* Hero section */ 
-    
-   .outer-hero-section {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1800px; /* Ensuring it doesn't exceed 1500px width */
-    margin: 0 auto; /* Center the section */
-    background-color: black; /* Dark background for contrast */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
-    border-bottom: 2px solid var(--sw-yellow); /* Yellow border at the bottom */
-}
+/* Hero section */
 
-.select-your-side {
-    background-image: url('https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.36_-_A_dark_fortress_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp');
-    background-size: cover;
-    background-position: center;
-    z-index: 20;
+.outer-hero-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1800px; /* Ensuring it doesn't exceed 1500px width */
+  margin: 0 auto; /* Center the section */
+  background-color: black; /* Dark background for contrast */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth with shadow */
+  border-bottom: 2px solid var(--sw-yellow); /* Yellow border at the bottom */
 }
 
 .jedi-hero-section {
-    position: relative;
-    overflow: hidden;
-    height: 50vh; /* Fixed viewport height */
-    transform: perspective(300px) rotateX(20deg);
-    transform-origin: 50% 100%;
-    background: var(--bg);
-    color: var(--sw-yellow);
+  position: relative;
+  overflow: hidden;
+  height: 50vh; /* Fixed viewport height */
+  transform: perspective(300px) rotateX(20deg);
+  transform-origin: 50% 100%;
+  background: var(--bg);
+  color: var(--sw-yellow);
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-header {
+  font-family: "Star Wars", sans-serif;
 }
 
 .jedi-hero-text {
-    position: absolute;
-    top: 100%; /* Start off-screen */
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    font-family: sans-serif;
-    animation: jedi-autoscroll 30s linear infinite;
+  position: absolute;
+  top: 100%; /* Start off-screen */
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-family: sans-serif;
+  animation: jedi-autoscroll 30s linear infinite;
 }
 
 @keyframes jedi-autoscroll {
-    from { transform: translateY(0); } /* Start from below the view */
-    to { transform: translateY(-190%); } /* Scroll through three blocks of text */
+  from {
+    transform: translateY(0);
+  } /* Start from below the view */
+  to {
+    transform: translateY(-190%);
+  } /* Scroll through three blocks of text */
 }
 
 .jedi-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  pointer-events: none;
 }
 
 /* Light / Dark toggle */
-
-.btn-group {
-    border: 2px solid var(--sw-yellow);
-    padding: 2px;
-
-    button {
-        border: none;
-        color: var(--bg);
-        font-weight: 600;
-    }
-    #lightSide {
-        background-color: var(--saber-blue);
-    }
-    #darkSide {
-        background-color: var(--saber-red);
-    }
-    #bothSides {
-        background: linear-gradient(to right, var(--saber-blue), var(--saber-red));
-        margin: 0 3px;
-    }
+/* Select your side */
+.select-your-side {
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  position: relative;
 }
 
-/* Lightsaber display section */ 
-.light {
-border-left: 5px solid var(--saber-blue); /* Light side has a blue border */
+h3 {
+  font-size: 1.25rem;
 }
 
-.dark {
-border-left: 5px solid var(saber-red); /* Dark side has a red border */
+/* Light mode backgrounds */
+.select-your-side.light-mode {
+  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
+}
+
+/* Dark mode backgrounds */
+.select-your-side.dark-mode {
+  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp");
+}
+
+/* Blended mode backgrounds */
+.select-your-side.blend-mode {
+  position: relative;
+  min-height: 80vh;
+}
+
+.select-your-side.blend-mode::before,
+.select-your-side.blend-mode::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.select-your-side.blend-mode::before {
+  left: 0;
+  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.21_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_oxcn13.webp");
+}
+
+.select-your-side.blend-mode::after {
+  right: 0;
+  background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
+}
+
+/* Star Wars Title */
+.star-wars-title {
+  /* Make sure to import a Star Wars font */
+  color: #ffcc00; /* Yellow */
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; /* Yellow */
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+  letter-spacing: -1px;
+}
+
+/* Toggle Section */
+.toggle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  max-width: 500px;
+  margin: auto;
+  z-index: 400 !important;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.toggle-btn {
+  border: none;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  color: var(--light-grey); /* Black text */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  transition: --transition;
+  box-shadow: var(--glass-shadow);
+}
+
+.toggle-btn:hover {
+  color: var(--saber-yellow); /* Yellow on hover */
+  background: #ffd700; /* Light yellow on hover */
+  transform: scale(1.06);
+}
+
+.toggle-btn:active {
+  transform: scale(1.01);
+}
+
+#lightSide {
+  background: rgba(0, 87, 179); /* Blue */
+  opacity: 0.8;
+}
+
+#lightSide:hover {
+  background: rgb(0, 46, 163);
+  color: white;
+}
+
+#darkSide {
+  background: rgb(179, 0, 0); /* Red */
+  opacity: 0.8;
+}
+
+#darkSide:hover {
+  background: rgb(155, 39, 39);
+  color: black;
+  opacity: 1;
+}
+
+#bothSides {
+  background: linear-gradient(
+    to right,
+    rgba(0, 87, 179, 0.8),
+    rgba(179, 0, 0, 0.8)
+  ); /* Blue to Red */
+}
+
+#bothSides:hover {
+  background: linear-gradient(
+    to right,
+    rgba(0, 87, 179, 1),
+    rgba(179, 0, 0, 1)
+  ); /* Light Blue to Light Red */
+}
+
+.z-index {
+  z-index: 30;
+}
+
+/* Content Section Styles */
+#sideContent {
+  margin-top: 20px;
+}
+
+#sideLogo {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+#sideText {
+  font-family: "Star Jedi", sans-serif; /* Make sure to import a Star Wars font */
+  color: #ffcc00; /* Yellow */
+  font-size: 1.2rem;
+  margin-top: 10px;
+  padding: 1rem;
+  border-radius: var(--glass-radius);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+/* Lightsaber display section */
+
+/* Lightsaber Card Styling with Keyframes for Glowing Effect */
+.lightsaber-card {
+  z-index: 2;
+  position: relative;
+  background: var(--glass-bg);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: none;
+  transition: box-shadow 4s ease;
+  animation: glowingAnimation 8s infinite;
+}
+
+.card-title {
+  font-family: "Star Wars", sans-serif;
 }
 
 /* Changing the color of the text */
 .color-text {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-
-  .saber-container {
-    height: 30vh;
-    min-height: 150px;
-  }
-
-.lightsaber {
-
-    width: 10px;
-    height: 100%;
-    position: relative;
-    transform: rotate(-45deg);
-    margin-left: 10%;
-
-    .glow {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px 8px 0 0;
-        filter: blur(6px);
-    }
-
-    .core {
-        position: absolute;
-        top: 5%;
-        right: 30%;
-        left: 30%;
-        bottom: 0;
-        filter: blur(2px);
-        background-color: white;
-    }
-
-    .handle {
-        position: absolute;
-        height: 25%;
-        width: 80%;
-        bottom: -20%;
-        background: linear-gradient(to left, #111 25% , #aaa 20%, #111);
-    }
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
+.saber-container {
+  height: 30vh;
+  min-height: 150px;
+}
+
+/* Enhanced Button Styles for Star Wars Theme */
+.btn-primary {
+  border: none;
+  background-color: var(--bright-yellow); /* Star Wars yellow background */
+  color: var(--bg); /* Text color */
+  transition: var(--transition);
+  font-family: var(--title);
+  letter-spacing: var(--spacing);
+}
+
+.btn-primary:hover {
+  background-color: var(--sw-yellow);
+  color: var(--saber-red);
+}
+
+.btn-secondary {
+  border: none;
+  background-color: var(--saber-purple);
+  color: var(--bg); /* Text color */
+  transition: var(--transition);
+  font-family: var(--title);
+  letter-spacing: 0.1rem;
+}
+
+.btn-secondary:hover {
+  background-color: hwb(267 30% 33%);
+  color: var(--dark-grey);
+}
+
+@media (min-width: 768px) {
+  .star-wars-title {
+    font-size: 2.5rem;
+  }
+
+  .select-your-side.blend-mode::before {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp");
+  }
+  .select-your-side.blend-mode::after {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
+  }
+  .select-your-side.light-mode {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
+  }
+  .select-your-side.dark-mode {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.28_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_ilacid.webp");
+  }
+}
+
+@media (min-width: 1024px) {
+  .select-your-side.dark-mode {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp");
+  }
+  .select-your-side.light-mode {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
+  }
+  .select-your-side.blend-mode::before {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572753/DALL_E_2024-05-22_21.57.25_-_An_imposing_landscape_of_a_Sith_stronghold_on_a_barren_volcanic_planet_where_lava_rivers_flow_freely_under_a_stormy_ash-filled_sky._The_stronghold_i_o1bxxi.webp");
+  }
+  .select-your-side.blend-mode::after {
+    background-image: url("https://res.cloudinary.com/digqsxx3z/image/upload/v1716572752/DALL_E_2024-05-22_21.57.26_-_A_serene_and_ancient_Jedi_temple_nestled_on_a_lush_mountainous_planet_with_towering_waterfalls_cascading_into_crystalline_lakes._The_temple_features_cpem9b.webp");
+  }
+}
