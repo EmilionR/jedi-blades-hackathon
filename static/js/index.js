@@ -1,25 +1,32 @@
+
+// Set click events for Light side
 document.getElementById("lightSide").addEventListener("click", function () {
   updateContent(
     "path/to/jedi-logo.png",
     "The Force is strong with you. As a Jedi, you seek peace and justice in the galaxy. Your lightsaber is a symbol of hope, illuminating the path to a brighter future. May the Force be with you, always.",
     "light-mode"
   );
+  filterSide("L");
 });
 
+// Set click events for Balance
 document.getElementById("bothSides").addEventListener("click", function () {
   updateContent(
     "path/to/balance-logo.png",
     "Balance is key. You walk the fine line between light and dark, harnessing the powers of both sides of the Force. Your journey is one of equilibrium, seeking harmony in a galaxy divided by conflict.",
     "blend-mode"
   );
+  filterSide("both");
 });
 
+// Set click events for Dark side
 document.getElementById("darkSide").addEventListener("click", function () {
   updateContent(
     "path/to/sith-logo.png",
     "Power is everything. As a Sith, you embrace the darkness, seeking to dominate the galaxy with your unmatched strength. Your red lightsaber burns with the fire of your ambition, casting fear into the hearts of your enemies.",
     "dark-mode"
   );
+  filterSide("D");
 });
 
 function updateContent(imgSrc, text, modeClass) {
@@ -32,29 +39,9 @@ function updateContent(imgSrc, text, modeClass) {
   sideText.style.display = "block";
 }
 
-// Set blend mode as default
-document.querySelector(".select-your-side").className =
-  "select-your-side blend-mode";
-
-// Set click events for Light side
-document.getElementById("lightSide").addEventListener("click", function () {
-  filterSide("L");
-});
-
-// Set click events for Balance
-document.getElementById("bothSides").addEventListener("click", function () {
-  filterSide("both");
-});
-
-// Set click events for Dark side
-document.getElementById("darkSide").addEventListener("click", function () {
-  filterSide("D");
-});
-
 function filterSide(side) {
-  const cards = document.querySelectorAll(".jedi-card-custom");
+  const cards = document.querySelectorAll("article");
   cards.forEach((card) => {
-    console.log(card.classList);
     if (side === "both") {
       card.style.display = "block";
     } else {
@@ -80,4 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     starrySky.appendChild(star);
   }
+  const animateLightsaberCards = () => {
+    const lightsaberCards = document.querySelectorAll('.lightsaber-card');
+    lightsaberCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.3}s`;
+        card.classList.add('active');
+    });
+};
+
+animateLightsaberCards();
 });
