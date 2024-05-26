@@ -23,7 +23,9 @@
   user-select: none;
 }
 
-.hero-header {font-family: 'Star Wars', sans-serif; }
+.hero-header {
+  font-family: "Star Wars", sans-serif;
+}
 
 .jedi-hero-text {
   position: absolute;
@@ -103,7 +105,7 @@
 
 /* Star Wars Title */
 .star-wars-title {
-   /* Make sure to import a Star Wars font */
+  /* Make sure to import a Star Wars font */
   color: #ffcc00; /* Yellow */
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -122,7 +124,6 @@
   max-width: 500px;
   margin: auto;
   z-index: 400 !important;
-
 }
 
 /* Toggle Buttons */
@@ -130,7 +131,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  
 }
 
 .toggle-btn {
@@ -235,7 +235,9 @@
   animation: glowingAnimation 8s infinite;
 }
 
-.card-title {font-family: 'Star Wars', sans-serif; }
+.card-title {
+  font-family: "Star Wars", sans-serif;
+}
 
 /* Changing the color of the text */
 .color-text {
@@ -257,7 +259,8 @@
   background-color: var(--bright-yellow); /* Star Wars yellow background */
   color: var(--dark-grey); /* Text color */
   transition: var(--transition);
-  font-family: 'Star Wars', sans-serif; 
+  font-family: var(--title);
+  letter-spacing: var(--spacing);
 }
 
 .btn-primary:hover {
@@ -267,10 +270,11 @@
 
 .btn-secondary {
   border: none;
-  background-color: var(--saber-purple); /* Red background */
+  background-color: var(--saber-purple);
   color: var(--saber-white); /* Text color */
   transition: var(--transition);
-  font-family: 'Star Wars', sans-serif; 
+  font-family: var(--title);
+  letter-spacing: 0.1rem;
 }
 
 .btn-secondary:hover {

@@ -22,14 +22,27 @@
                 <div class="my-3">
                   <h2 class="text-center my-2 title">
                     Wielded by {{ lightsaber.owner.name }}
-                    <span
-                      class="d-inline-block rounded-circle"
-                      style="width: 20px; height: 20px; background-color: {{ lightsaber.color }};"
-                    ></span>
+
+                    <div class="col text-center saber-container">
+                      <div class="lightsaber">
+                        <div
+                          class="glow"
+                          style="background-color: {{ lightsaber.color }};"
+                        ></div>
+                        <div class="core"></div>
+                        <div class="handle"></div>
+                      </div>
+                    </div>
                   </h2>
                   <hr class="hr" />
                 </div>
-                <h3 class="py-2 text-center title">Design</h3>
+                <h3 class="py-2 text-center title">
+                  Design
+                  <span
+                    class="d-inline-block rounded-circle"
+                    style="width: 20px; height: 20px; background-color: {{ lightsaber.color }};"
+                  ></span>
+                </h3>
                 <p class="py-2 text">{{ lightsaber.design }}</p>
                 <h3 class="py-2 text-center title">Lightsaber Lore</h3>
                 <p class="py-2 text">{{ lightsaber.description }}</p>
