@@ -1,23 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+:root {
+  --bg: black;
+  --secondary-bg: #333;
+  --sw-yellow: #ffe81f;
+  --saber-blue: #2e67f8;
+  --saber-green: #2ff924;
+  --saber-red: #c13d3d;
+  --saber-purple: #7851a9;
+  --saber-yellow: #f9ff58;
+  --saber-white: #ddddff;
+
+  /* Color palette */
+  --light-grey: #d6d6d6;
+  --bright-yellow: #ffee32;
+  --gold-yellow: #ffd100;
+  --black: #202020;
+  --dark-grey: #333533;
+
+  /* Fonts */
+  --title1: "Star Wars", sans-serif;
+  --title: "Orbitron", sans-serif;
+  --main-font: "Raleway", sans-serif;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-radius: 16px;
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --glass-backdrop: blur(4px);
+  --glass-border: 1px solid rgba(255, 157, 157, 0.13);
+
+  /* Commonly used CSS properties for consistency */
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+
+  /* Borders */
+  --dark-border: 2px solid #202020;
+  --dark-shadow: 2px -2px 15px 0 #202020;
+}
+
 /* General styles */
 
 body {
     flex-direction: column;
+    align-items: center;
   }
   
 
-
 /* Team Section */
+
+#team-section {
+    padding: 5%;
+    align-items: center;
+    background-color: var(--dark-grey);
+}
+
+.team-section-header {
+    width: 80%;
+}
 
 img {
     max-width: 100%;
+    padding: 15px;
 }
 
 p {
     text-align: center;
-    font-size: 70%;
-    line-height: 1.5;
+    /* font-size: 70%; */
+    /* line-height: 1.5; */
     font-weight: 400;
-
+    font-family: var(--main-font);
+    color: var(--light-grey);
 }
 
 hr {
@@ -35,29 +88,35 @@ hr {
 .heading-1 {
     margin-bottom: 20px;
     text-align: center;
-    font-size: 180%;
+    /* font-size: 180%; */
+    font-size: 48px;
+    font-family: var(--title);
+    text-transform: uppercase;
+    color: var(--gold-yellow);
 }
 
 .heading-2 {
     font-size: 30px;
-    font-weight: 800;
-    letter-spacing: -3px;
+    /* font-weight: 800; */
+    /* letter-spacing: -3px; */
+    font-family: var(--title);
+    text-transform: uppercase;
+    color: var(--gold-yellow)
 }
 
 .subheading {
     font-size: 18px;
     font-weight: 400;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
+    font-family: var(--title);
+    color: var(--bright-yellow);
 }
-
-
 
 #team-section {
     display: flex;
     flex-direction: column;
     gap: 50px;
     padding-block: 100px;
-
 }
 
 #team-section hr {
@@ -68,6 +127,11 @@ hr {
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin: 40px;
+    padding: 20px;
+    background-color: var(--black);
+    border: var(--dark-border);
+    box-shadow: var(--dark-shadow);
 }
 
 .team-member-card {
@@ -75,6 +139,7 @@ hr {
     flex-direction: column;
     gap: 15px;
     width: 300px;
+    height: 650px;
 }
 
 .team-member-card-header {
