@@ -54,7 +54,6 @@ button:hover,
 a:hover,
 .btn:hover {
   cursor: none;
-
 }
 
 .card {
@@ -116,6 +115,7 @@ a {
 
 /*                    General  Header                  */
 header {
+  width: 100%;
   background-color: #050505; /* Deep space black */
   color: #ffe81f; /* Star Wars theme yellow */
   border-bottom: 3px solid #ffe81f; /* Star Wars theme yellow */
