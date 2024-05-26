@@ -187,10 +187,11 @@ h3 {
 
 /* Lightsaber display section */
 
+
+
 /* Lightsaber Card Styling with Keyframes for Glowing Effect */
 .lightsaber-card {
   z-index: 2;
-  position: relative;
   background: var(--glass-bg);
   border-radius: var(--glass-radius);
   box-shadow: var(--glass-shadow);
@@ -199,6 +200,11 @@ h3 {
   border: none;
   transition: box-shadow 4s ease;
   animation: glowingAnimation 8s infinite;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .card-title {
