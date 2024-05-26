@@ -18,47 +18,6 @@ hr {
   color: var(--sw-yellow);
 }
 
-.saber-container {
-  height: 30vh;
-  min-height: 150px;
-  display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-}
-
-.lightsaber {
-  width: 10px;
-  height: 100%;
-  position: relative;
-  transform: rotate(-45deg);
-
-  .glow {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px 8px 0 0;
-    filter: blur(6px);
-  }
-
-  .core {
-    position: absolute;
-    top: 5%;
-    right: 20%;
-    left: 30%;
-    bottom: 0;
-    filter: blur(2px);
-    background-color: white;
-  }
-
-  .handle {
-    position: absolute;
-    height: 25%;
-    width: 80%;
-    bottom: -20%;
-    background: linear-gradient(to left, #111 25%, #aaa 20%, #111);
-  }
-}
-
 .text {
   font-family: var(--main-font);
 }

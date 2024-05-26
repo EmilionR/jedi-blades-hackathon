@@ -1,0 +1,1 @@
+web: gunicorn jedi_blades.wsgi:application --log-file -
