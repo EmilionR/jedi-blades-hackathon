@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url("https://fonts.cdnfonts.com/css/star-wars");
 :root {
   --bg: black;
   --secondary-bg: #333;
@@ -44,14 +44,6 @@ html,
 body {
   color: var(--saber-white);
   background: var(--bg);
-  cursor: none;
-}
-
-button,a,.btn,
-button:hover,
-a:hover,
-.btn:hover {
-  cursor: none;
 }
 
 .card {
@@ -67,14 +59,15 @@ a {
   text-decoration: none;
 }
 
-.btn-primary {
+.cursor {
+  display: hidden;
+}
 
+.btn-primary {
   background-color: var(--bg);
   border: 2px solid var(--sw-yellow);
   color: var(--sw-yellow);
 }
-
-/*       Cursor & Lightsaber        */
 
 .lightsaber {
   width: 10px;
@@ -110,19 +103,6 @@ a {
   }
 }
 
-.cursor {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  pointer-events: none;
-  transition: all 0.1s ease;
-  z-index: 9999;
-
-  .glow {
-    background-color: var(--saber-blue);
-  }
-}
-
 /*                    General  Header                  */
 header {
   /* Deep space black */
@@ -132,7 +112,7 @@ header {
 .navbar {
   padding: 0.5rem 1rem;
   background-color: #050505;
-  font-family: 'Star Wars', sans-serif; 
+  font-family: "Star Wars", sans-serif;
   background-color: transparent;
 }
 
@@ -169,25 +149,24 @@ header {
 
 /* Navbar logo styling */
 .nav-logo {
-  height: 40px;  /* Fixed height for logos */
-  width: auto;   /* Auto width to maintain aspect ratio */
+  height: 40px; /* Fixed height for logos */
+  width: auto; /* Auto width to maintain aspect ratio */
   vertical-align: middle; /* Align logos with the text vertically */
 }
 
 /* Ensure logos do not become too large on smaller screens */
 @media (max-width: 768px) {
   .nav-logo {
-      height: 30px; /* Smaller logos for mobile devices */
+    height: 30px; /* Smaller logos for mobile devices */
   }
 }
 
 /* Adjustments for very small devices */
 @media (max-width: 480px) {
   .nav-logo {
-      height: 25px; /* Even smaller logos for very small devices */
+    height: 25px; /* Even smaller logos for very small devices */
   }
 }
-
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -413,5 +392,33 @@ footer {
   }
   to {
     transform: translateY(-100vh);
+  }
+}
+
+@media (pointer: fine) {
+  /* Rules for devices with mouse here */
+  .cursor {
+    display: block;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    z-index: 9999;
+
+    .glow {
+      background-color: var(--saber-blue);
+    }
+  }
+
+  html,
+  body,
+  button,
+  a,
+  .btn,
+  button:hover,
+  a:hover,
+  .btn:hover {
+    cursor: none;
   }
 }
