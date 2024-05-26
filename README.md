@@ -5,14 +5,16 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/EmilionR/jedi-blades-hackathon)](https://github.com/EmilionR/jedi-blades-hackathon)
 
 <div align="center">
-  <img src="documentation/mockup.png" alt="screenshot">
+  <img src="static/images/readme_images/landing-page.png" alt="Landing page">
 </div>
 
 Welcome to Jedi Blades! Our website shows our wide selection of lightsabers. Whether you are a Jedi or a Sith, we have the perfect lightsaber for you. <br>
 
 Our lightsabers are made from the finest materials and are built to last. They are perfect for dueling or for display. We also have lightsaber accessories such as stands and cases to help you take care of your lightsaber. <br>
 
-So come on in and take a look at our selection. May the Force be with you!
+So come on in and take a look at our selection. May the Force be with you! <br>
+
+The deployed app is available [here](https://jedi-blades-786cf143833b.herokuapp.com/).
 
 ## Table of Contents
 - [Intro](#jedi-blades)
@@ -21,6 +23,7 @@ So come on in and take a look at our selection. May the Force be with you!
     - [User Goals](#user-goals)
     - [Features](#features)
     - [Surface](#surface)
+- [Testing](#testing)
 - [Future Implementations](#future-implementations)
 - [Tools & Technologies Used](#tools--technologies-used)
 - [Credits](#credits)
@@ -58,9 +61,25 @@ All user stories are mapped to Issues in Github, with acceptance criteria and ta
 - Team members: As a site user I can see the team members so that I can learn more about the team
 
 ### Features
+#### Landing page
+The landing page includes:
+- A header with navigation links and a footer with social, team, and legal links.
+- A button so the user can choose to play Star Wars music while picking their favorite lightsaber.
+- A scrolling intro section in the style of the Star Wars intro text, so the user can read all about Jedi Blades.
+- A "Choose your path" button to filter the available lightsabers by light and/or dark side
+- The selection of lightsabers. Each lightsaber card shows an image, the name, color, and owner of the lightsaber, and buttons to see a detail about that saber or character.
+- The cursor, in the shape of a lightsaber.
+
+#### Lightsaber details
+Each lightsaber's details include an image of the saber, its name, which character wields it, and its design and lore so that users can pick their perfect weapon.
+
+#### Character details
+Each character's details include an image, the character's name, light/dark side alignment, home planet, and lore.
+
+#### Team page
+The team page shows the talented Sabersmiths who forged the Jedi Blades project.
 
 ### Surface
-
 #### Wireframes
 We started out with these wireframes:
 <div align="left">
@@ -124,7 +143,36 @@ The main font is Raleway, which is clear and easy to read, for accessibility:
   <img src="static/images/readme_images/raleway-font.png" alt="Main font" width="400">
 </div>
 
+#### Surface updates
+In the finished project, the surface design was created with a different palette, typography, and styles, using images and transparency to create mood and depth.
+
+### Screenshots
+<!-- Screenshots of the completed project -->
+
+## Testing
+### Lighthouse reports
+Desktop landing page:
+<div align="left">
+  <img src="static/images/readme_images/lh-desktop-landing.png" alt="Lighthouse testing desktop landing page" width="300">
+</div>
+
+Desktop team page:
+<div align="left">
+  <img src="static/images/readme_images/lh-desktop-team.png" alt="Lighthouse testing desktop team page" width="300">
+</div>
+
+Mobile landing page:
+<div align="left">
+  <img src="static/images/readme_images/lh-mobile-landing.png" alt="Lighthouse testing mobile landing page" width="300">
+</div>
+
+Mobile team page:
+<div align="left">
+  <img src="static/images/readme_images/lh-mobile-team.png" alt="Lighthouse testing mobile team page" width="300">
+</div>
+
 ## Future Implementations
+<!-- These are all the awesome things that the page will have in the future -->
 
 ## Tools & Technologies Used
 
