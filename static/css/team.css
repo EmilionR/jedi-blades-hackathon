@@ -14,7 +14,8 @@ body {
 
 .heading-1 {
   margin-bottom: 20px;
-  font-size: 180%;
+  font-size: 2.3rem;
+  font-weight: 300;
   font-family: var(--title1);
   letter-spacing: var(--spacing);
   color: var(--gold-yellow);
@@ -44,9 +45,8 @@ img {
 }
 
 p {
-  font-size: 70%;
-  line-height: 1.5;
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
 hr {
