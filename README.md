@@ -4,13 +4,17 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/EmilionR/jedi-blades-hackathon)](https://github.com/EmilionR/jedi-blades-hackathon/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/EmilionR/jedi-blades-hackathon)](https://github.com/EmilionR/jedi-blades-hackathon)
 
-![screenshot](documentation/mockup.png)
+<div align="center">
+  <img src="static/images/readme_images/landing-page.png" alt="Landing page">
+</div>
 
 Welcome to Jedi Blades! Our website shows our wide selection of lightsabers. Whether you are a Jedi or a Sith, we have the perfect lightsaber for you. <br>
 
 Our lightsabers are made from the finest materials and are built to last. They are perfect for dueling or for display. We also have lightsaber accessories such as stands and cases to help you take care of your lightsaber. <br>
 
-So come on in and take a look at our selection. May the Force be with you!
+So come on in and take a look at our selection. May the Force be with you! <br>
+
+The deployed app is available [here](https://jedi-blades-786cf143833b.herokuapp.com/).
 
 ## Table of Contents
 - [Intro](#jedi-blades)
@@ -19,6 +23,7 @@ So come on in and take a look at our selection. May the Force be with you!
     - [User Goals](#user-goals)
     - [Features](#features)
     - [Surface](#surface)
+- [Testing](#testing)
 - [Future Implementations](#future-implementations)
 - [Tools & Technologies Used](#tools--technologies-used)
 - [Credits](#credits)
@@ -55,33 +60,143 @@ All user stories are mapped to Issues in Github, with acceptance criteria and ta
 - Team page: As a site user I can view a page about the team so that I can learn about the developers behind the project
 - Team members: As a site user I can see the team members so that I can learn more about the team
 
+### Structure
+#### Entity relationship diagram
+<!-- These are the models that we used to build the site, and how they relate -->
+
 ### Features
+#### Landing page
+The landing page includes:
+- A header with navigation links and a footer with social, team, and legal links.
+- A button so the user can choose to play Star Wars music while picking their favorite lightsaber.
+- A scrolling intro section in the style of the Star Wars intro text, so the user can read all about Jedi Blades.
+- A "Choose your path" button to filter the available lightsabers by light and/or dark side
+- The selection of lightsabers. Each lightsaber card shows an image, the name, color, and owner of the lightsaber, and buttons to see a detail about that saber or character.
+- The cursor, in the shape of a lightsaber.
+
+#### Lightsaber details
+Each lightsaber's details include an image of the saber, its name, which character wields it, and its design and lore so that users can pick their perfect weapon.
+
+#### Character details
+Each character's details include an image, the character's name, light/dark side alignment, home planet, and lore.
+
+#### Team page
+The team page shows the talented Sabersmiths who forged the Jedi Blades project.
 
 ### Surface
-
 #### Wireframes
 We started out with these wireframes:
-![Original desktop wireframe](static/images/readme_images/wf-original-desktop.png)
-![Original mobile wireframe](static/images/readme_images/wf-original-mobile.png)
-![Original tablet wireframe](static/images/readme_images/wf-original-tablet.png)
+<div align="left">
+  <img src="static/images/readme_images/wf-original-desktop.png" alt="Original desktop wireframe" width="300">
+  <img src="static/images/readme_images/wf-original-tablet.png" alt="Original tablet wireframe" width="200">
+  <img src="static/images/readme_images/wf-original-mobile.png" alt="Original mobile wireframe" width="150">
+</div>
 
 We developed this wireframe to help build the Lightsaber and Character list pages, and the Team page:
-![Lightsaber list page](static/images/readme_images/wf-lightsaber-list.png)
+<div align="left">
+  <img src="static/images/readme_images/wf-lightsaber-list.png" alt="Lightsaber list page wireframe" width="500">
+</div>
 
-This is the landing page:
-![Landing page](static/images/readme_images/wf-landing-page.png)
+Then we had more ideas for scrolling text and a Light Side/Dark Side options:
+<div align="left">
+  <img src="static/images/readme_images/wf-landing-page.png" alt="Landing page wireframe" width="500">
+</div>
+
+This is the Characters page:
+<div align="left">
+  <img src="static/images/readme_images/wf-characters.png" alt="Characters page wireframe" width="500">
+</div>
+
+The Team page:
+<div align="left">
+  <img src="static/images/readme_images/wf-team.png" alt="Team page wireframe" width="500">
+</div>
+
+And the About page:
+<div align="left">
+  <img src="static/images/readme_images/wf-about.png" alt="About page wireframe" width="500">
+</div>
 
 #### Color Palette
-The color palette is based on the official Star Wars yellow and black, with some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
-![Color palette](static/images/readme_images/color-palette.png)
+The official Star Wars yellow and black provided inspiration:
+<div align="left">
+  <img src="static/images/readme_images/official-colors.png" alt="Official Star Wars colors" width="200">
+</div>
+
+The palette we developed has some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
+<div align="left">
+  <img src="static/images/readme_images/color-palette.png" alt="Color palette" width="500">
+</div>
+
+We used official colors for the lightsabers that are specific to each character:
+- Blue: #2e67f8
+- Green: #2ff924
+- Red: #c13d3d
+- Purple: #7851a9
+- Yellow: #f9ff58
+- White: #ddddff
 
 #### Typography
-We used Google Fonts for this project. The titles are Orbitron, which is similar to the Star Wars logo font.
-![Title font](static/images/readme_images/orbitron-font.png)
-The main font is Raleway, which is clear and easy to read.
-![Main font](static/images/readme_images/raleway-font.png)
+We used Google Fonts for this project. The titles are Orbitron, which is a Google Fonts option similar to the Star Wars logo font:
+<div align="left">
+  <img src="static/images/readme_images/orbitron-font.png" alt="Title font" width="400">
+</div>
+
+The main font is Raleway, which is clear and easy to read, for accessibility:
+<div align="left">
+  <img src="static/images/readme_images/raleway-font.png" alt="Main font" width="400">
+</div>
+
+#### Surface updates during development
+During development, the surface design was created with a different palette, typography, and styles, using images and colors to create mood and depth.
+
+### Screenshots
+<!-- Screenshots of the project -->
+
+The lightsaber cards on the landing page:
+<div align="left">
+  <img src="static/images/readme_images/landing-page2.png" alt="Lightsaber list on the landing page" width="500">
+</div>
+
+Lightsaber details:
+<div align="left">
+  <img src="static/images/readme_images/lightsaber-detail.png" alt="Lightsaber detail" width="500">
+</div>
+
+Character details:
+<div align="left">
+  <img src="static/images/readme_images/character-detail.png" alt="Character detail" width="500">
+</div>
+
+The Team page:
+<div align="left">
+  <img src="static/images/readme_images/team.png" alt="Team page" width="500">
+</div>
+
+## Testing
+### Lighthouse reports
+Desktop landing page:
+<div align="left">
+  <img src="static/images/readme_images/lh-desktop-landing.png" alt="Lighthouse testing desktop landing page" width="300">
+</div>
+
+Desktop team page:
+<div align="left">
+  <img src="static/images/readme_images/lh-desktop-team.png" alt="Lighthouse testing desktop team page" width="300">
+</div>
+
+Mobile landing page:
+<div align="left">
+  <img src="static/images/readme_images/lh-mobile-landing.png" alt="Lighthouse testing mobile landing page" width="300">
+</div>
+
+Mobile team page:
+<div align="left">
+  <img src="static/images/readme_images/lh-mobile-team.png" alt="Lighthouse testing mobile team page" width="300">
+</div>
 
 ## Future Implementations
+<!-- These are all the awesome things that the page will have in the future -->
 
 ## Tools & Technologies Used
 
@@ -104,3 +219,5 @@ The main font is Raleway, which is clear and easy to read.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
 ## Credits
+<!-- These are the lovely people and resources that we used to put this project together! -->
+Thanks to the whole team!

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/star-wars");
 :root {
   --bg: black;
   --secondary-bg: #333;
@@ -19,8 +19,24 @@
   --dark-grey: #333533;
 
   /* Fonts */
+  --title1: "Star Wars", sans-serif;
   --title: "Orbitron", sans-serif;
   --main-font: "Raleway", sans-serif;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-radius: 16px;
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --glass-backdrop: blur(4px);
+  --glass-border: 1px solid rgba(255, 157, 157, 0.13);
+
+  /* Commonly used CSS properties for consistency */
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+
+  /* Borders */
+  --dark-border: 2px solid #202020;
+  --dark-shadow: 2px -2px 15px 0 #202020;
 }
 
 /*                    General                  */
@@ -28,6 +44,16 @@ html,
 body {
   color: var(--saber-white);
   background: var(--bg);
+  cursor: none;
+}
+
+button,
+a,
+.btn,
+button:hover,
+a:hover,
+.btn:hover {
+  cursor: none;
 }
 
 .card {
@@ -43,13 +69,145 @@ a {
   text-decoration: none;
 }
 
+.cursor {
+  display: hidden;
+}
+
 .btn-primary {
   background-color: var(--bg);
   border: 2px solid var(--sw-yellow);
   color: var(--sw-yellow);
 }
 
+.lightsaber {
+  width: 10px;
+  height: 100%;
+  position: relative;
+  transform: rotate(-45deg);
+  margin-left: 10%;
+
+  .glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    filter: blur(6px);
+  }
+
+  .core {
+    position: absolute;
+    top: 5%;
+    right: 30%;
+    left: 30%;
+    bottom: 0;
+    filter: blur(2px);
+    background-color: white;
+  }
+
+  .handle {
+    position: absolute;
+    height: 25%;
+    width: 80%;
+    bottom: -20%;
+    background: linear-gradient(to left, #111 25%, #aaa 20%, #111);
+  }
+}
+
 /*                    General  Header                  */
+header {
+  background-color: #050505; /* Deep space black */
+  color: #ffe81f; /* Star Wars theme yellow */
+  border-bottom: 3px solid #ffe81f; /* Star Wars theme yellow */
+}
+.navbar {
+  background-color: #050505;
+  font-family: var(--title);
+  background-color: transparent;
+}
+
+.navbar-brand {
+  color: #ffe81f; /* Star Wars theme yellow */
+  font-size: 2rem; /* Larger font size for brand */
+}
+
+.navbar-brand:hover {
+  color: #ffd700; /* Lighter yellow on hover */
+}
+
+.navbar-toggler {
+  border-color: #ffe81f;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFE81F' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-link {
+  color: #ffe81f; /* Light saber blue */
+  margin: 0 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #c1d72e; /* Light saber green */
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link.active {
+  color: #4bd1f7; /* Star Wars theme yellow */
+}
+
+/* Navbar logo styling */
+.nav-logo {
+  height: 40px; /* Fixed height for logos */
+  width: auto; /* Auto width to maintain aspect ratio */
+  vertical-align: middle; /* Align logos with the text vertically */
+}
+
+hr {
+  height: 3px; /* Increase the height */
+  background-color: var(
+    --bright-yellow
+  ); /* Set the background color to the Star Wars theme yellow */
+  border: none; /* Remove any default border */
+}
+
+/* Ensure logos do not become too large on smaller screens */
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 30px; /* Smaller logos for mobile devices */
+  }
+}
+
+/* Adjustments for very small devices */
+@media (max-width: 480px) {
+  .nav-logo {
+    height: 25px; /* Even smaller logos for very small devices */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+/* Styling for social icons in the header, if any */
+.header-social-icons {
+  color: #4bd1f7; /* Light saber blue */
+}
+
+.header-social-icons:hover {
+  color: #c1d72e; /* Light saber green */
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* Star wars icon */
 
 /*                    General  Footer                   */
 
@@ -78,13 +236,20 @@ footer {
     font-size: 1.5rem; /* Even larger text on larger screens */
   }
 }
+/*                 Modal styling                      */
+.modal-content {
+  background-color: #1c1e21; /* Dark background for a "space" feel */
+  color: #ffe81f; /* Star Wars theme yellow */
+}
 
-nav ul {
-  gap: 1rem;
+.btn-primary {
+  background-color: #0062cc; /* Standard Bootstrap primary button color */
+  border-color: #005cbf;
+}
 
-  li {
-    list-style: none;
-  }
+.btn-primary:hover {
+  background-color: #004885;
+  border-color: #003f5e;
 }
 /*                 Max width setting                 */
 .container-max {
@@ -92,23 +257,125 @@ nav ul {
   margin: auto;
 }
 /*                  Footer                */
-.footer-social-icon {
-  font-size: 1.5em;
-  margin-right: 15px;
-}
-.footer-text {
-  font-size: 0.9em;
-}
 footer {
-  font-size: 1.1em; /* Larger footer text */
+  background-color: #050505; /* Deep space black */
+  color: #ffe81f; /* Star Wars theme yellow */
+  padding: 20px;
+  border-top: 3px solid #ffe81f; /* Star Wars theme yellow */
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
 }
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-column {
+  flex: 1 1 200px; /* Flex basis of 200px but can grow and shrink */
+  padding: 10px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffe81f;
+}
+
+.footer-text,
+.footer-link {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4bd1f7; /* Light saber blue */
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #c1d72e; /* Light saber green */
+}
+
+.footer-social-icons {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #4bd1f7; /* Light saber blue */
+}
+
+.footer-social-icons:hover {
+  color: #c1d72e; /* Light saber green */
+}
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  footer .container {
-    display: flex;
+  .footer-content {
     flex-direction: column;
     align-items: center;
   }
-  footer h5 {
-    margin-top: 20px;
+
+  .footer-column {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+/*                  Starry Sky                */
+.starry-sky {
+  position: relative;
+  width: 100%;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff;
+  animation: animateStar linear infinite;
+  z-index: 10;
+}
+
+@keyframes animateStar {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@media (pointer: fine) {
+  /* Rules for devices with mouse here */
+  .cursor {
+    display: block;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    z-index: 9999;
+
+    .glow {
+      background-color: var(--saber-blue);
+    }
+  }
+
+  html,
+  body,
+  button,
+  a,
+  .btn,
+  button:hover,
+  a:hover,
+  .btn:hover {
+    cursor: none;
   }
 }

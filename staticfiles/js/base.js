@@ -1,9 +1,4 @@
 // Navbar toggler
-document
-  .querySelector(".navbar-toggler")
-  .addEventListener("click", function () {
-    document.getElementById("burger").classList.toggle("active");
-  });
 
 // Sound effects
 document.addEventListener("DOMContentLoaded", function () {
@@ -23,12 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // Index to keep track of the current sound
-  let swingIndex = {index: 0};
-  let clashIndex = {index: 0};
+  let swingIndex = { index: 0 };
+  let clashIndex = { index: 0 };
 
   // Function to play the sound
   function playSound(soundList, currentIndex) {
-
     // Update the index to a different sound in a round-robin fashion
     while (true) {
       let randomIndex = Math.floor(Math.random() * soundList.length);
@@ -57,66 +51,124 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Cookie Functions 
+// Cookie Functions
 
-// Function to display the cookie consent modal if needed
-function checkCookieConsent() {
-  if (!localStorage.getItem('cookieConsent')) {
-      // Create a new modal instance and show it
-      var myModal = new bootstrap.Modal(document.getElementById('cookieConsentModal'), {
-          backdrop: 'static',  // Prevents closing the modal by clicking outside it
-          keyboard: false       // Prevents closing the modal with the keyboard
-      });
-      myModal.show();
-  }
-}
 
 // Function to accept cookies and hide the modal
 function acceptCookies() {
-  localStorage.setItem('cookieConsent', 'true');
-  var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
-  myModal.hide(); // Hide the modal after consent
+  try {
+    localStorage.setItem('cookieConsent', 'true');
+    var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
+    myModal.hide(); // Hide the modal after consent
+  } catch (error) {
+    console.error("Failed to accept cookies or hide the modal:", error);
+  }
+}
+
+// Function to check if cookie consent is already given
+function checkCookieConsent() {
+  if (!localStorage.getItem('cookieConsent')) {
+    var cookieModal = new bootstrap.Modal(document.getElementById('cookieConsentModal'));
+    cookieModal.show();
+  }
 }
 
 // Add event listener to hide modal and record consent when clicking outside the modal
 document.getElementById('cookieConsentModal').addEventListener('click', function(event) {
   if (event.target === this) {
-      acceptCookies(); // Treat clicks on the modal backdrop as consent
+    acceptCookies(); // Treat clicks on the modal backdrop as consent
   }
 });
 
 // Initialize cookie check when document is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+  try {
+    checkCookieConsent();
+  } catch (error) {
+    console.error("Failed to check cookie consent:", error);
+  }
+});
+
+// Event listener for the Accept button
+document.querySelector('.btn-primary').addEventListener('click', function() {
+  try {
+    acceptCookies();
+  } catch (error) {
+    console.error("Failed to handle accept button click:", error);
+  }
+});
+
+// Fallback in case Modal instance is not properly retrieved
+document.getElementById('cookieConsentModal').addEventListener('hidden.bs.modal', function () {
+  if (!localStorage.getItem('cookieConsent')) {
+    localStorage.setItem('cookieConsent', 'true');
+  }
+});
+
+// Add a listener for escape key to close modal
+document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {
+    try {
+      var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
+      myModal.hide();
+      localStorage.setItem('cookieConsent', 'true');
+    } catch (error) {
+      console.error("Failed to close modal with escape key:", error);
+    }
+  }
+});
+
+// Initialize cookie check when document is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
   checkCookieConsent();
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Define the background music
-  let bgAudio = new Audio('static/sounds/theme-song.mp3');
+  let bgAudio = new Audio("static/sounds/theme-song.mp3");
   bgAudio.loop = true; // Enable looping
   bgAudio.volume = 0.2; // Set a reasonable volume
 
   // Function to toggle music play/pause
   function toggleMusic() {
-      if (bgAudio.paused) {
-          bgAudio.play();
-          document.getElementById('toggle-music').textContent = 'Pause Star Wars Music';
-      } else {
-          bgAudio.pause();
-          document.getElementById('toggle-music').textContent = 'Play Star Wars Music';
-      }
+    var toggleButton = document.getElementById("toggle-music");
+    var icon = toggleButton.querySelector("i");
+    if (bgAudio.paused) {
+      bgAudio.play();
+      icon.className = "fa-solid fa-volume-high";
+    } else {
+      bgAudio.pause();
+      icon.className = "fa-solid fa-volume-xmark";
+    }
   }
 
   // Event listener for the music control button
-  document.getElementById('toggle-music').addEventListener('click', toggleMusic);
+  document
+    .getElementById("toggle-music")
+    .addEventListener("click", toggleMusic);
 
   // Optional: Autoplay policy may prevent audio from auto-playing without user interaction
-  bgAudio.addEventListener('ended', function() {
+  bgAudio.addEventListener(
+    "ended",
+    function () {
       this.currentTime = 0;
       this.play();
-  }, false);
+    },
+    false
+  );
 
   checkCookieConsent();
 });
 
+// Cursor
+
+const cursor = document.querySelector(".cursor");
+
+const positionElement = (e) => {
+  const mouseY = e.clientY - 10;
+  const mouseX = e.clientX + 5;
+
+  cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+};
+
+window.addEventListener("mousemove", positionElement);

@@ -1,3 +1,17 @@
+:root {
+  --sw-yellow: #ffe81f;
+  --spacing: 2px;
+  --twinkle-duration: 4s;
+}
+
+body,
+html {
+  font-family: var(--main-font);
+  background: black;
+  overflow-x: hidden;
+  color: white;
+}
+
 main {
   display: grid;
 }
@@ -10,6 +24,8 @@ hr {
   background: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.99)),
     url("https://res-console.cloudinary.com/dxr4xewpz/thumbnails/v1/image/upload/v1716673639/bGlnaHRzYWJlcnNfamtkYnIw/drilldown")
       center/cover no-repeat;
+  padding: 20px;
+  z-index: 1;
 }
 
 .title {
@@ -18,6 +34,13 @@ hr {
   color: var(--sw-yellow);
 }
 
+.title1 {
+  font-family: var(--title1);
+  color: var(--sw-yellow);
+}
+.text {
+  color: white;
+}
 .saber-container {
   height: 30vh;
   min-height: 150px;
@@ -31,55 +54,113 @@ hr {
   height: 100%;
   position: relative;
   transform: rotate(-45deg);
-
-  .glow {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px 8px 0 0;
-    filter: blur(6px);
-  }
-
-  .core {
-    position: absolute;
-    top: 5%;
-    right: 20%;
-    left: 30%;
-    bottom: 0;
-    filter: blur(2px);
-    background-color: white;
-  }
-
-  .handle {
-    position: absolute;
-    height: 25%;
-    width: 80%;
-    bottom: -20%;
-    background: linear-gradient(to left, #111 25%, #aaa 20%, #111);
-  }
 }
 
-.text {
+.lightsaber .glow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+  filter: blur(6px);
+}
+
+.lightsaber .core {
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  left: 30%;
+  bottom: 0;
+  filter: blur(2px);
+  background-color: white;
+}
+
+.lightsaber .handle {
+  position: absolute;
+  height: 25%;
+  width: 80%;
+  bottom: -20%;
+  background: linear-gradient(to left, #111 25%, #aaa 20%, #111);
+}
+
+span {
   font-family: var(--main-font);
+  color: var(--sw-white);
 }
 
 .card {
   background-color: transparent;
-  border: 1px soild black;
-}
-
-:root {
-  --twinkle-duration: 4s;
+  border: 1px solid black;
 }
 
 .stars-wrapper {
-  position: relative;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   pointer-events: none;
-  max-width: 1500px;
-  overflow: hidden;
+  z-index: -1;
 }
 
-/* Image styling for a better visual effect */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--sw-yellow);
+  border-radius: 50%;
+  animation: twinkle 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 img.img-fluid {
   border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.fade-in,
+.slide-in-left,
+.slide-in-right {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.active,
+.slide-in-left.active,
+.slide-in-right.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  transform: translateX(-100%);
+}
+
+.slide-in-right {
+  transform: translateX(100%);
+}
+
+.slide-in-left.active,
+.slide-in-right.active {
+  transform: translateX(0);
+}
+
+.header-section {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .header-section,
+  .glass-card {
+    margin: 10px;
+  }
 }

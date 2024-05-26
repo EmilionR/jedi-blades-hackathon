@@ -32,43 +32,19 @@
     <header class="container-max">
       <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container-fluid py-3">
-          <a class="navbar-brand sfx" href="/">JediBlades</a>
-          <button id="toggle-music" class="btn btn-warning sfx">
-            Play Star Wars Music
-          </button>
-
-          <button
-            class="navbar-toggler sfx"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+          <a class="navbar-brand sfx" href="/"
+            ><img
+              src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/q3oqyzmvtog2wrw8zh9v.png"
+              alt="Lightsabers"
+              class="nav-logo"
+            />JediBlades</a
           >
-            <div id="burger">
-              <div class="bun top"></div>
-              <div class="filling"></div>
-              <div class="bun bottom"></div>
-            </div>
+          <button id="toggle-music" class="btn btn-warning sfx">
+            <i class="fa-solid fa-volume-xmark"></i>
           </button>
-
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          </button>
+          <div class="navbar">
             <ul class="navbar-nav w-100 justify-content-around">
-              <li class="nav-item sfx">
-                <a
-                  class="nav-link {% if request.resolver_match.url_name == 'lightsaber-list' %}active{% endif %}"
-                  aria-current="page"
-                  href="{% url 'lightsaber-list' %}"
-                >
-                  <img
-                    src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/q3oqyzmvtog2wrw8zh9v.png"
-                    alt="Lightsabers"
-                    class="nav-logo"
-                  />
-                  <span>Lightsabers</span>
-                </a>
-              </li>
               <li class="nav-item sfx">
                 <a
                   class="nav-link sfx {% if request.resolver_match.url_name == 'team' %}active{% endif %}"
@@ -87,12 +63,10 @@
         </div>
       </nav>
     </header>
-
     <main>
-      {% block content %}
-      <!-- Page-specific content will go here -->
-      {% endblock %}
-
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
       <!-- Cookie Consent Modal -->
       <div
         class="modal fade"
@@ -107,28 +81,15 @@
               <h5 class="modal-title" id="cookieConsentModalLabel">
                 Cookie Consent
               </h5>
-              <button
-                type="button"
-                class="close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+
+                
+              
             </div>
             <div class="modal-body">
-              By clicking "Accept", you agree to the use of cookies to enhance
-              your browsing experience.
+              By clicking outside of this cookie modal , you agree to the use of cookies to enhance
+              your browsing experience. Cookies are small pieces of information that are held on your local device for a specified time . These can be used to track your personal data in our case third party cookies are used by cloudinary the provider of our free image hosting . Please visit their cookie policy for more information and do not hesitate to reach out to us with any questions you might have. Clicking outside of the cookie display will also enable sound effects and by continuing this will be taken as permission to play them. 
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-primary"
-                onclick="acceptCookies()"
-              >
-                Accept
-              </button>
-            </div>
+
           </div>
         </div>
       </div>
@@ -328,18 +289,14 @@
     <footer>
       <div class="container footer-content">
         <div class="footer-column">
-          <h5 class="footer-title">Connect With Us</h5>
-          <div>
-            <i class="fab fa-facebook-square footer-social-icons sfx"></i>
-            <i class="fab fa-twitter-square footer-social-icons sfx"></i>
-            <i class="fab fa-instagram-square footer-social-icons sfx"></i>
-          </div>
+         
+          <h5 class="footer-title">© 2024 Jedi Blades. All rights reserved.</h5>
         </div>
         <div class="footer-column">
           <h5 class="footer-title">Our Team</h5>
-          <a href="#" class="footer-link sfx">Apple / Apple </a><br />
-          <a href="#" class="footer-link sfx">Apple / Apple</a><br />
-          <a href="#" class="footer-link sfx">Apple / Apple</a>
+          <a href="{% url 'team' %}#jesse" class="footer-link sfx">Jesse Ross </a><br />
+          <a href="{% url 'team' %}#emil" class="footer-link sfx">Emil Jadersten </a><br />
+          <a href="{% url 'team' %}#johnny" class="footer-link sfx">Johnny Trinh</a>
         </div>
         <div class="footer-column">
           <h5 class="footer-title">Legal</h5>
@@ -357,7 +314,7 @@
             class="footer-link sfx"
             >Copyright and Trademark Policy </a
           ><br />
-          <a href="#" class="footer-link sfx">Cookie Policy</a>
+          
         </div>
       </div>
     </footer>
@@ -365,5 +322,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="{% static 'js/base.js' %}"></script>
+    <script> </script>
   </body>
 </html>

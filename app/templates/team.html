@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/team.css' %}" />
 
-<section id="team-section" class="section">
+<section id="team-section" class="section starry-sky">
   <div class="team-section-header">
-    <h2 class="heading-1">Meet The Team</h2>
+    <h1 class="heading-1">Meet The Team</h1>
     <p class="text">
       The team of JediBlades. Welcome to JediBlades! We are a passionate group
       of innovators and tech enthusiasts united by our love for lightsabers and
@@ -14,7 +14,7 @@
   </div>
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-10 col-md-6 col-lg-4">
-      <div class="team-cards-container">
+      <div class="team-cards-container" id="emil">
         <div class="team-member-card">
           <img
             src="https://res.cloudinary.com/dxr4xewpz/image/upload/v1716728917/emil-jedi_nccp9q.webp"
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="col-10 col-md-6 col-lg-4">
-      <div class="team-cards-container">
+      <div class="team-cards-container" id="johnny">
         <div class="team-member-card">
           <img
             src="https://res.cloudinary.com/dxr4xewpz/image/upload/v1716732064/johnny-sith_hqpgqz.webp"
@@ -76,7 +76,7 @@
       </div>
     </div>
     <div class="col-10 col-md-6 col-lg-4">
-      <div class="team-cards-container">
+      <div class="team-cards-container" id="jesse">
         <div class="team-member-card">
           <img
             src="https://res.cloudinary.com/dxr4xewpz/image/upload/v1716730624/jess-2_nfcuz5.webp"
@@ -107,5 +107,6 @@
     </div>
   </div>
 </section>
+<script src="{% static 'js/team.js' %}"></script>
 
 {% endblock %}

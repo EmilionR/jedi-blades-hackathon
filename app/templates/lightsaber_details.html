@@ -1,28 +1,32 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/lightsaber-detail.css' %}" />
 
-<div class="lightsaber-container">
-  <div class="header-section text-center py-4">
-    <h1 class="title">{{ lightsaber.name }}</h1>
-  </div>
-  <div class="container">
-    <div class="content-section">
-      <div class="row d-flex justify-content-center">
-        <div class="col-10 col-md-6 lightsaber-image">
-          <img
-            src="{{ lightsaber.image.url }}"
-            alt="{{ lightsaber.name }} Lightsaber"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-10 col-md-6">
-          <div class="sub-section">
-            <div class="card border-0">
-              <div class="card-body text-center">
-                <div class="my-3">
-                  <h2 class="text-center my-2 title">
-                    Wielded by {{ lightsaber.owner.name }}
-
+<div class="starry-sky" id="stars-wrapper">
+  <div class="lightsaber-container">
+    <div class="header-section text-center py-4 fade-in">
+      <h1 class="title1">{{ lightsaber.name }}</h1>
+    </div>
+    <div class="container">
+      <div class="content-section">
+        <div class="row d-flex justify-content-center">
+          <div class="col-10 col-md-6 lightsaber-image slide-in-left">
+            <div class="glass-card">
+              <img
+                src="{{ lightsaber.image.url }}"
+                alt="{{ lightsaber.name }} Lightsaber"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-10 col-md-6 slide-in-right">
+            <div class="sub-section">
+              <div class="glass-card">
+                <div class="card-body text-center">
+                  <div class="my-3">
+                    <h2 class="text-center my-2 title">
+                      Wielded by
+                      <span class="text">{{ lightsaber.owner.name }}</span>
+                    </h2>
                     <div class="col text-center saber-container">
                       <div class="lightsaber">
                         <div
@@ -33,25 +37,33 @@
                         <div class="handle"></div>
                       </div>
                     </div>
-                  </h2>
-                  <hr class="hr" />
+                    <hr class="hr" />
+                  </div>
+                  <h3 class="py-2 text-center title">
+                    Design
+                    <span
+                      class="d-inline-block rounded-circle"
+                      style="width: 20px; height: 20px; background-color: {{ lightsaber.color }};"
+                    ></span>
+                  </h3>
+                  <p class="py-2 text">{{ lightsaber.design }}</p>
                 </div>
-                <h3 class="py-2 text-center title">
-                  Design
-                  <span
-                    class="d-inline-block rounded-circle"
-                    style="width: 20px; height: 20px; background-color: {{ lightsaber.color }};"
-                  ></span>
-                </h3>
-                <p class="py-2 text">{{ lightsaber.design }}</p>
-                <h3 class="py-2 text-center title">Lightsaber Lore</h3>
-                <p class="py-2 text">{{ lightsaber.description }}</p>
+                
+                </div>
+                <div
+                  class="content-section text-center glass-card py-3 p-1 p-md-3 fade-in"
+                >
+                  <h3 class="py-2 text-center title">Lightsaber Lore</h3>
+                  <p class="py-2 text">{{ lightsaber.description }}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        {% endblock %}
       </div>
     </div>
   </div>
+
+  <script src="{% static 'js/details.js' %}"></script>
+  {% endblock %}
 </div>
