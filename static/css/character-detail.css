@@ -1,117 +1,140 @@
-body, html {
-    color: #FFE81F !important;
-   
-
-    overflow-x: hidden;
+body,
+html {
+  color: #ffe81f !important;
+  overflow-x: hidden;
 }
 
-.fade-in, .slide-in-left, .slide-in-right {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+h1 {
+  font-family: var(--title1);
 }
 
-.fade-in.active, .slide-in-left.active, .slide-in-right.active {
-    opacity: 1;
-    transform: translateY(0);
+h2,
+h3 {
+  font-family: var(--title);
+}
+
+p {
+  font-family: var(--main-font);
+}
+
+hr {
+  color: var(--sw-yellow);
+  width: 50%;
+}
+
+.text-white {
+  color: var(--sw-white);
+}
+
+.fade-in,
+.slide-in-left,
+.slide-in-right {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.active,
+.slide-in-left.active,
+.slide-in-right.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .slide-in-left {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .slide-in-right {
-    transform: translateX(100%);
+  transform: translateX(100%);
 }
 
-.slide-in-left.active, .slide-in-right.active {
-    transform: translateX(0);
+.slide-in-left.active,
+.slide-in-right.active {
+  transform: translateX(0);
 }
 
 .stars-wrapper {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: #FFE81F;
-    border-radius: 50%;
-    animation: twinkle 1.5s infinite alternate ease-in-out;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffe81f;
+  border-radius: 50%;
+  animation: twinkle 1.5s infinite alternate ease-in-out;
 }
 
 @keyframes twinkle {
-    from { opacity: 0.2; }
-    to { opacity: 1; }
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 20px;
-    margin: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index:80;
-}
-
-
-
-h1, h2, h3 {
-    font-family: 'Star Wars', sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 80;
 }
 
 .header-section {
-
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 @media (max-width: 768px) {
-    .header-section, .glass-card {
-        margin: 10px;
-    }
+  .header-section,
+  .glass-card {
+    margin: 10px;
+  }
 }
 
 /* Header Section Styling */
 .header-section {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for headers */
-    padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for headers */
+  padding: 20px 0;
 }
 
 /* Glassmorphism Style for Cards */
 .card {
-    background-color: rgba(255, 255, 255, 0.1); /* Translucent white background */
-    backdrop-filter: blur(10px); /* Blur effect to create a frosted glass look */
-    border-radius: 15px; /* Rounded corners for the card */
-    border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle white border */
+  background-color: rgba(255, 255, 255, 0.1); /* Translucent white background */
+  backdrop-filter: blur(10px); /* Blur effect to create a frosted glass look */
+  border-radius: 15px; /* Rounded corners for the card */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle white border */
 }
 
 /* Styling for images */
 img.img-fluid {
-    border-radius: 15px; /* Rounded corners for images */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Shadow for depth */
+  border-radius: 15px; /* Rounded corners for images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
 }
 
 /* Styling for color indicators, like lightsaber colors */
 
-
 /* Text alignment */
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .header-section, .card {
-        margin: 10px; /* Smaller margins for mobile devices */
-    }
+  .header-section,
+  .card {
+    margin: 10px; /* Smaller margins for mobile devices */
+  }
 }
-
