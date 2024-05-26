@@ -240,6 +240,21 @@ nav ul {
     list-style: none;
   }
 }
+/*                 Modal styling                      */
+.modal-content {
+  background-color: #1c1e21; /* Dark background for a "space" feel */
+  color: #ffe81f; /* Star Wars theme yellow */
+}
+
+.btn-primary {
+  background-color: #0062cc; /* Standard Bootstrap primary button color */
+  border-color: #005cbf;
+}
+
+.btn-primary:hover {
+  background-color: #004885;
+  border-color: #003f5e;
+}
 /*                 Max width setting                 */
 .container-max {
   max-width: 1800px;
