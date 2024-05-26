@@ -1,0 +1,44 @@
+main {
+  display: grid;
+}
+
+hr {
+  color: var(--sw-yellow);
+}
+
+.lightsaber-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.99)),
+    url("https://res-console.cloudinary.com/dxr4xewpz/thumbnails/v1/image/upload/v1716673639/bGlnaHRzYWJlcnNfamtkYnIw/drilldown")
+      center/cover no-repeat;
+}
+
+.title {
+  font-family: var(--title);
+  letter-spacing: var(--spacing);
+  color: var(--sw-yellow);
+}
+
+.text {
+  font-family: var(--main-font);
+}
+
+.card {
+  background-color: transparent;
+  border: 1px soild black;
+}
+
+:root {
+  --twinkle-duration: 4s;
+}
+
+.stars-wrapper {
+  position: relative;
+  pointer-events: none;
+  max-width: 1500px;
+  overflow: hidden;
+}
+
+/* Image styling for a better visual effect */
+img.img-fluid {
+  border-radius: 15px;
+}
