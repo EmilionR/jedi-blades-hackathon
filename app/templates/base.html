@@ -22,9 +22,10 @@
   <body class="p-0 m-0">
     <!-- Navbar for medium to large screens: Always expanded -->
     <header class="container-max">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark ">
           <div class="container-fluid  py-3">
               <a class="navbar-brand sfx" href="/">JediBlades</a>
+              <button id="toggle-music" class="btn btn-warning">Play Star Wars Music</button>
              
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <div id="burger">
@@ -36,16 +37,18 @@
             
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="navbar-nav w-100 justify-content-around">
-                      <li class="nav-item sfx">
-                          <a class="nav-link active" aria-current="page" href="{% url 'lightsaber-list' %}">
-                              <i class="fas fa-home"></i> <span>Lightsabers</span>
-                          </a>
-                      </li>
-                      <li class="nav-item sfx">
-                          <a class="nav-link" href="{% url 'team' %}">
-                              <i class="fas fa-users"></i> <span>Team</span>
-                          </a>
-                      </li>
+                    <li class="nav-item sfx">
+                      <a class="nav-link {% if request.resolver_match.url_name == 'lightsaber-list' %}active{% endif %}" aria-current="page" href="{% url 'lightsaber-list' %}">
+                          <img src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/q3oqyzmvtog2wrw8zh9v.png" alt="Lightsabers" class="nav-logo">
+                          <span>Lightsabers</span>
+                      </a>
+                  </li>
+                  <li class="nav-item sfx">
+                      <a class="nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}" href="{% url 'team' %}">
+                          <img src="https://res.cloudinary.com/digqsxx3z/image/upload/v1716671824/dxhe7dl6mgwsgoxigk0e.png"  alt="Team" class="nav-logo">
+                          <span>Team</span>
+                      </a>
+                  </li>
                   </ul>
               </div>
           </div>
@@ -56,6 +59,26 @@
       {% block content %}
       <!-- Page-specific content will go here -->
       {% endblock %}
+
+      <!-- Cookie Consent Modal -->
+      <div class="modal fade" id="cookieConsentModal" tabindex="-1" aria-labelledby="cookieConsentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cookieConsentModalLabel">Cookie Consent</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    By clicking "Accept", you agree to the use of cookies to enhance your browsing experience.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="acceptCookies()">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
      <!-- Copyright policy  -->
       <div class="modal fade  border-dark " id="policyModal" tabindex="-1" role="dialog" aria-labelledby="policyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url('https://fonts.cdnfonts.com/css/star-wars');
 :root {
   --bg: black;
   --secondary-bg: #333;
@@ -19,6 +19,7 @@
   --dark-grey: #333533;
 
   /* Fonts */
+  --title1: "Star Wars", sans-serif;
   --title: "Orbitron", sans-serif;
   --main-font: "Raleway", sans-serif;
 
@@ -55,6 +56,7 @@ a {
 }
 
 .btn-primary {
+
   background-color: var(--bg);
   border: 2px solid var(--sw-yellow);
   color: var(--sw-yellow);
@@ -69,7 +71,7 @@ header {
 .navbar {
   padding: 0.5rem 1rem;
   background-color: #050505;
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Star Wars', sans-serif; 
   background-color: transparent;
 }
 
@@ -91,7 +93,7 @@ header {
 }
 
 .navbar-nav .nav-link {
-  color: #4bd1f7; /* Light saber blue */
+  color: #ffe81f; /* Light saber blue */
   margin: 0 10px;
 }
 
@@ -101,8 +103,30 @@ header {
 
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-link.active {
-  color: #ffe81f; /* Star Wars theme yellow */
+  color: #4bd1f7; /* Star Wars theme yellow */
 }
+
+/* Navbar logo styling */
+.nav-logo {
+  height: 40px;  /* Fixed height for logos */
+  width: auto;   /* Auto width to maintain aspect ratio */
+  vertical-align: middle; /* Align logos with the text vertically */
+}
+
+/* Ensure logos do not become too large on smaller screens */
+@media (max-width: 768px) {
+  .nav-logo {
+      height: 30px; /* Smaller logos for mobile devices */
+  }
+}
+
+/* Adjustments for very small devices */
+@media (max-width: 480px) {
+  .nav-logo {
+      height: 25px; /* Even smaller logos for very small devices */
+  }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -215,6 +239,21 @@ nav ul {
   li {
     list-style: none;
   }
+}
+/*                 Modal styling                      */
+.modal-content {
+  background-color: #1c1e21; /* Dark background for a "space" feel */
+  color: #ffe81f; /* Star Wars theme yellow */
+}
+
+.btn-primary {
+  background-color: #0062cc; /* Standard Bootstrap primary button color */
+  border-color: #005cbf;
+}
+
+.btn-primary:hover {
+  background-color: #004885;
+  border-color: #003f5e;
 }
 /*                 Max width setting                 */
 .container-max {
