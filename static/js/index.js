@@ -80,4 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     starrySky.appendChild(star);
   }
+  const animateLightsaberCards = () => {
+    const lightsaberCards = document.querySelectorAll('.lightsaber-card');
+    lightsaberCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.3}s`;
+        card.classList.add('active');
+    });
+};
+
+animateLightsaberCards();
 });
