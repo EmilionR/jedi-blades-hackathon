@@ -60,6 +60,10 @@ All user stories are mapped to Issues in Github, with acceptance criteria and ta
 - Team page: As a site user I can view a page about the team so that I can learn about the developers behind the project
 - Team members: As a site user I can see the team members so that I can learn more about the team
 
+### Structure
+#### Entity relationship diagram
+<!-- These are the models that we used to build the site, and how they relate -->
+
 ### Features
 #### Landing page
 The landing page includes:
@@ -143,11 +147,31 @@ The main font is Raleway, which is clear and easy to read, for accessibility:
   <img src="static/images/readme_images/raleway-font.png" alt="Main font" width="400">
 </div>
 
-#### Surface updates
-In the finished project, the surface design was created with a different palette, typography, and styles, using images and transparency to create mood and depth.
+#### Surface updates during development
+During development, the surface design was created with a different palette, typography, and styles, using images and colors to create mood and depth.
 
 ### Screenshots
-<!-- Screenshots of the completed project -->
+<!-- Screenshots of the project -->
+
+The lightsaber cards on the landing page:
+<div align="left">
+  <img src="static/images/readme_images/landing-page2.png" alt="Lightsaber list on the landing page" width="500">
+</div>
+
+Lightsaber details:
+<div align="left">
+  <img src="static/images/readme_images/lightsaber-detail.png" alt="Lightsaber detail" width="500">
+</div>
+
+Character details:
+<div align="left">
+  <img src="static/images/readme_images/character-detail.png" alt="Character detail" width="500">
+</div>
+
+The Team page:
+<div align="left">
+  <img src="static/images/readme_images/team.png" alt="Team page" width="500">
+</div>
 
 ## Testing
 ### Lighthouse reports
@@ -195,3 +219,5 @@ Mobile team page:
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
 ## Credits
+<!-- These are the lovely people and resources that we used to put this project together! -->
+Thanks to the whole team!
