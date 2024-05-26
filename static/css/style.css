@@ -33,6 +33,10 @@
   /* Commonly used CSS properties for consistency */
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
+
+  /* Borders */
+  --dark-border: 2px solid #202020;
+  --dark-shadow: 2px -2px 15px 0 #202020;
 }
 
 /*                    General                  */
