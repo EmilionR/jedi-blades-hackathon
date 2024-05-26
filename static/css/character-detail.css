@@ -1,0 +1,58 @@
+/* Importing a Star Wars themed font */
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+:root {
+    --twinkle-duration: 4s;
+}
+
+body, html {
+    color: #FFE81F; /* Star Wars yellow for all text */
+   /* Consistent font across all text */
+}
+
+.stars-wrapper {
+    position: relative;
+    pointer-events: none;
+    max-width: 1500px; /* Limit the maximum width of the starry background */
+    overflow: hidden;
+}
+
+/* Base Styles for headings */
+h1, h2, h3 {
+    font-family: 'Star Wars', sans-serif; /* Ensuring font consistency in headings */
+}
+
+/* Header Section Styling */
+.header-section {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for headers */
+    padding: 20px 0;
+}
+
+/* Glassmorphism Style for Cards */
+.card {
+    background-color: rgba(255, 255, 255, 0.1); /* Translucent white background */
+    backdrop-filter: blur(10px); /* Blur effect to create a frosted glass look */
+    border-radius: 15px; /* Rounded corners for the card */
+    border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle white border */
+}
+
+/* Styling for images */
+img.img-fluid {
+    border-radius: 15px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Shadow for depth */
+}
+
+/* Styling for color indicators, like lightsaber colors */
+
+
+/* Text alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-section, .card {
+        margin: 10px; /* Smaller margins for mobile devices */
+    }
+}
