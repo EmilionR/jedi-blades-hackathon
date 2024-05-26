@@ -120,3 +120,15 @@ document.addEventListener("DOMContentLoaded", function() {
   checkCookieConsent();
 });
 
+// Cursor
+
+const cursor = document.querySelector('.cursor');
+
+const positionElement = (e)=> {
+  const mouseY = e.clientY - 10;
+  const mouseX = e.clientX + 5;
+   
+  cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+}
+
+window.addEventListener('mousemove', positionElement)
