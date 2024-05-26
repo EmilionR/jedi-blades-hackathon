@@ -59,10 +59,19 @@
 /* Light / Dark toggle */
 /* Select your side */
 .select-your-side {
-  background-size: cover;
-  background-position: center;
   min-height: 80vh;
   position: relative;
+  background-image: linear-gradient(
+    200deg,
+    black 45.45%,
+    #112 45.45%,
+    #112 50%,
+    black 50%,
+    black 95.45%,
+    #112 95.45%,
+    #112 100%
+  );
+  background-size: 1608.09px 585.3px;
 }
 
 h3 {
@@ -187,8 +196,6 @@ h3 {
 
 /* Lightsaber display section */
 
-
-
 /* Lightsaber Card Styling with Keyframes for Glowing Effect */
 .lightsaber-card {
   z-index: 2;
@@ -258,5 +265,4 @@ h3 {
 }
 
 @media (min-width: 1024px) {
-  
 }
