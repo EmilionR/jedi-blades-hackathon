@@ -23,6 +23,7 @@ The deployed app is available [here](https://jedi-blades-786cf143833b.herokuapp.
     - [User Goals](#user-goals)
     - [Features](#features)
     - [Surface](#surface)
+    - [Responsiveness](#responsiveness)
 - [Testing](#testing)
 - [Future Implementations](#future-implementations)
 - [Tools & Technologies Used](#tools--technologies-used)
@@ -38,6 +39,59 @@ Whether you are a Jedi or a Sith, you can find the perfect lightsaber for your p
 
 #### User Stories
 All user stories are mapped to Issues in Github, with acceptance criteria and tasks. We tracked the issues with a Github Project [progress board](https://github.com/users/EmilionR/projects/6) and grouped them into Epics so that we could follow Agile methodology. <br>
+
+### Dark Side Toggle
+**As a site user, I want to be able to toggle between the light side and the dark side so that I can choose my allegiance.**
+- **Acceptance Criteria**:
+  - There is a toggle switch or button on the site to switch between light and dark side themes.
+  - The selected theme is visually represented across the site.
+  - The user’s choice is remembered during their session.
+
+### Team Page
+**As a site user, I want to view a page about the team so that I can learn about the developers behind the project.**
+- **Acceptance Criteria**:
+  - There is a dedicated team page accessible from the main navigation.
+  - The team page includes photos, names, and brief bios of each team member.
+  - Links to team members' social profiles or personal websites are available.
+
+### Site Navigation
+**As a site user, I want to easily navigate the site so that I can find any page or section without issues.**
+- **Acceptance Criteria**:
+  - A consistent navigation bar is present on all pages.
+  - Links are clearly labeled and easy to understand.
+  - The navigation bar includes links to the home page, lightsaber list, character list, team page, and other relevant sections.
+
+### Character Details Page
+**As a site user, I want to view a character's details page so that I can learn more about the character.**
+- **Acceptance Criteria**:
+  - Clicking on a character’s name or image takes the user to a detailed character page.
+  - The character details page includes a large image of the character, their name, alignment (light or dark side), home planet, and lore.
+  - Additional information such as notable battles, allies, and enemies may also be included.
+
+### Lightsaber Details
+**As a site user, I want to view a dedicated page for a specific lightsaber so that I can learn more about it.**
+- **Acceptance Criteria**:
+  - Clicking on a lightsaber’s name or image takes the user to a detailed lightsaber page.
+  - The lightsaber details page includes a large image of the lightsaber, its name, the character who wields it, and design and lore details.
+  - Information about the lightsaber’s features, materials, and any unique characteristics is provided.
+
+### Character List
+**As a site user, I want to view a list of characters so that I can browse and find any character.**
+- **Acceptance Criteria**:
+  - There is a dedicated character list page accessible from the main navigation.
+  - The character list page displays all characters in a grid or list format.
+  - Each character entry includes a thumbnail image and the character’s name.
+  - Clicking on a character entry takes the user to the character’s detail page.
+
+### Sound Effects
+**As a site user, I want to hear sound effects when interacting with the site so that I can have an immersive experience.**
+- **Acceptance Criteria**:
+  - Relevant sound effects play during key interactions (e.g., lightsaber toggle, navigation clicks).
+  - Sound effects can be toggled on and off by the user.
+  - The sound effects are thematically appropriate and enhance the user experience without being intrusive.
+
+By focusing on these user stories, we ensure that our website meets the needs and expectations of our users, providing an engaging and intuitive experience for all visitors. Each story is linked to specific tasks and acceptance criteria to facilitate clear and measurable development progress.
+
 
 **EPIC - UI & Navigation**
 - Dark side toggle: As a site user I can join the dark side so that I can be a sith lord
@@ -116,6 +170,10 @@ And the About page:
 <div align="left">
   <img src="static/images/readme_images/wf-about.png" alt="About page wireframe" width="500">
 </div>
+
+## Testing
+### Microsoft Edge
+The website works fine when using Microsoft Edge.
 
 #### Color Palette
 The official Star Wars yellow and black provided inspiration:
