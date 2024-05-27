@@ -80,6 +80,10 @@ a {
   color: var(--sw-yellow);
 }
 
+.btn-warning {
+  background-color: var(--sw-yellow);
+}
+
 .lightsaber {
   width: 10px;
   height: 100%;
