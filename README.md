@@ -88,7 +88,11 @@ The team page shows the talented Sabersmiths who forged the Jedi Blades project.
 
 #### Wireframes
 
-We started out with these wireframes:
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+we choose to used [Balsamiq](https://balsamiq.com/wireframes) to design our site wireframes.
+
+<details>
+<summary> Click here to see all Wireframes </summary>
 
 <div align="left">
   <img src="static/images/readme_images/wf-original-desktop.png" alt="Original desktop wireframe" width="300">
@@ -119,6 +123,7 @@ And the About page:
 <div align="left">
   <img src="static/images/readme_images/wf-about.png" alt="About page wireframe" width="500">
 </div>
+</details>
 
 #### Color Palette
 
@@ -129,15 +134,16 @@ The official Star Wars yellow and black provided inspiration:
 </div>
 
 We used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
+
 ```css
 :root {
-    --bg: black;
-  --sw-yellow: #FFE81F;
+  --bg: black;
+  --sw-yellow: #ffe81f;
   --saber-blue: hsl(223, 94%, 58%);
-  --saber-red: #C13D3D;
-  --saber-white: #DDDDFF;
+  --saber-red: #c13d3d;
+  --saber-white: #ddddff;
   /* Color palette */
-  --light-grey: #D6D6D6;
+  --light-grey: #d6d6d6;
   --dark-grey: #333533;
   /* Fonts */
   --title1: "Star Wars", sans-serif;
@@ -192,7 +198,7 @@ During development, we refined the visual design, using images and colors to cre
 The lightsaber cards on the landing page:
 
 <div align="left">
-  <img src="static/images/readme_images/landing-page2.png" alt="Lightsaber list on the landing page" width="500">
+  <img src="static/images/readme_images/landing-page.png" alt="Lightsaber list on the landing page" width="500">
 </div>
 
 Lightsaber details:
