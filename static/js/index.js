@@ -11,7 +11,7 @@ document.getElementById("lightSide").addEventListener("click", function () {
 // Set click events for Balance
 document.getElementById("bothSides").addEventListener("click", function () {
   updateContent(
-    "https://res.cloudinary.com/dxr4xewpz/image/upload/v1716761534/jedi-logo_zyk5f8.png",
+    "https://res.cloudinary.com/dxr4xewpz/image/upload/v1716809823/blanace_xb5p8b.png",
     "Balance is key. You walk the fine line between light and dark, harnessing the powers of both sides of the Force. Your journey is one of equilibrium, seeking harmony in a galaxy divided by conflict.",
     "blend-mode"
   );
