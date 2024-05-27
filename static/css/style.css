@@ -80,6 +80,9 @@ a {
   color: var(--sw-yellow);
 }
 
+.btn-warning {
+  background-color: var(--sw-yellow);
+
 .txt-l {
   font-size: 1.5rem;
   font-family: var(--title);
