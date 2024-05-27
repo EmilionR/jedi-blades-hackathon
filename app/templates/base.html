@@ -44,7 +44,7 @@
               class="nav-logo"
             />JediBlades</a
           >
-          <button id="toggle-music" class="btn btn-warning sfx">
+          <button id="toggle-music" class="btn btn-warning sfx" aria-label="Play Star Wars music.">
             <i class="fa-solid fa-volume-xmark"></i>
           </button>
           <div class="navbar">
@@ -191,6 +191,7 @@
                 type="button"
                 class="btn btn-secondary"
                 data-dismiss="modal"
+                aria-label="Close"
               >
                 Close
               </button>
@@ -315,14 +316,13 @@
         <div class="footer-column">
           <h5 class="footer-title">Our Team</h5>
           <a href="{% url 'team' %}#jesse" class="footer-link sfx"
-            >Jesse Ross </a
-          ><br />
+          aria-label="See the team member">Jesse Ross </a><br />
           <a href="{% url 'team' %}#emil" class="footer-link sfx"
-            >Emil Jadersten </a
-          ><br />
+             aria-label="See the team member">Emil Jädersten </a><br />
           <a href="{% url 'team' %}#johnny" class="footer-link sfx"
-            >Johnny Trinh</a
-          >
+             aria-label="See the team member">Johnny Trinh</a><br />
+          <a href="{% url 'team' %}#salma" class="footer-link sfx"
+             aria-label="See the team member">Salma Ahmed</a>
         </div>
         <div class="footer-column">
           <h5 class="footer-title">Legal</h5>
