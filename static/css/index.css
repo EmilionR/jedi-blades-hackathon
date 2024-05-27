@@ -222,6 +222,7 @@ h3 {
 
 .card-title {
   font-family: "Star Wars", sans-serif;
+  color: var(--bright-yellow);
 }
 
 .saber-container {
