@@ -70,6 +70,7 @@ The landing page includes:
 - A "Choose your path" button to filter the available lightsabers by light and/or dark side
 - The selection of lightsabers. Each lightsaber card shows an image, the name, color, and owner of the lightsaber, and buttons to see a detail about that saber or character.
 - The cursor, in the shape of a lightsaber.
+- Compatibility with reduced motion settings
 
 #### Lightsaber details
 
@@ -125,12 +126,6 @@ The official Star Wars yellow and black provided inspiration:
 
 <div align="left">
   <img src="static/images/readme_images/official-colors.png" alt="Official Star Wars colors" width="200">
-</div>
-
-The palette we developed has some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
-
-<div align="left">
-  <img src="static/images/readme_images/color-palette.png" alt="Color palette" width="500">
 </div>
 
 We used official colors for the lightsabers that are specific to each character:
