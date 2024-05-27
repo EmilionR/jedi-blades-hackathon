@@ -34,7 +34,7 @@
               <p class="my-2 py-2 txt-l">
                 Lightsaber:
                 {% for lightsaber in character.lightsaber.all %}
-                <a href="/lightsaber/{{ lightsaber.pk }}">{{ lightsaber.name }}</a>
+                <a class="sfx" href="/lightsaber/{{ lightsaber.pk }}">{{ lightsaber.name }}</a>
                 {% endfor %}
               </p>
             </div>
