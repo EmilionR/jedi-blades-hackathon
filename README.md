@@ -70,6 +70,7 @@ The landing page includes:
 - A "Choose your path" button to filter the available lightsabers by light and/or dark side
 - The selection of lightsabers. Each lightsaber card shows an image, the name, color, and owner of the lightsaber, and buttons to see a detail about that saber or character.
 - The cursor, in the shape of a lightsaber.
+- Compatibility with reduced motion settings
 
 #### Lightsaber details
 
@@ -127,11 +128,35 @@ The official Star Wars yellow and black provided inspiration:
   <img src="static/images/readme_images/official-colors.png" alt="Official Star Wars colors" width="200">
 </div>
 
-The palette we developed has some subtler colors for visual depth, and high contrast for accessibility. It was created with [Coolors](https://coolors.co/).
-
-<div align="left">
-  <img src="static/images/readme_images/color-palette.png" alt="Color palette" width="500">
-</div>
+We used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
+```css
+:root {
+    --bg: black;
+  --sw-yellow: #FFE81F;
+  --saber-blue: hsl(223, 94%, 58%);
+  --saber-red: #C13D3D;
+  --saber-white: #DDDDFF;
+  /* Color palette */
+  --light-grey: #D6D6D6;
+  --dark-grey: #333533;
+  /* Fonts */
+  --title1: "Star Wars", sans-serif;
+  --title: "Orbitron", sans-serif;
+  --main-font: "Raleway", sans-serif;
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-radius: 16px;
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --glass-backdrop: blur(4px);
+  --glass-border: 1px solid rgba(255, 157, 157, 0.13);
+  /* Commonly used CSS properties for consistency */
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  /* Borders */
+  --dark-border: 2px solid #202020;
+  --dark-shadow: 2px -2px 15px 0 #202020;
+}
+```
 
 We used official colors for the lightsabers that are specific to each character:
 
