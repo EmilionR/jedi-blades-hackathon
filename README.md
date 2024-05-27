@@ -102,11 +102,6 @@ Then we had more ideas for scrolling text and a Light Side/Dark Side options:
   <img src="static/images/readme_images/wf-landing-page.png" alt="Landing page wireframe" width="500">
 </div>
 
-This is the Characters page:
-<div align="left">
-  <img src="static/images/readme_images/wf-characters.png" alt="Characters page wireframe" width="500">
-</div>
-
 The Team page:
 <div align="left">
   <img src="static/images/readme_images/wf-team.png" alt="Team page wireframe" width="500">
@@ -148,7 +143,7 @@ The main font is Raleway, which is clear and easy to read, for accessibility:
 </div>
 
 #### Surface updates during development
-During development, the surface design was created with a different palette, typography, and styles, using images and colors to create mood and depth.
+During development, we refined the visual design, using images and colors to create mood and depth.
 
 ### Screenshots
 <!-- Screenshots of the project -->
