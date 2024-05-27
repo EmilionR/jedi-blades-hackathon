@@ -128,6 +128,36 @@ The official Star Wars yellow and black provided inspiration:
   <img src="static/images/readme_images/official-colors.png" alt="Official Star Wars colors" width="200">
 </div>
 
+We used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
+```css
+:root {
+    --bg: black;
+  --sw-yellow: #FFE81F;
+  --saber-blue: hsl(223, 94%, 58%);
+  --saber-red: #C13D3D;
+  --saber-white: #DDDDFF;
+  /* Color palette */
+  --light-grey: #D6D6D6;
+  --dark-grey: #333533;
+  /* Fonts */
+  --title1: "Star Wars", sans-serif;
+  --title: "Orbitron", sans-serif;
+  --main-font: "Raleway", sans-serif;
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-radius: 16px;
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --glass-backdrop: blur(4px);
+  --glass-border: 1px solid rgba(255, 157, 157, 0.13);
+  /* Commonly used CSS properties for consistency */
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  /* Borders */
+  --dark-border: 2px solid #202020;
+  --dark-shadow: 2px -2px 15px 0 #202020;
+}
+```
+
 We used official colors for the lightsabers that are specific to each character:
 
 - Blue: #2e67f8
