@@ -1,0 +1,95 @@
+
+section {
+    width: 100%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+.heading-1 {
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+    font-weight: 300;
+    font-family: var(--title1);
+    letter-spacing: var(--spacing);
+    color: var(--gold-yellow);
+}
+
+.text {
+    width: 90%;
+    font-family: var(--title);
+    text-align: justify;
+}
+
+img {
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+.lightsaber-image-container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.overlay:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#crystal {
+    top: 50%;
+    right: 30%;
+    width: 10%;
+    height: 10%;
+}
+
+#hilt {
+    top: 30%;
+    left: 25%;
+    width: 20%;
+    height: 20%;
+}
+
+#emitter {
+    top: 10%;
+    left: 50%;
+    width: 15%;
+    height: 15%;
+}
+
+#blade {
+    top: 55%;
+    left: 75%;
+    width: 30%;
+    height: 20%;
+}
+
+#hover-info {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    z-index: 1000;
+}
+
+.heading-2 {
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+    font-weight: 300;
+    font-family: var(--title1);
+    letter-spacing: var(--spacing);
+    color: var(--gold-yellow);
+    margin-left: 2rem;
+}

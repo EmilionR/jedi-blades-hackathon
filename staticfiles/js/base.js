@@ -6,15 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Arrays of sound file URLs
   const swingSounds = [
-    "static/sounds/lightsaber-1.mp3",
-    "static/sounds/lightsaber-2.mp3",
-    "static/sounds/lightsaber-3.mp3",
-    "static/sounds/lightsaber-4.mp3",
+    "/static/sounds/lightsaber-1.mp3",
+    "/static/sounds/lightsaber-2.mp3",
+    "/static/sounds/lightsaber-3.mp3",
+    "/static/sounds/lightsaber-4.mp3",
   ];
   const clashSounds = [
-    "static/sounds/clash-1.mp3",
-    "static/sounds/clash-2.mp3",
-    "static/sounds/clash-3.mp3",
+    "/static/sounds/clash-1.mp3",
+    "/static/sounds/clash-2.mp3",
+    "/static/sounds/clash-3.mp3",
   ];
 
   // Index to keep track of the current sound
@@ -33,32 +33,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Select the sound to play
-    audio = new Audio(soundList[currentIndex.index]);
+    let audio = new Audio(soundList[currentIndex.index]);
+
+    // Set the volume to a lower level
+    audio.volume = 0.2;
 
     // Play the current sound
     audio.play();
   }
 
-  for (item of hoverSaber) {
+  hoverSaber.forEach((item) => {
     item.addEventListener("mouseenter", function () {
       playSound(swingSounds, swingIndex);
     });
 
     item.addEventListener("click", function () {
-      // Play the sound
       playSound(clashSounds, clashIndex);
     });
-  }
+  });
 });
 
 // Cookie Functions
 
-
 // Function to accept cookies and hide the modal
 function acceptCookies() {
   try {
-    localStorage.setItem('cookieConsent', 'true');
-    var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
+    localStorage.setItem("cookieConsent", "true");
+    let myModal = bootstrap.Modal.getInstance(
+      document.getElementById("cookieConsentModal")
+    );
     myModal.hide(); // Hide the modal after consent
   } catch (error) {
     console.error("Failed to accept cookies or hide the modal:", error);
@@ -67,21 +70,25 @@ function acceptCookies() {
 
 // Function to check if cookie consent is already given
 function checkCookieConsent() {
-  if (!localStorage.getItem('cookieConsent')) {
-    var cookieModal = new bootstrap.Modal(document.getElementById('cookieConsentModal'));
+  if (!localStorage.getItem("cookieConsent")) {
+    let cookieModal = new bootstrap.Modal(
+      document.getElementById("cookieConsentModal")
+    );
     cookieModal.show();
   }
 }
 
 // Add event listener to hide modal and record consent when clicking outside the modal
-document.getElementById('cookieConsentModal').addEventListener('click', function(event) {
-  if (event.target === this) {
-    acceptCookies(); // Treat clicks on the modal backdrop as consent
-  }
-});
+document
+  .getElementById("cookieConsentModal")
+  .addEventListener("click", function (event) {
+    if (event.target === this) {
+      acceptCookies(); // Treat clicks on the modal backdrop as consent
+    }
+  });
 
 // Initialize cookie check when document is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   try {
     checkCookieConsent();
   } catch (error) {
@@ -89,29 +96,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Event listener for the Accept button
-document.querySelector('.btn-primary').addEventListener('click', function() {
-  try {
-    acceptCookies();
-  } catch (error) {
-    console.error("Failed to handle accept button click:", error);
-  }
-});
-
 // Fallback in case Modal instance is not properly retrieved
-document.getElementById('cookieConsentModal').addEventListener('hidden.bs.modal', function () {
-  if (!localStorage.getItem('cookieConsent')) {
-    localStorage.setItem('cookieConsent', 'true');
-  }
-});
+document
+  .getElementById("cookieConsentModal")
+  .addEventListener("hidden.bs.modal", function () {
+    if (!localStorage.getItem("cookieConsent")) {
+      localStorage.setItem("cookieConsent", "true");
+    }
+  });
 
 // Add a listener for escape key to close modal
-document.addEventListener('keydown', function(event) {
+document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     try {
-      var myModal = bootstrap.Modal.getInstance(document.getElementById('cookieConsentModal'));
+      let myModal = bootstrap.Modal.getInstance(
+        document.getElementById("cookieConsentModal")
+      );
       myModal.hide();
-      localStorage.setItem('cookieConsent', 'true');
+      localStorage.setItem("cookieConsent", "true");
     } catch (error) {
       console.error("Failed to close modal with escape key:", error);
     }
@@ -125,14 +127,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Define the background music
-  let bgAudio = new Audio("static/sounds/theme-song.mp3");
+  let bgAudio = new Audio("/static/sounds/theme-song.mp3");
   bgAudio.loop = true; // Enable looping
-  bgAudio.volume = 0.2; // Set a reasonable volume
+  bgAudio.volume = 0.15; // Set a reasonable volume
 
   // Function to toggle music play/pause
   function toggleMusic() {
-    var toggleButton = document.getElementById("toggle-music");
-    var icon = toggleButton.querySelector("i");
+    let toggleButton = document.getElementById("toggle-music");
+    let icon = toggleButton.querySelector("i");
     if (bgAudio.paused) {
       bgAudio.play();
       icon.className = "fa-solid fa-volume-high";
