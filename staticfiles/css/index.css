@@ -124,8 +124,6 @@ h3 {
 }
 
 .toggle-btn:hover {
-  color: var(--saber-yellow); /* Yellow on hover */
-  background: #ffd700; /* Light yellow on hover */
   transform: scale(1.06);
 }
 
@@ -220,7 +218,7 @@ h3 {
 
 .card-title {
   font-family: "Star Wars", sans-serif;
-  color: var(--bright-yellow);
+  color: var(--sw-yellow);
 }
 
 .saber-container {
@@ -231,7 +229,7 @@ h3 {
 /* Enhanced Button Styles for Star Wars Theme */
 .btn-primary {
   border: none;
-  background-color: var(--bright-yellow); /* Star Wars yellow background */
+  background-color: var(--sw-yellow); /* Star Wars yellow background */
   color: var(--bg); /* Text color */
   transition: var(--transition);
   font-family: var(--title);
