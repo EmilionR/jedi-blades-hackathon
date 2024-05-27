@@ -15,7 +15,7 @@ section {
     font-weight: 300;
     font-family: var(--title1);
     letter-spacing: var(--spacing);
-    color: var(--gold-yellow);
+    color: var(--sw-yellow);
 }
 
 .text {
@@ -37,7 +37,7 @@ img {
     position: absolute;
     cursor: pointer;
     border: 1px solid transparent;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .overlay:hover {
@@ -90,6 +90,6 @@ img {
     font-weight: 300;
     font-family: var(--title1);
     letter-spacing: var(--spacing);
-    color: var(--gold-yellow);
+    color: var(--sw-yellow);
     margin-left: 2rem;
 }
