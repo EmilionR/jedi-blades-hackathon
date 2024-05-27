@@ -83,11 +83,12 @@ h3 {
   /* Make sure to import a Star Wars font */
   color: #ffcc00; /* Yellow */
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; /* Yellow */
   margin-bottom: 1rem;
   padding: 0 2rem;
   letter-spacing: -1px;
+  font-family: var(--title);
 }
 
 /* Toggle Section */
@@ -105,7 +106,7 @@ h3 {
 .toggle-buttons {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 80%;
 }
 
 .toggle-btn {
@@ -113,7 +114,8 @@ h3 {
   flex: 1;
   padding: 0.5rem 1rem;
   margin: 0 0.25rem;
-  color: var(--light-grey); /* Black text */
+  color: var(--light-grey);
+  font-family: var(--title);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: var(--spacing);
@@ -132,40 +134,36 @@ h3 {
 }
 
 #lightSide {
-  background: rgba(0, 87, 179); /* Blue */
+  background: var(--light-grey);
+  color: black; /* Blue */
   opacity: 0.8;
 }
 
 #lightSide:hover {
-  background: rgb(0, 46, 163);
+  background: var(--light-grey);
   color: white;
 }
 
 #darkSide {
-  background: rgb(179, 0, 0); /* Red */
+  background: var(--dark-grey);
+  color: black; /* Red */
   opacity: 0.8;
 }
 
 #darkSide:hover {
-  background: rgb(155, 39, 39);
-  color: black;
+  background: var(--dark-grey);
+  color: white;
   opacity: 1;
 }
 
 #bothSides {
-  background: linear-gradient(
-    to right,
-    rgba(0, 87, 179, 0.8),
-    rgba(179, 0, 0, 0.8)
-  ); /* Blue to Red */
+  background: linear-gradient(to right, var(--light-grey), var(--dark-grey));
+  color: black;
 }
 
 #bothSides:hover {
-  background: linear-gradient(
-    to right,
-    rgba(0, 87, 179, 1),
-    rgba(179, 0, 0, 1)
-  ); /* Light Blue to Light Red */
+  background: linear-gradient(to right, var(--light-grey), var(--dark-grey));
+  color: white;
 }
 
 .z-index {
@@ -261,11 +259,8 @@ h3 {
 
 @media (min-width: 768px) {
   .star-wars-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-}
-
-@media (min-width: 1024px) {
 }
 
 /* Animation Keyframes */
