@@ -120,37 +120,6 @@
             </div>
           </div>
         </div>
-        <div
-          class="modal fade"
-          id="characterModal{{ lightsaber.id }}"
-          tabindex="-1"
-          aria-labelledby="characterModalLabel{{ lightsaber.id }}"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5
-                  class="modal-title"
-                  id="characterModalLabel{{ lightsaber.id }}"
-                >
-                  {{ lightsaber.owner.name }}
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <p>Full Name: {{ lightsaber.owner.full_name }}</p>
-                <p>Alignment: {{ lightsaber.owner.get_alignment_display }}</p>
-                <p>Home Planet: {{ lightsaber.owner.home_planet }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </article>
       {% endfor %}
     </div>
