@@ -1,5 +1,4 @@
 :root {
-  --sw-yellow: #ffe81f;
   --spacing: 2px;
   --twinkle-duration: 4s;
 }
@@ -7,9 +6,8 @@
 body,
 html {
   font-family: var(--main-font);
-  background: black;
   overflow-x: hidden;
-  color: white;
+  color: var(--sw-yellow) !important;
 }
 
 main {

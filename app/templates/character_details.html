@@ -21,16 +21,22 @@
         <div class="col-12 col-md-10 col-lg-6">
           <div class="sub-section py-5 slide-in-right">
             <div class="card-body text-center">
-              <h2 class="my-2 py-2">
+              <p class="my-2 py-2 txt-xl">
                 Alignment:
                 <span class="text-white"
                   >{{ character.get_alignment_display }}</span
                 >
-              </h2>
-              <h3 class="my-2 py-2">
+              </p>
+              <p class="my-2 py-2 txt-l">
                 Home Planet:
                 <span class="text-white">{{ character.home_planet }}</span>
-              </h3>
+              </p>
+              <p class="my-2 py-2 txt-l">
+                Lightsaber:
+                {% for lightsaber in character.lightsaber.all %}
+                <a href="/lightsaber/{{ lightsaber.pk }}">{{ lightsaber.name }}</a>
+                {% endfor %}
+              </p>
             </div>
           </div>
         </div>

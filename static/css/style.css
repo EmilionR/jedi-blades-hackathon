@@ -82,6 +82,15 @@ a {
 
 .btn-warning {
   background-color: var(--sw-yellow);
+
+.txt-l {
+  font-size: 1.5rem;
+  font-family: var(--title);
+}
+
+.txt-xl {
+  font-size: 2rem;
+  font-family: var(--title);
 }
 
 .lightsaber {
