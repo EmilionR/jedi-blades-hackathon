@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/about_lightsaber.css' %}" />
+<section id="about-section" class="section starry-sky">
+    <div id="about-section-header">
+        <h1 class="heading-1">About Lightsabers</h1>
+        <p class="text">
+            Lightsabers, the iconic weapons of the Jedi and Sith, are more than mere blades of energy. 
+            These elegant weapons, often referred to as "laser swords," are a testament to the craftsmanship, technological prowess, 
+            and deep connection to the Force required to wield them. 
+            Each lightsaber is unique, reflecting the personality and skill of its creator. 
+            Here, we delve into the intricate components that make up a lightsaber and the lore surrounding these legendary weapons.
+        </p>
+        <div class="lightsaber-image-container">
+            <img 
+                src="https://th.bing.com/th/id/OIP.Uj1ZyQOpCIqg0XdSEzuX2gAAAA?rs=1&pid=ImgDetMain"
+                alt="Lightsaber Anatomy image"
+                class="image-fluid"
+            />
+            <!-- Add overlay divs for each part of the lightsaber -->
+            <div class="overlay" id="crystal" data-info="Kyber Crystal: The heart of the lightsaber, channeling the Force to create the blade."></div>
+            <div class="overlay" id="hilt" data-info="Hilt: The handle of the lightsaber, housing all the crucial components."></div>
+            <div class="overlay" id="emitter" data-info="Emitter: Projects and controls the blade's length and intensity."></div>
+            <div class="overlay" id="blade" data-info="Blade: Projected beam of light used to defeat enemies."></div>
+            <!-- Add more overlays as needed -->
+        </div>
+        <div id="hover-info"></div>
+    </div>
+
+    <div id="history-lore-section" class="section">
+        <h2 class="heading-2">History and Lore</h2>
+        <p class="text">
+            Lightsabers have a storied history in the galaxy. From the legendary battles of the Jedi and Sith to the creation of unique lightsabers by their wielders, these weapons have always been a symbol of power and skill. Notable lightsabers include Anakin Skywalker's blue blade, Darth Vader's red saber, and Luke Skywalker's green lightsaber, each with its own tale.
+        </p>
+    </div>
+    
+    <div id="construction-section" class="section">
+        <h2 class="heading-2">Construction and Components</h2>
+        <p class="text">
+            Constructing a lightsaber is a rite of passage for both Jedi and Sith. The process involves gathering parts and a Kyber crystal, often through a journey of self-discovery. Key components include the hilt, which houses the power source and controls, the emitter matrix, and the focusing crystal that shapes the blade.
+        </p>
+    </div>
+    
+    <div id="types-variations-section" class="section">
+        <h2 class="heading-2">Types and Variations</h2>
+        <p class="text">
+            Lightsabers come in various forms to suit the fighting styles of their wielders. The double-bladed lightsaber, famously wielded by Darth Maul, offers a distinct combat advantage. The crossguard lightsaber, used by Kylo Ren, features additional blades for offensive and defensive maneuvers. Curved-hilt lightsabers, favored by Count Dooku, provide ergonomic benefits for dueling.
+        </p>
+    </div>
+    
+    <div id="famous-battles-section" class="section">
+        <h2 class="heading-2">Famous Lightsaber Battles</h2>
+        <p class="text">
+            Throughout history, lightsabers have been at the center of many legendary battles. From the duel between Obi-Wan Kenobi and Anakin Skywalker on Mustafar to the clash between Rey and Kylo Ren, these epic encounters have shaped the fate of the galaxy.
+        </p>
+    </div>
+</section>
+
+
+
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}
