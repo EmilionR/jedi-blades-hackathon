@@ -151,6 +151,13 @@ header {
   color: var(--saber-white) !important;
 }
 
+#toggle-music:hover,
+#toggle-music:focus-visible {
+  color: var(--sw-yellow) !important;
+  background-color: var(--bg);
+  border: 2px solid var(--sw-yellow);
+}
+
 .navbar-toggler {
   border-color: #ffe81f;
 }
