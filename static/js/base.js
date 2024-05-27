@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Define the background music
-  let bgAudio = new Audio("static/sounds/theme-song.mp3");
+  let bgAudio = new Audio("/static/sounds/theme-song.mp3");
   bgAudio.loop = true; // Enable looping
   bgAudio.volume = 0.2; // Set a reasonable volume
 
