@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let audio = new Audio(soundList[currentIndex.index]);
 
     // Set the volume to a lower level
-    audio.volume = 0.01;
+    audio.volume = 0.2;
 
     // Play the current sound
     audio.play();
