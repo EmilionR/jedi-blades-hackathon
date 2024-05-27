@@ -19,10 +19,8 @@ class LightsaberDetailView(DetailView):
     template_name = 'lightsaber_details.html'
     context_object_name = 'lightsaber'
 
-
-
-
-
+class AboutView(TemplateView):
+    template_name = 'about_lightsaber.html'
 
 
 class TeamView(TemplateView):

@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import LightsaberListView, LightsaberDetailView, CharacterDetailView, TeamView
+from app.views import LightsaberListView, LightsaberDetailView, CharacterDetailView, TeamView, AboutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('lightsaber/<int:pk>/', LightsaberDetailView.as_view(), name='lightsaber-detail'),
     path('character/<int:pk>/', CharacterDetailView.as_view(), name='character-detail'),
     path('team/', TeamView.as_view(), name='team'),
+    path('about/', AboutView.as_view(), name='about'),
 ]
