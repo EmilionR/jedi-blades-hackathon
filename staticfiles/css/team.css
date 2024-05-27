@@ -14,11 +14,13 @@ body {
 
 .heading-1 {
   margin-bottom: 20px;
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   font-weight: 300;
+  padding: 0 2rem;
   font-family: var(--title1);
   letter-spacing: var(--spacing);
-  color: var(--gold-yellow);
+  color: var(--sw-yellow);
+  text-align: center;
 }
 
 .jedi {
@@ -57,7 +59,7 @@ hr {
   margin-inline-start: auto;
   margin-inline-end: auto;
   border-style: inset;
-  border: 1px solid var(--gold-yellow);
+  border: 1px solid var(--sw-yellow);
 }
 
 img {
@@ -69,7 +71,7 @@ img {
   font-weight: 800;
   font-family: var(--title);
   letter-spacing: var(--spacing);
-  color: var(--gold-yellow);
+  color: var(--sw-yellow);
 }
 
 .subheading {
@@ -111,5 +113,9 @@ img {
   #photos {
     column-count: 2;
     column-gap: 0;
+  }
+
+  .heading-1 {
+    font-size: 2rem;
   }
 }
