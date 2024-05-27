@@ -45,6 +45,7 @@ body {
   color: var(--saber-white);
   background: var(--bg);
   cursor: none;
+  overflow-x: hidden;
 }
 
 button,
