@@ -6,15 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Arrays of sound file URLs
   const swingSounds = [
-    "static/sounds/lightsaber-1.mp3",
-    "static/sounds/lightsaber-2.mp3",
-    "static/sounds/lightsaber-3.mp3",
-    "static/sounds/lightsaber-4.mp3",
+    "/static/sounds/lightsaber-1.mp3",
+    "/static/sounds/lightsaber-2.mp3",
+    "/static/sounds/lightsaber-3.mp3",
+    "/static/sounds/lightsaber-4.mp3",
   ];
   const clashSounds = [
-    "static/sounds/clash-1.mp3",
-    "static/sounds/clash-2.mp3",
-    "static/sounds/clash-3.mp3",
+    "/static/sounds/clash-1.mp3",
+    "/static/sounds/clash-2.mp3",
+    "/static/sounds/clash-3.mp3",
   ];
 
   // Index to keep track of the current sound
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Define the background music
-  let bgAudio = new Audio("static/sounds/theme-song.mp3");
+  let bgAudio = new Audio("/static/sounds/theme-song.mp3");
   bgAudio.loop = true; // Enable looping
   bgAudio.volume = 0.15; // Set a reasonable volume
 
