@@ -1,6 +1,6 @@
 body,
 html {
-  color: #ffe81f !important;
+  color: var(--sw-yellow) !important;
   overflow-x: hidden;
 }
 
@@ -8,13 +8,12 @@ h1 {
   font-family: var(--title1);
 }
 
-h2,
-h3 {
-  font-family: var(--title);
-}
-
 p {
   font-family: var(--main-font);
+}
+
+a {
+  color: var(--saber-white);
 }
 
 hr {
